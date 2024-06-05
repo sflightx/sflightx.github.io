@@ -13,7 +13,7 @@
     justify-content: left;
 }
 
-.feature-container, .detail-container {
+.feature-container, .detail-container, .feature-article-container {
     margin: 0px 50px;
     text-align: center; 
     color:#d3d3d3;
@@ -44,15 +44,6 @@
 
 .profileImage {
     right: 0px;
-}
-
-main {
-    flex: 1;
-    padding: 0vw;
-    background-image: url('https://firebasestorage.googleapis.com/v0/b/sflight-x.appspot.com/o/static%2Fimg%2F4k%2Fmaya-liftoff-4k.png?alt=media&token=4c53f8e3-258e-4f51-8f0a-c2b091bfa604');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
 }
 
 footer {

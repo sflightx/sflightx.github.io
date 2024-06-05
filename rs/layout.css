@@ -4,6 +4,12 @@
     color: white;
 }
 
+main {
+    flex: 1;
+    padding: 0vw;
+    background-color: rgba(0,0,0,1);
+}
+
 body {
     background: black;
     margin: 0;
@@ -94,22 +100,22 @@ button:hover h6 {
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 3.5em;
+        font-size: 1.5em;
     }
     h2 {
-        font-size: 3em;
+        font-size: 1.35em;
     }
     h3 {
-        font-size: 2.75em;
+        font-size: 1.1em;
     }
     h4 {
-        font-size: 2.5em;
+        font-size: 1em;
     }
     h5 {
-        font-size: 2.25em;
+        font-size: 0.85em;
     }
     h6 {
-        font-size: 2em;
+        font-size: 0.75em;
     }
     p {
         font-size: 80%;
@@ -141,6 +147,24 @@ button:hover h6 {
         margin: 0px;
         font-size: 5vw;
     }
+    .article {
+        padding: 10px 50px;
+    }
+}
+
+table {
+    background-color: rgba(0,0,0,0.75);
+    padding: 25px 50px;
+    width: 100vw;
+    height: 100%;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 25px 25px 0px 0px; /* 100vw - 20px for left and right padding */
+}
+
+td {
+    padding: 25px 10px;
+    border-bottom: 1px solid white;
 }
 
 #menu {
@@ -151,22 +175,22 @@ button:hover h6 {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
     h1 {
-        font-size: 3em;
-    }
-    h2 {
-        font-size: 2.5em;
-    }
-    h3 {
         font-size: 2em;
     }
-    h4 {
+    h2 {
+        font-size: 1.75em;
+    }
+    h3 {
         font-size: 1.5em;
     }
-    h5 {
+    h4 {
         font-size: 1.25em;
     }
-    h6 {
+    h5 {
         font-size: 1em;
+    }
+    h6 {
+        font-size: 0.75em;
     }
     p {
         font-size: 90%;
@@ -179,6 +203,9 @@ button:hover h6 {
     .stat-child h4 {
         margin: 0px;
         font-size: 3vw;
+    }
+    .article {
+        padding: 20px 80px;
     }
 
 }
@@ -201,10 +228,13 @@ button:hover h6 {
         font-size: 2.25em;
     }
     h6 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
     p {
         font-size: 100%;
+    }
+    .article {
+        padding: 20px 100px;
     }
 }
 
@@ -246,7 +276,7 @@ button:hover h6 {
         font-size: 2.25em;
     }
     h6 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
     p {
         font-size: 110%;
@@ -273,25 +303,25 @@ button:hover h6 {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     h1 {
-        font-size: 3em;
+        font-size: 4em;
     }
     h2 {
-        font-size: 2.5em;
+        font-size: 3.5em;
     }
     h3 {
-        font-size: 2em;
+        font-size: 3em;
     }
     h4 {
-        font-size: 1.5em;
+        font-size: 2.5em;
     }
     h5 {
-        font-size: 1.25em;
+        font-size: 2.25em;
     }
     h6 {
-        font-size: 1em;
+        font-size: 1.5em;
     }
     p {
-        font-size: 100%;
+        font-size: 110%;
     }
     .stat-child p {
         margin: 0px;
@@ -323,6 +353,9 @@ button:hover h6 {
         text-decoration: none;
         color: white;
         font-size: 1.25vw;
+    }
+    .article {
+        padding: 30px 150px;
     }
 }
 /* 4k devices (4k screens, 2400px and up) */
