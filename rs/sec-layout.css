@@ -87,7 +87,7 @@ button:hover h6 {
         font-size: 0.75em;
     }
     p {
-        font-size: 80%;
+        font-size: 100%;
     }
     .overview-h1 {
         text-align: left; 
@@ -142,7 +142,7 @@ button:hover h6 {
         font-size: 0.75em;
     }
     p {
-        font-size: 90%;
+        font-size: 110%;
     }
     .stat-child p {
         margin: 0px;
@@ -180,7 +180,7 @@ button:hover h6 {
         font-size: 1.5em;
     }
     p {
-        font-size: 100%;
+        font-size: 120%;
     }
     .article {
         padding: 20px 100px;
@@ -228,7 +228,7 @@ button:hover h6 {
         font-size: 1.5em;
     }
     p {
-        font-size: 110%;
+        font-size: 130%;
     }
     .stat-child p {
         margin: 0px;
@@ -265,7 +265,7 @@ button:hover h6 {
         font-size: 2em;
     }
     p {
-        font-size: 130%;
+        font-size: 140%;
     }
     .stat-child p {
         margin: 0px;
