@@ -1,22 +1,4 @@
-* {
-    font-family: 'Barlow Condensed';
-    text-transform: uppercase;
-    color: white;
-}
 
-main {
-    flex: 1;
-    padding: 0vw;
-    background-color: rgba(0,0,0,1);
-}
-
-body {
-    background: black;
-    margin: 0;
-    padding:0;
-    max-height: 100vh;
-    max-width: 100%;
-}
 
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
@@ -32,43 +14,18 @@ body {
     direction: ltr;
   }
 
-header {
-    position: fixed;
-    width: 100vw;
-    max-height: 7.5vh;
-    margin: auto;
-    padding: 20px 0px;
-    transition: top 0.75s ease-in-out, background-color 0.75s ease-in-out;
-    z-index: 2;
-
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
 header ul {
-    text-align: end;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(0,0,0,0.75); /* Change this to your preferred color */
+     /* Change this to your preferred color */
     position: fixed; /* Make the navbar fixed on top */
     top: 0;
     max-width: 100vw;
     max-height: 100%;
     transition: opacity 0.5s, visibility 0.5s;
-    display: none;
-}
-
-header ul li {
-    margin: 50px 25px;
-    list-style-type: none;
-    width: auto;
+    
 }
 
 header ul li a {
     text-decoration: none;
-    color: white;
 }
 
 header ul li p {
@@ -79,14 +36,26 @@ header img {
     height: 7.5vh; /* Adjust as needed */
 }
 
-
-
-button {
-    background-color: rgba(0,0,0,0);
+#menu {
     color: white;
-    padding: 10px 100px;
-    border: solid white 3px;
-    transition: 0.3s ease-in-out;
+    display: block;
+}
+
+
+footer {
+    color: white;
+    padding: 30px 25px;
+    max-width: 100%;
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 button:hover {
@@ -150,26 +119,6 @@ button:hover h6 {
     .article {
         padding: 10px 50px;
     }
-}
-
-table {
-    background-color: rgba(0,0,0,0.75);
-    padding: 25px 50px;
-    width: 100vw;
-    height: 100%;
-    font-weight: bold;
-    border: 1px solid white;
-    border-radius: 25px 25px 0px 0px; /* 100vw - 20px for left and right padding */
-}
-
-td {
-    padding: 25px 10px;
-    border-bottom: 1px solid white;
-}
-
-#menu {
-    color: white;
-    display: block;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -255,7 +204,7 @@ td {
     header ul li a {
         text-align: center;
     }
-    footer {
+    #link-section {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -290,11 +239,6 @@ td {
         margin: 0px;
         font-size: 2vw;
     }
-    footer {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
     #menu {
         display: none;
     }
@@ -303,25 +247,25 @@ td {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
     h1 {
-        font-size: 4em;
+        font-size: 3.5em;
     }
     h2 {
-        font-size: 3.5em;
+        font-size: 3.25em;
     }
     h3 {
         font-size: 3em;
     }
     h4 {
-        font-size: 2.5em;
+        font-size: 2.75em;
     }
     h5 {
-        font-size: 2.25em;
+        font-size: 2.5em;
     }
     h6 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
     p {
-        font-size: 110%;
+        font-size: 115%;
     }
     .stat-child p {
         margin: 0px;
@@ -344,9 +288,9 @@ td {
         list-style-type: none;
         width: auto;
     }
-    footer {
+    footer #link-section {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
     }
     header ul li a {
@@ -355,7 +299,7 @@ td {
         font-size: 1.25vw;
     }
     .article {
-        padding: 30px 150px;
+        padding: 30px 250px;
     }
 }
 /* 4k devices (4k screens, 2400px and up) */
@@ -368,7 +312,7 @@ td {
         list-style-type: none;
         width: auto;
     }
-    footer {
+    footer #link-section {
         display: flex;
         justify-content: space-evenly;
         align-items: center;

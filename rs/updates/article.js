@@ -1,7 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var publicationDateElement = document.getElementById("publication-date");
-    var publishedDate = new Date(publicationDateElement.getAttribute("data-published"));
-    var localPublishedDate = publishedDate.toLocaleString(undefined, {timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone});
+    
+    // Get the key from the URL (e.g., ?key=article1)
+    const urlParams = new URLSearchParams(window.location.search);
+    const key = urlParams.get("articleKey");
+    const baseUrl = "https://sflightx.com/updates/article/";
 
-    publicationDateElement.textContent = "Published: " + localPublishedDate;
+    // Load the snippet into the specified <div>
+    const articleDiv = document.querySelector(".article");
+    const snippetFilename = `${baseUrl}${key}.html`; // Assuming filenames match keys
+
+    fetch(snippetFilename)
+        .then((response) => response.text())
+        .then((html) => {
+        articleDiv.innerHTML = html;
+    }).catch((error) => {
+        articleDiv.innerHTML = "Error loading article.";
+    });
 });
+
