@@ -41,6 +41,10 @@ header img {
     display: block;
 }
 
+.article img {
+    width: 100%;
+}
+
 
 footer {
     color: white;
@@ -153,10 +157,6 @@ button:hover h6 {
         margin: 0px;
         font-size: 3vw;
     }
-    .article {
-        padding: 20px 80px;
-    }
-
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -181,9 +181,6 @@ button:hover h6 {
     }
     p {
         font-size: 120%;
-    }
-    .article {
-        padding: 20px 100px;
     }
 }
 
@@ -297,9 +294,6 @@ button:hover h6 {
         text-decoration: none;
         color: white;
         font-size: 1.25vw;
-    }
-    .article {
-        padding: 30px 250px;
     }
 }
 /* 4k devices (4k screens, 2400px and up) */
