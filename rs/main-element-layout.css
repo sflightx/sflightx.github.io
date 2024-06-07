@@ -23,6 +23,11 @@ h1, h2, h3, h4, h5, h6, p {
     margin: 20px 0px;
 }
 
+header b {
+    font-size: 3vh;
+    
+}
+
 header {
     position: fixed;
     width: 100vw;
@@ -47,7 +52,7 @@ ul {
 }
 
 li {
-    margin: 20px 25px;
+    margin: 0px 25px;
     list-style-type: none;
     width: auto;
 }

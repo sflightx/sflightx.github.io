@@ -2,7 +2,7 @@
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
     font-style: normal;
-    font-size: 240px;  /* Preferred icon size */
+    font-size: 50px;  /* Preferred icon size */
     display: inline-block;
     line-height: 1;
     text-transform: none;
@@ -16,8 +16,8 @@ header ul {
      /* Change this to your preferred color */
     position: fixed; /* Make the navbar fixed on top */
     top: 0;
-    max-width: 100vw;
-    max-height: 100%;
+    width: 100vw;
+    height: 100%;
     transition: opacity 0.5s, visibility 0.5s;
     
 }
@@ -37,6 +37,12 @@ header img {
 #menu {
     color: white;
     display: block;
+}
+
+#link-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .article {
