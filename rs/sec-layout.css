@@ -86,6 +86,11 @@ header ul li {
     list-style-type: none;
     width: auto;
 }
+#link-section li {
+    margin: 25px 0px;
+    list-style-type: none;
+    width: auto;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

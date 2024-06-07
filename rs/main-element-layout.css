@@ -46,12 +46,6 @@ ul {
     display: none;
 }
 
-li {
-    margin: 25px 0px;
-    list-style-type: none;
-    width: auto;
-}
-
 table {
     background-color: rgba(0,0,0,0.75);
     padding: 25px 50px;
