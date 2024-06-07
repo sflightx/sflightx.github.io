@@ -130,6 +130,10 @@ button:hover h6 {
         margin: 0px;
         font-size: 5vw;
     }
+    header b {
+        font-size: 3vh;
+        
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -164,6 +168,10 @@ button:hover h6 {
         margin: 0px;
         font-size: 3vw;
     }
+    header b {
+        font-size: 3vh;
+        
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -188,6 +196,10 @@ button:hover h6 {
     }
     p {
         font-size: 120%;
+    }
+    header b {
+        font-size: 3vh;
+        
     }
 }
 
@@ -246,6 +258,10 @@ button:hover h6 {
     #menu {
         display: none;
     }
+    header b {
+        font-size: 1.5vh;
+        
+    }
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -302,6 +318,10 @@ button:hover h6 {
         color: white;
         font-size: 1.25vw;
     }
+    header b {
+        font-size: 1.5vh;
+        
+    }
 }
 /* 4k devices (4k screens, 2400px and up) */
 @media only screen and (min-width: 2400px) {
@@ -352,5 +372,9 @@ button:hover h6 {
     .stat-child h4 {
         margin: 0px;
         font-size: 3vw;
+    }
+    header b {
+        font-size: 1.5vh;
+        
     }
 }

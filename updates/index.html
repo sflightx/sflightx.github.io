@@ -71,5 +71,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <script src="../rs/updates/article.js"></script>
     <script src="../rs/main-rs-layout.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var imageUrl = getImageUrl();
+        document.getElementById("bg-img").src = imageUrl;
+        });   
+    </script>
 </body>
 </html>
