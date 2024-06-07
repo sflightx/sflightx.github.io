@@ -42,12 +42,12 @@
                 <li><a href="https://youtube.com/@sflightx">
                     
                     <b>YOUTUBE</b></a><p></p></li>
-                <li><a href="https://x.com/SFlightXJNO">
-                    
-                    <b>X</b></a><p></p></li>
                 <li><a href="https://discord.gg/sflightx">
                     
                     <b>DISCORD</b></a><p></p></li>
+                <li><a href="https://x.com/SFlightXJNO">
+                    
+                    <b>X</b></a><p></p></li>
                 <li><a href="https://patreon.com/sflightx/">
                     
                     <b>PATREON</b></a><p></p></li>
@@ -71,11 +71,10 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
     <script src="../rs/updates/article.js"></script>
     <script src="../rs/main-rs-layout.js"></script>
+    <script src="../rs/updates/config.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var imageUrl = getImageUrl();
-        document.getElementById("bg-img").src = imageUrl;
-        });   
+        document.getElementById("bg-img").src = IMG_preparing_the_block_five;
+        document.getElementById('feature-article-title').textContent = TXT_preparing_the_block_five;
     </script>
 </body>
 </html>

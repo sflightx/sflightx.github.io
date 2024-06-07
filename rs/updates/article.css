@@ -23,6 +23,8 @@
 
 #bg-img {
     height: 100vh;
+    background-position: center center;
+    background-size: cover;
 }
 
 #feature-article-title {
