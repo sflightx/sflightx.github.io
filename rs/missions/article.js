@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Get the key from the URL (e.g., ?key=article1)
     const urlParams = new URLSearchParams(window.location.search);
-    const key = urlParams.get("articleKey");
-    const baseUrl = "https://sflightx.com/updates/article/";
+    const key = urlParams.get("id");
+    const baseUrl = "https://sflightx.com/missions/launch/";
 
     // Load the snippet into the specified <div>
     const articleDiv = document.querySelector(".article");
@@ -19,10 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }else{
             console.log("Image not found for article: ", key);
         }
-        const formattedText = key.replaceAll("-", " ");
+        const preformattedText = key.replaceAll("-", " ");
+        const formattedText = preformattedText.replaceAll("_", "-");
+        console.log(formattedText);
         document.getElementById('feature-article-title').textContent = formattedText;
     }).catch((error) => {
         articleDiv.innerHTML = "Error loading article.";
     });
 });
+
+
 
