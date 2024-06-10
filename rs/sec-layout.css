@@ -37,6 +37,7 @@ header img {
 #menu {
     color: white;
     display: block;
+    overflow: hidden;
 }
 
 #link-section {
