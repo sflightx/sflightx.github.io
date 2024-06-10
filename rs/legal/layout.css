@@ -1,82 +1,40 @@
-body {
-    background: black;
-    margin: 0;
-    margin-top: 5vh;
-    padding:0;
-    font-family: Arial, sans-serif; /* Set the preferred font */
+.feature, .detail, .image-container {
+    background-color: black;
+    position: relative;
+    width: calc(95vw-50px);
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    max-height: 100vh;
-    max-width: 100vw;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 240px;  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
+.detail {
+    justify-content: left;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
-    color: white;
-    padding-right: 5vw;
+.feature-container, .detail-container, .feature-article-container {
+    margin: 0px 50px;
+    text-align: center; 
+    color:#d3d3d3;
+    max-height: 25vh;
+    max-width: 100%;
+    position: absolute;
 }
 
-main h1 {
-    padding-left: 3vw;
+.detail-container {
+    bottom: 20%;
+    text-align: left;
 }
 
-main h2 {
-    padding-left: 6vw;
+#bg-img {
+    width: auto;
+    height: 100vh;
 }
 
-main h3 {
-    padding-left: 9vw;
-}
-
-main h4{
-    padding-left: 12vw;
-}
-
-main p {
-    padding-left: 15vw;
-}
-
-header {
-    position: fixed;
-    top: 0px;
+#feature-title, #detail-title {
+    font-size: 5vw;
     margin: 0px;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
-    padding: 8px;
-    height: 5vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center; /* Center align vertically*/
-    transition: top 0.3s; /* Adding transition for smooth hide/show effect */
-    z-index: 2;
-}
-
-.header-hide {
-    top: -100px; /* Moves the header off-screen when scrolled down */
-}
-
-header img {
-
-    display: block;
-    max-height: 100%; /* Adjust as needed */
-    max-width: 100%; /* Adjust as needed */
-}
-
-.top img {
-    max-width: 100vw;
 }
 
 .menuImage {
@@ -88,22 +46,10 @@ header img {
     right: 0px;
 }
 
-main {
-    flex: 1;
-    /* Additional styles for main content if needed */
-}
-
-* {
-    font-family: 'Barlow Condensed';
-    padding: 0px;
-}
-
 footer {
     color: white;
-    padding: 4vh;
-    bottom: 0;
-    width: 75vw;
-    margin: 0px auto;
+    padding: 0px 25px;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -115,4 +61,79 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+
+td {
+    padding: 25px 10px;
+    border-bottom: 1px solid white;
+}
+
+.highlight {
+    color: rgb(160, 160, 160);
+}
+
+.stat {
+    padding: 30px 50px;
+    text-align: center;
+    background-color: rgba(0,0,0,1);
+}
+
+.stat-container {
+    margin: 25px 0px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.stat-child {
+    padding: 5px 15px;
+}
+
+.stat-child p {
+    margin: 0px;
+    font-size: 5vw;
+}
+
+.stat-child h4 {
+    margin: 0px;
+    font-size: 2.5vw;
+}
+
+.overview {
+    position: relative;
+    width: 100vw;
+    
+}
+
+.overview-detail {
+    position: sticky;
+}
+
+.overview-header {
+    padding: 10vh 10vw 5vh 10vw;
+}
+
+.overview-h1 {
+    text-align: left; 
+    color:#d3d3d3;
+    margin: 0;
+    font-size: 5vw;
+}
+
+.overview-h3 {
+    text-align: left; 
+    color:#d3d3d3;
+    margin: 0;
+    font-size: 3vw;
+}
+
+.sec-span {
+    color: rgb(145, 145, 145);
+    font-style: italic;
+} 
+
+main h1, main h2, main h3, main h4, main h5, main h6, main p {
+    text-transform: none;
+    padding: 5px 10vw;
+    line-height: 1.5;
 }
