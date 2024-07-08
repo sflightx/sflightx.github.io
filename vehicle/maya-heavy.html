@@ -21,10 +21,11 @@
 
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/Iwc5mxo.png">
     
-    <link rel="stylesheet" href="../rs/vehicle/style.css">
-    <link rel="stylesheet" href="../rs/design.css">
-    <link rel="stylesheet" href="../rs/sec-layout.css">
-    <link rel="stylesheet" href="../rs/main-element-layout.css">
+    <link rel="stylesheet" href="../../resources/sflightx.github.io/sflightx.css">
+    <link rel="stylesheet" href="../../resources/vehicle/maya-heavy.css">
+    <link rel="stylesheet" href="../../resources/main/import.css">
+    <link rel="stylesheet" href="../../resources/main/sec.css">
+    <link rel="stylesheet" href="../../resources/main/main.css">
 </head>
 
 <body>
@@ -41,13 +42,10 @@
     </header>
     <main>
         <!-- Content of the main section -->
-        <div class="feature">
-            <div class="feature-container">
+        <div id="feature">
+            <div td="feature-container">
                 <h1 id="feature-title">Maya Heavy</h1>
-                <p>Maya Heavy is a medium lift rocket capable of transporting heavy cargo missions to space</p>
-            </div>
-            <div class="img-container">
-                <img id="bg-img" src="https://firebasestorage.googleapis.com/v0/b/sflight-x.appspot.com/o/static%2Fimg%2Fthumbnail%2Fobsat-1-lq.png?alt=media&token=20348636-e54f-4f80-864a-6f67fecf2324">
+                <p id="feature-subtitle">Maya Heavy is a medium lift rocket capable of transporting heavy cargo missions to space</p>
             </div>
         </div>
         <div class="stat">
@@ -61,8 +59,10 @@
     </main>
     <footer>
         <h6>We're working something new with the website. Stay Tuned!</h6>
-        <p>© 2021-2024 Spaceflight Exploration</p>
-        <p><a href="https://sflightx.github.io/legal/v1.0/terms.html">Terms of Use</a> | <a href="https://sflightx.github.io/legal/v1.0/privacy_policy.html">Privacy Policy</a></p>
+        <div>
+            <p>© 2021-2024 Spaceflight Exploration</p>
+            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
+        </div>
     </footer>
 
     <!-- Firebase SDK -->
@@ -70,6 +70,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../rs/vehicle/script.js"></script>
+    <script src="../../resources/main/init.js"></script>
 </body>
 </html>
