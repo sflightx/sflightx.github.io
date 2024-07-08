@@ -21,10 +21,11 @@
 
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/Iwc5mxo.png">
     
-    <link rel="stylesheet" href="../rs/vehicle/style.css">
-    <link rel="stylesheet" href="../rs/design.css">
-    <link rel="stylesheet" href="../rs/sec-layout.css">
-    <link rel="stylesheet" href="../rs/main-element-layout.css">
+    <link rel="stylesheet" href="../../resources/sflightx.github.io/sflightx.css">
+    <link rel="stylesheet" href="../../resources/vehicle/vehicle.css">
+    <link rel="stylesheet" href="../../resources/main/import.css">
+    <link rel="stylesheet" href="../../resources/main/sec.css">
+    <link rel="stylesheet" href="../../resources/main/main.css">
 </head>
 
 <body>
@@ -42,28 +43,25 @@
     </header>
     <main>
         <!-- Content of the main section -->
-        <div class="feature">
-            <div class="feature-container">
+        <div id="feature">
+            <div id="feature-container">
                 <h1 id="feature-title">Maya</h1>
-                <p>First solid fueled rocket, and recovered liquid fueled rocket made in the Philippines.</p>
-            </div>
-            <div class="img-container">
-                <img id="bg-img" src="https://firebasestorage.googleapis.com/v0/b/sflight-x.appspot.com/o/static%2Fimg%2FGJdl1oUXAAACecS.jpg?alt=media&token=98ffa880-48b9-458b-8b1a-ded3ba8a0a2e">
+                <p id="feature-subtitle">First solid fueled rocket, and recovered liquid fueled rocket made in the Philippines.</p>
             </div>
         </div>
         <div class="stat">
             <div class="stat-container">
-                <div class="stat-child"><p>9</p><h4>Total Launches</h4></div>
+                <div class="stat-child"><p>13</p><h4>Total Launches</h4></div>
                 <div class="stat-child"><p>1</p><h4>Total Recoveries</h4></div>
-                <div class="stat-child"><p>7</p><h4>Total Payload</h4></div>
+                <div class="stat-child"><p>11</p><h4>Total Payload</h4></div>
                 <div class="stat-child"><p>2</p><h4>Total Landings</h4></div>  
             </div>
         </div>
         <div class="overview">
             <div class="overview-detail">
                 <div class="overview-header">
-                    <h3 class="overview-h3">Maya <span class="sec-span">Block 5</span></h3>
-                    <h1 class="overview-h1">Overview</h1>
+                    <h5>Maya <span class="sec-span">Block 5</span></h5>
+                    <h1>Overview</h1>
                 </div>
                 <table>
                     <div class="part-1">
@@ -120,27 +118,29 @@
         </div>
         <div class="detail">
             <div class="detail-container">
-                <h1 id="detail-title">Maya standing on Pad A</h1>
-                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1785212699179405494';"><h6><b>Learn More</b></h6></button>
+                <h1 id="detail-title">Maya Lifting Off at Pad C</h1>
+                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1805463559071318388';"><h6><b>Learn More</b></h6></button>
             </div>
             <div class="img-container">
-                <img id="bg-img" src="https://i.imgur.com/y1LAsqI.png">
+                <img id="bg-img" src="https://i.imgur.com/lLgPNX9.jpeg">
             </div>
         </div>
         
         <div class="detail">
             <div class="detail-container">
-                <h1 id="detail-title">Maya Liftoff</h1>
+                <h1 id="detail-title">Maya Showcase</h1>
             </div>
             <div class="img-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/XUM_ZT9ubPU?si=NpbkXVeN7LCLaref&loop=1&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false" style="width: 100vw; aspect-ratio: 16/9;"></iframe>
+                <iframe src="https://www.youtube-nocookie.com/embed/aeel9_wAA-s?si=jJGII8bBheVUkIcT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false" style="width: 100vw; aspect-ratio: 16/9;"></iframe>
             </div>
         </div>
     </main>
     <footer>
         <h6>We're working something new with the website. Stay Tuned!</h6>
-        <p>© 2021-2024 Spaceflight Exploration</p>
-        <p><a href="https://sflightx.github.io/legal/v1.0/terms.html">Terms of Use</a> | <a href="https://sflightx.github.io/legal/v1.0/privacy_policy.html">Privacy Policy</a></p>
+        <div>
+            <p>© 2021-2024 Spaceflight Exploration</p>
+            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
+        </div>
     </footer>
 
     <!-- Firebase SDK -->
@@ -148,6 +148,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../rs/vehicle/script.js"></script>
+    <script src="../../resources/main/init.js"></script>
 </body>
 </html>
