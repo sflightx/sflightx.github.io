@@ -21,11 +21,10 @@
 
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/Iwc5mxo.png">
     
-    <link rel="stylesheet" href="../../resources/sflightx.github.io/sflightx.css">
     <link rel="stylesheet" href="../../resources/vehicle/maya.css">
     <link rel="stylesheet" href="../../resources/main/import.css">
-    <link rel="stylesheet" href="../../resources/main/sec.css">
-    <link rel="stylesheet" href="../../resources/main/main.css">
+    <link rel="stylesheet" href="../../resources/main/secondary-layout.css">
+    <link rel="stylesheet" href="../../resources/main/primary-layout.css">
 </head>
 
 <body>
@@ -43,39 +42,40 @@
     </header>
     <main>
         <!-- Content of the main section -->
-        <div id="feature">
-            <div id="feature-container">
-                <h1 id="feature-title">Maya</h1>
-                <p id="feature-subtitle">First solid fueled rocket, and recovered liquid fueled rocket made in the Philippines.</p>
+        <div class="banner-full" style="background-image: url('https://i.imgur.com/YBF74SD.jpeg');">
+            <h1>Maya</h1>
+            <p id="banner-title">Partially reusable medium-lift rocket virtually made in the Philippines.</p>
+        </div>
+        <div class="banner-stat">
+            <div class="banner-stat-container">
+                <div class="banner-stat-child"><p>16</p><h2>Total Launches</h2></div>
+                <div class="banner-stat-child"><p>1</p><h2>Total Recoveries</h2></div>
+                <div class="banner-stat-child"><p>14</p><h2>Total Payload</h2></div>
+                <div class="banner-stat-child"><p>2</p><h2>Total Landings</h2></div>  
             </div>
         </div>
-        <div class="stat">
-            <div class="stat-container">
-                <div class="stat-child"><p>13</p><h4>Total Launches</h4></div>
-                <div class="stat-child"><p>1</p><h4>Total Recoveries</h4></div>
-                <div class="stat-child"><p>11</p><h4>Total Payload</h4></div>
-                <div class="stat-child"><p>2</p><h4>Total Landings</h4></div>  
-            </div>
-        </div>
-        <div class="overview">
-            <div class="overview-detail">
-                <div class="overview-header">
-                    <h5>Maya <span class="sec-span">Block 5</span></h5>
-                    <h1>Overview</h1>
+        <div class="banner-overview">
+            <div class="banner-overview-detail">
+                <div id="banner-info">
+                    <div class="banner-overview-header">
+                        <h5>Maya <span class="sec-span">Block 6</span></h5>
+                        <h1>Overview</h1>
+                    </div>
+                    <img class="banner-overview-img" src="https://i.imgur.com/O9zSfsA.png">
                 </div>
                 <table>
                     <div class="part-1">
                         <tr>
                         <td>Height</td>
-                        <td>90 m<span class="highlight"> / 295.3 ft</span></td>
+                        <td>110 m<span class="highlight"> / 360.9 ft</span></td>
                     </tr>
                     <tr>
                         <td>Diameter</td>
-                        <td>6 m<span class="highlight"> / 19.7 ft</span></td>
+                        <td>5 m<span class="highlight"> / 16.4 ft</span></td>
                     </tr>
                     <tr>
                         <td>Dry Mass</td>
-                        <td>200,000 kg<span class="highlight"> / 440,920 lbs</span></td>
+                        <td>210,000 kg<span class="highlight"> / 480,000 lbs</span></td>
                     </tr>
                     </div>
                     
@@ -118,11 +118,11 @@
         </div>
         <div class="detail">
             <div class="detail-container">
-                <h1 id="detail-title">Maya Lifting Off at Pad C</h1>
-                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1805463559071318388';"><h6><b>Learn More</b></h6></button>
+                <h1 id="detail-title">Maya Block 6 Static Fire</h1>
+                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1883514223495700738';"><h6><b>Learn More</b></h6></button>
             </div>
             <div class="img-container">
-                <img id="bg-img" src="https://i.imgur.com/lLgPNX9.jpeg">
+                <img id="bg-img" src="https://i.imgur.com/86aRvan.png">
             </div>
         </div>
         
@@ -131,15 +131,21 @@
                 <h1 id="detail-title">Maya Showcase</h1>
             </div>
             <div class="img-container">
-                <iframe src="https://www.youtube-nocookie.com/embed/aeel9_wAA-s?si=jJGII8bBheVUkIcT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false" style="width: 100vw; aspect-ratio: 16/9;"></iframe>
+                <iframe src="https://www.youtube.com/embed/iX08QiihNwc?si=1UDGrDSDe8KSJFga" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false" style="width: 100vw; aspect-ratio: 16/9;"></iframe>
             </div>
         </div>
     </main>
-    <footer>
-        <h6>We're working something new with the website. Stay Tuned!</h6>
+    <footer id="footer">
         <div>
             <p>© 2021-2024 Spaceflight Exploration</p>
             <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
+        </div>
+        <div id="footer-link">
+            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
+            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
+            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
+            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
+            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
         </div>
     </footer>
 
