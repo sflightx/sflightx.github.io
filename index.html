@@ -1,121 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="0.3">
-    <meta name="version_date" content="11-10-2024">
+    <meta name="version" content="1.4">
+    <meta name="author" content="SFlightX">
+    <meta name="version_date" content="04-23-2025">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
-    <meta property="og:image" content="https://i.imgur.com/unbXdTh.png" />
+    <meta name="description"
+        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
     <meta property="og:url" content="sflightx.com" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@SFlightXJNO" />
     <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description" content="sFlightX launches advanced technologies from Earth to Space" />
-    <meta name="twitter:image" content="https://i.imgur.com/unbXdTh.png" />
+    <meta name="twitter:description"
+        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
+    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
+    <title>SFlightX</title>
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
 
-    <title>sFlightX</title>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/unbXdTh.png">
-    
-    <link rel="stylesheet" href="../resources/main/import.css">
-    <link rel="stylesheet" href="../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../resources/main/primary-layout.css">
-    <link rel="stylesheet" href="../resources/main/anim/main-anim.css">
+    <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
 
-    <body>
-        <header>
-            <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-            <ul id="nav_list">
-                <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-                <li><a href="https://sflightx.com/vehicle/"><b>VEHICLE</b></a><p></p></li>
-                <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-                <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-                <li><a href="https://athena.sflightx.com/"><b>ATHENA</b></a><p></p></li>
-                
-                <!--li><b>|</b></li>
-                <li class="logged-content"><a href="#footer"><b>CHATS</b></a><p></p></li>
-                <li class="logged-content"><a href="#footer"><b>PROFILE</b></a><p></p></li-->
-            </ul>
-            <span class="material-symbols-outlined" id="menu">menu</span>
-        </header>
-        <main>
-            <!-- Content of the main section -->
-            <div class="banner-full" style="background-image: url('https://i.imgur.com/aVh7WUf.jpeg');">
-                <a href="https://sflightx.com"><img id="banner-logo" src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-                <h1 id="banner-title">sFlightX launches advanced technologies<br>from Earth to Space</h1>
-            </div>
-            
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-imports.css" />
+    <link rel="stylesheet" href="../resources/design/material-primary.css" />
+    <link rel="stylesheet" href="../resources/design/material-secondary.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-scheme.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/main.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/tailwind.css" />
 
-            <div class="banner-semi" id="banner-info">
-                <img src="https://firebasestorage.googleapis.com/v0/b/sflight-x.appspot.com/o/static%2Fsflightx.com%2Fimg%2Fmaya%2F5Vu3Wj4qHI.svg?alt=media&token=731459de-7ce1-463a-b193-d803f42b26e0" alt="image of Maya Block 6" class="banner-img">
-                <div class="banner-div">
-                    <h1 id="banner-title">Maya Block 6</h1>
-                    <p id="subtext">Maya Block 6, is our company's flagship rocket. Featuring enormous upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse and reliability.</p>
-                    <button onclick="window.location.href='https://sflightx.com/missions?id=dss_2-mission';"><h4><b>Learn More</b></h4></button>
-                </div>
-            </div>
+<body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+    <header>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com"></a>
+            <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
+    </header>
+    <main>
+        <div style="height: 10vh;"></div>
 
-            <div class="banner" id="banner-info">
-                <img src="https://firebasestorage.googleapis.com/v0/b/sflight-x.appspot.com/o/static%2Fsflightx.com%2Fimg%2Fmaya%2FptGqjLeLGb.svg?alt=media&token=c20ac58c-6f7d-4675-a6c3-611c61aa5def" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-                <div class="banner-div">
-                    <h1 id="banner-title">State-of-the-art Launch Complexes</h1>
-                    <p>FEATURE</p>
-                    <p id="subtext">Orbital Launch Complex and Suborbital Launch Complex for Maya and Stellar are the company's world class launchpads in Droo and RSS in Juno: New Origins.</p>
-                    <button onclick="window.location.href='https://sflightx.com/ambitions';"><h4><b>Learn More</b></h4></button>
+        <div class="banner" id="full"
+            style="background-image: url('https://sflightx.com/resources/static/sflightx_com/maya-block-5-liftoff.jpg');">
+            <h5 class="md-typescale-headline-medium">SFlightX launches advanced technologies<br>from Earth to Space</h5>
+        </div>
+
+        <div class="banner" id="semi">
+            <img src="https://sflightx.com/resources/static/sflightx_com/GkT5JaTXcAA4IfP.jpg"
+                alt="image of Maya Block 6">
+            <div class="container" id="static"
+                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h4 class="md-typescale-headline-large">Maya Block 6</h4>
+                    <p class="md-typescale-body-large">Maya Block 6, is our company's flagship rocket. Featuring
+                        enormous upgrades from Block 1
+                        to Block 5, this version is the most ambitious yet in terms of rapid reuse and reliability.</p>
+                </div>
+                <div style="display: flex; justify-content: flex-start;">
+                    <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
+                        <h4>Learn More</h4>
+                    </md-filled-tonal-button>
                 </div>
             </div>
-            <div class="banner" id="banner-info">
-                <img src="https://i.imgur.com/86aRvan.png" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-                <div class="banner-div">
-                    <h1 id="banner-title">Sky Shield Reaction Mission</h1>
-                    <p>RECENT MISSION</p>
-                    <p id="subtext">Maya Block 6 lifted off at January 30, 15:52 UTC from Pad A. This mission carried 5 Sky Shield Reaction Satellites to Low Droo Orbit.</p>
-                    <button onclick="window.location.href='https://sflightx.com/missions?id=sky-shield-reaction-mission';"><h4><b>Learn More</b></h4></button>
+        </div>
+
+        <div class="banner" id="semi">
+            <img src="https://sflightx.com/resources/static/sflightx_com/GopOnLkW0AAhlt6.jpg"
+                alt="Launch Complex C, at Bataan Space Center." class="banner-img">
+            <div class="container" id="static" style="margin: 0;">
+                <h4 class="md-typescale-headline-large">State-of-the-art Launch Complexes</h4>
+                <md-suggestion-chip class="md-typescale-body-large">FEATURE</md-suggestion-chip>
+                <p>Orbital Launch Complex and Suborbital Launch Complex for Maya and Stellar are the
+                    company's world class launchpads in Droo and RSS in Juno: New Origins.</p>
+                <div style="display: flex; justify-content: flex-start;">
+                    <md-filled-tonal-button href="https://sflightx.com/ambition">
+                        <h4>Learn More</h4>
+                    </md-filled-tonal-button>
                 </div>
             </div>
-            <div class="banner" id="banner-info">
-                <img src="https://i.imgur.com/86aRvan.png" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-                <div class="banner-div">
-                    <h1 id="banner-title">DSS-2 Mission</h1>
-                    <p>NEXT MISSION</p>
-                    <p id="subtext">DSS-2 is second of the contracted Athena Missions to expand human presence to space. The mission will carry the Serenity Module for the first-ever in-space autonomous docking system built by sFlightX together with OmegaLink.</p>
-                    <button onclick="window.location.href='https://sflightx.com/missions?id=dss_2-mission';"><h4><b>Learn More</b></h4></button>
+        </div>
+        <div class="banner" id="semi">
+            <img src="https://sflightx.com/resources/static/ssr/86aRvan.png" alt="Launch Complex C, at Bataan Space Center."
+                class="banner-img">
+            <div class="container" id="static" style="margin: 0;">
+                <h4 class="md-typescale-headline-large">Sky Shield Reaction Mission</h4>
+                <md-suggestion-chip class="md-typescale-body-large">RECENT MISSION</md-suggestion-chip>
+                <p>Maya Block 6 lifted off at January 30, 15:52 UTC from Pad A. This mission carried 5 Sky
+                    Shield Reaction Satellites to Low Droo Orbit.</p>
+                <div style="display: flex; justify-content: flex-start;">
+                    <md-filled-tonal-button href="https://sflightx.com/missions?id=sky-shield-reaction-mission">
+                    <h4>Learn More</h4>
+                    </md-filled-tonal-button>
                 </div>
             </div>
-            <div class="banner" id="banner-info">
-                <img src="https://i.imgur.com/5KFq18a.png" alt="sFlightX Logo" class="banner-img">
-                <div class="banner-div">
-                    <h1 id="banner-title">Invite our Discord Bot</h1>
-                    <p>NEWS</p>
-                    <p id="subtext">Add the bot to your server. Sometimes dead, just awaiting signal acquisition...from <b>MARS</b>!</p>
-                    <button onclick="window.location.href='https://sflightx.com/invite/discord';"><h4><b>Invite to Server</b></h4></button>
+        </div>
+        <div class="banner" id="semi">
+            <img src="https://sflightx.com/resources/static/dss_2/GopO1oQX0AArgsx.jpg" alt="DSS-2 Mission"
+                class="banner-img">
+            <div class="container" id="static" style="margin: 0;">
+                <h4 class="md-typescale-headline-large">DSS-2 Mission</h4>
+                <md-suggestion-chip class="md-typescale-body-large">NEXT MISSION</md-suggestion-chip>
+                <p>DSS-2 is second of the contracted Athena Missions to expand human presence to space. The
+                    mission will carry the Serenity Module for the first-ever in-space autonomous docking system built
+                    by sFlightX together with OmegaLink.</p>
+                <div style="display: flex; justify-content: flex-start;">
+                    <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
+                    <h4>Learn More</h4>
+                    </md-filled-tonal-button>
                 </div>
             </div>
-        </main>
-        <footer id="footer">
-            <div>
-                <p>© 2021-2024 Spaceflight Exploration</p>
-                <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
+        </div>
+        <div class="banner" id="semi">
+            <img src="https://sflightx.com/resources/static/logo-full.png" alt="sFlightX Logo" class="banner-img">
+            <div class="container" id="static" style="margin: 0;">
+                <h4 class="md-typescale-headline-large">Invite our Discord Bot</h4>
+                <md-suggestion-chip class="md-typescale-body-large">NEWS</md-suggestion-chip>
+                <p>Add the bot to your server. Sometimes dead, just awaiting signal acquisition...from
+                    <b>MARS</b>!
+                </p>
+                <div style="display: flex; justify-content: flex-start;">
+                    <md-filled-tonal-button href="https://sflightx.com/invite/discord">
+                    <h4>Add to Server</h4>
+                    </md-filled-tonal-button>
+                </div>
             </div>
-            <div id="footer-link">
-                <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-                <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-                <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-                <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-                <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
+        </div>
+        <footer>
+            <div id="horizontal-footer">
+
+                <div id="footer-logo">
+                    <a href="https://sflightx.com"><img id="logo" src="https://sflightx.com/resources/static/logo.png"
+                            alt="sFlightX Logo" /></a>
+                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
+                        New
+                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
+                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
+                </div>
+                <div id="legal-link">
+                    <div id="icon-link">
+                        <a href="https://x.com/SFlightXJNO"><img
+                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://youtube.com/@sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://facebook.com/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://bsky.app/profile/sflightx.com"><img
+                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://simplerockets.com/u/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                    </div>
+                    <div class="text-link">
+                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
+                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
+                    </div>
+                </div>
+
             </div>
         </footer>
-    </body>
-    
+    </main>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../resources/main/init.js"></script>
-    <script src="../resources/sflightx.github.io/startup.js"></script>
-    <script src="../resources/auth/authentication.js"></script>
+    <script src="../resources/function/drawer.js"></script>
+    <script src="https://sflightx.com/resources/function/scroll.js"></script>
+    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
+    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
 </body>
+
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+</body>
+
 </html>
