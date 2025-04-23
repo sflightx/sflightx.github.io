@@ -1,159 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="0.1">
-    <meta name="version_date" content="5-18-2024">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Maya">
-    <meta property="og:image"
-        content="https://i.imgur.com/YeVZaEG.png" />
+    <meta name="version" content="1.2">
+    <meta name="author" content="SFlightX">
+    <meta name="version_date" content="04-23-2025">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description"
+        content="Maya is a two-stage rocket that can lift 30t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the first stage being capable of landing back on the launch pad.">
+    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
     <meta property="og:url" content="sflightx.com/vehicle/maya" />
-    
+
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@sFlightXJNO" />
-    <meta name="twitter:title" content="Maya" />
+    <meta name="twitter:site" content="@SFlightXJNO" />
+    <meta name="twitter:title" content="sFlightX" />
     <meta name="twitter:description"
-        content="Maya Block 6 is a two staged rocket that can lift 30t to LEO at expended mode."
-        content="https://i.imgur.com/YeVZaEG.png">
+        content="Maya is a two-stage rocket that can lift 30t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the first stage being capable of landing back on the launch pad." />
+    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
+    <title>SFlightX</title>
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
 
-    <title>sFlightX - Maya</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+        }
+      </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
 
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/Iwc5mxo.png">
-    
-    <link rel="stylesheet" href="../../resources/vehicle/maya.css">
-    <link rel="stylesheet" href="../../resources/main/import.css">
-    <link rel="stylesheet" href="../../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/primary-layout.css">
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-imports.css" />
+    <link rel="stylesheet" href="../../resources/design/material-primary.css" />
+    <link rel="stylesheet" href="../../resources/design/material-secondary.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-scheme.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/main.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/tailwind.css" />
 </head>
 
 <body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
     <header>
-        <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-        <ul id="nav_list">
-            <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/maya"><b>MAYA</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/maya-heavy"><b>MAYA HEAVY</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/stellar"><b>STELLAR</b></a><p></p></li>
-            <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-            <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-        </ul>
-        <span class="material-symbols-outlined" id="menu">menu</span>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com"></a>
+            <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
     </header>
     <main>
+        <div style="height: 10vh;"></div>
         <!-- Content of the main section -->
-        <div class="banner-full" style="background-image: url('https://i.imgur.com/YBF74SD.jpeg');">
-            <h1>Maya</h1>
-            <p id="banner-title">Partially reusable medium-lift rocket virtually made in the Philippines.</p>
+        <div class="banner" id="full"
+            style="background-image: url('https://sflightx.com/resources/static/sflightx_com/GkT5JaTXcAA4IfP.jpg');">
+            <h5 class="md-typescale-headline-medium" style="color: black;">Partially reusable medium-lift
+                rocket<br>virtually made in the Philippines.</h5>
         </div>
-        <div class="banner-stat">
-            <div class="banner-stat-container">
-                <div class="banner-stat-child"><p>16</p><h2>Total Launches</h2></div>
-                <div class="banner-stat-child"><p>1</p><h2>Total Recoveries</h2></div>
-                <div class="banner-stat-child"><p>14</p><h2>Total Payload</h2></div>
-                <div class="banner-stat-child"><p>2</p><h2>Total Landings</h2></div>  
+        <div class="banner" id="stat">
+            <div class="container" id="stat">
+                <h1 class="md-typescale-display-large">16</h1>
+                <h4 class="md-typescale-title-large">Total Launches</h4>
+            </div>
+            <div class="container" id="stat">
+                <h1 class="md-typescale-display-large">1</h1>
+                <h4 class="md-typescale-title-large">Total Recoveries</h4>
+            </div>
+            <div class="container" id="stat">
+                <h1 class="md-typescale-display-large">14</h1>
+                <h4 class="md-typescale-title-large">Total Payload</h4>
+            </div>
+            <div class="container" id="stat">
+                <h1 class="md-typescale-display-large">2</h1>
+                <h4 class="md-typescale-title-large">Total Landings</h4>
             </div>
         </div>
-        <div class="banner-overview">
-            <div class="banner-overview-detail">
-                <div id="banner-info">
-                    <div class="banner-overview-header">
-                        <h5>Maya <span class="sec-span">Block 6</span></h5>
-                        <h1>Overview</h1>
-                    </div>
-                    <img class="banner-overview-img" src="https://i.imgur.com/O9zSfsA.png">
+        <div class="banner" id="overview">
+            <div class="banner" id="semi">
+                <div class="banner" id="overview-header">
+                    <h1 class="md-typescale-display-medium">Maya <span class="sec-span">Block 6</span></h1>
                 </div>
-                <table>
-                    <div class="part-1">
-                        <tr>
-                        <td>Height</td>
-                        <td>110 m<span class="highlight"> / 360.9 ft</span></td>
-                    </tr>
-                    <tr>
-                        <td>Diameter</td>
-                        <td>5 m<span class="highlight"> / 16.4 ft</span></td>
-                    </tr>
-                    <tr>
-                        <td>Dry Mass</td>
-                        <td>210,000 kg<span class="highlight"> / 480,000 lbs</span></td>
-                    </tr>
+                <img class="banner-overview-img" src="https://sflightx.com/resources/static/sflightx_com/GopOnLkW0AAhlt6.jpg">
+            </div>
+            <md-list><br><br>
+                <md-subheader>Specifications</md-subheader>
+                <md-list-item>
+                    <div slot="headline">Height</div>
+                    <div slot="trailing-supporting-text">110 m / 360.9 ft</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Diameter</div>
+                    <div slot="trailing-supporting-text">5 m / 16.4 ft</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Dry Mass</div>
+                    <div slot="trailing-supporting-text">210,000 kg / 480,000 lbs</div>
+                </md-list-item><br><br>
+
+                <md-subheader>Payload Capacities</md-subheader>
+                <md-list-item>
+                    <div slot="headline">Payload to Low Droo Orbit</div>
+                    <div slot="trailing-supporting-text">25,500 kg / 56,200 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Geosynchronous Transfer Orbit (Droo)</div>
+                    <div slot="trailing-supporting-text">9,750 kg / 21,500 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Luna</div>
+                    <div slot="trailing-supporting-text">6,000 kg / 13,200 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Cylero</div>
+                    <div slot="trailing-supporting-text">4,500 kg / 9,920 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Low Earth Orbit</div>
+                    <div slot="trailing-supporting-text">15,000 kg / 33,070 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Geosynchronous Transfer Orbit</div>
+                    <div slot="trailing-supporting-text">5,000 kg / 11,000 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to the Moon</div>
+                    <div slot="trailing-supporting-text">4,000 kg / 8,800 lbs</div>
+                </md-list-item>
+                <md-divider></md-divider>
+                <md-list-item>
+                    <div slot="headline">Payload to Mars</div>
+                    <div slot="trailing-supporting-text">2,500 kg / 5,500 lbs</div>
+                </md-list-item>
+            </md-list>
+        </div>
+        <div style="height: 5vh;"></div>
+
+        <div class="secondary-container">
+            <h3 class="md-typescale-display-small">Maya Showcase</h3>
+            <div class="img-container">
+                <iframe src="https://www.youtube.com/embed/iX08QiihNwc?si=1UDGrDSDe8KSJFga" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false"
+                    style="width: 100%; aspect-ratio: 16/9; border-radius: 24px;"></iframe>
+            </div>
+        </div>
+        <footer>
+            <div id="horizontal-footer">
+
+                <div id="footer-logo">
+                    <a href="https://sflightx.com"><img id="footer_logo" src="https://sflightx.com/resources/static/logo.png"
+                            alt="sFlightX Logo" /></a>
+                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
+                        New
+                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
+                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
+                </div>
+                <div id="legal-link">
+                    <div id="icon-link">
+                        <a href="https://x.com/SFlightXJNO"><img
+                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://youtube.com/@sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://facebook.com/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://bsky.app/profile/sflightx.com"><img
+                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://simplerockets.com/u/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
                     </div>
-                    
+                    <div class="text-link">
+                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
+                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
+                    </div>
+                </div>
 
-                    <tr>
-                        <td>Payload to Low Droo Orbit</td>
-                        <td>25,500 kg<span class="highlight"> / 56,200 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to Geosynchronous Transfer Orbit (Droo)</td>
-                        <td>9,750 kg<span class="highlight"> / 21,500 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to Luna</td>
-                        <td>6,000 kg<span class="highlight"> / 13,200 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to Cylero</td>
-                        <td>4,500 kg<span class="highlight"> / 9,920 lbs</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Payload to Low Earth Orbit</td>
-                        <td>15,000 kg<span class="highlight"> / 33,070 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to Geosynchronous Transfer Orbit</td>
-                        <td>5,000 kg<span class="highlight"> / 11,000 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to the Moon</td>
-                        <td>4,000 kg<span class="highlight"> / 8,800 lbs</span></td>
-                    </tr>
-                    <tr>
-                        <td>Payload to Mars</td>
-                        <td>2,500 kg<span class="highlight"> / 5,500 lbs</span></td>
-                    </tr>
-                </table>
             </div>
-        </div>
-        <div class="detail">
-            <div class="detail-container">
-                <h1 id="detail-title">Maya Block 6 Static Fire</h1>
-                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1883514223495700738';"><h6><b>Learn More</b></h6></button>
-            </div>
-            <div class="img-container">
-                <img id="bg-img" src="https://i.imgur.com/86aRvan.png">
-            </div>
-        </div>
-        
-        <div class="detail">
-            <div class="detail-container">
-                <h1 id="detail-title">Maya Showcase</h1>
-            </div>
-            <div class="img-container">
-                <iframe src="https://www.youtube.com/embed/iX08QiihNwc?si=1UDGrDSDe8KSJFga" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false" style="width: 100vw; aspect-ratio: 16/9;"></iframe>
-            </div>
-        </div>
+        </footer>
     </main>
-    <footer id="footer">
-        <div>
-            <p>© 2021-2024 Spaceflight Exploration</p>
-            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
-        </div>
-        <div id="footer-link">
-            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
-        </div>
-    </footer>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../../resources/main/init.js"></script>
+    <script src="https://sflightx.com/resources/function/drawer.js"></script>
+    <script src="https://sflightx.com/resources/function/scroll.js"></script>
+    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
+    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
 </body>
+
 </html>
