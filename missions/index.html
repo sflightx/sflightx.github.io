@@ -1,64 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="0.1">
-    <meta name="version_date" content="7-5-2024">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="sFlightX Upcoming and Recent Launches">
-    <meta property="og:image"
-        content="https://i.imgur.com/unbXdTh.png" />
-    <meta property="og:url" content="sflightx.com/missions/" />
-    
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/unbXdTh.png">
-    
-    <link rel="stylesheet" href="../../resources/missions/index.css">
-    <link rel="stylesheet" href="../../resources/main/import.css">
-    <link rel="stylesheet" href="../../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/primary-layout.css">
+    <meta name="version" content="0.3">
+    <meta name="author" content="SFlightX">
+    <meta name="version_date" content="04-24-2025">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description" content="Mission status updates for SFlightX.">
+    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
+    <meta property="og:url" content="sflightx.com" />
 
-    <title>sFlightX - Missions</title>
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SFlightXJNO" />
+    <meta name="twitter:title" content="sFlightX" />
+    <meta name="twitter:description" content="Mission status updates for SFlightX." />
+    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
+    <title>SFlightX - Missions</title>
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+        }
+      </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-imports.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-primary.css" />
+    <link rel="stylesheet" href="../../resources/design/material-secondary.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-scheme.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/main.css" />
+    <link rel="stylesheet" href="https://help.sflightx.com/tailwind.css" />
 </head>
 
 <body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
     <header>
-        <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-        <ul id="nav_list">
-            <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-                <li><a href="https://sflightx.com/vehicle/"><b>VEHICLE</b></a><p></p></li>
-                <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-                <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-                <li><a href="https://athena.sflightx.com/"><b>ATHENA</b></a><p></p></li>
-        </ul>
-        <span class="material-symbols-outlined" id="menu">menu</span>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com">
+                <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
     </header>
-    <main style="padding-top: 7.5vh;">
-        <!-- Content of the main section -->
+    <main>
+        <div style="height: 10vh;"></div>
+        
         <div id="article-header">
             <div id="grid"></div>
         </div>
         <div id="article"></div>
-    </main>
-    <footer id="footer">
-        <div>
-            <p>© 2021-2024 Spaceflight Exploration</p>
-            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
-        </div>
-        <div id="footer-link">
-            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
-        </div>
-    </footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../../resources/main/init.js"></script>
-    <script src="../../resources/missions/article.js"></script>
+        <footer>
+            <div id="horizontal-footer">
+
+                <div id="footer-logo">
+                    <a href="https://sflightx.com"><img id="footer-logo"
+                            src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" /></a>
+                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
+                        New
+                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
+                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
+                </div>
+                <div id="legal-link">
+                    <div id="icon-link">
+                        <a href="https://x.com/SFlightXJNO"><img
+                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://youtube.com/@sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://facebook.com/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://bsky.app/profile/sflightx.com"><img
+                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                        <a href="https://simplerockets.com/u/sflightx"><img
+                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
+                                class="footer-link-img"></a>
+                    </div>
+                    <div class="text-link">
+                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
+                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </main>
+    <script src="../../resources/function/missions/article.js"></script>
+    <script src="https://sflightx.com/resources/function/drawer.js"></script>
+    <script src="https://sflightx.com/resources/function/scroll.js"></script>
+    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
+    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
 </body>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
 </html>
