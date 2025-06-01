@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="version" content="1.4">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
     <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
     <meta property="og:url" content="sflightx.com" />
-
+    
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@SFlightXJNO" />
     <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
+    <meta name="twitter:description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
     <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
     <title>SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
-
+    
     <script type="importmap">
-    {
+        {
       "imports": {
         "@material/web/": "https://esm.run/@material/web/"
       }
@@ -33,14 +32,11 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-imports.css" />
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-primary.css" />
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-secondary.css" />
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-scheme.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-dependency.css" />
     <link rel="stylesheet" href="https://help.sflightx.com/main.css" />
     <link rel="stylesheet" href="https://help.sflightx.com/tailwind.css" />
 </head>
+
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
@@ -54,24 +50,25 @@
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-            <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
         <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
     </header>
     <main>
-        <div style="height: 10vh;"></div>
-        
-        <div class="banner" id="full"
-            style="background-image: url('https://sflightx.com/resources/static/sflightx_com/maya-block-5-liftoff.jpg');">
-            <h5 class="md-typescale-headline-medium">SFlightX launches advanced technologies<br>from Earth to Space</h5>
+        <div class="container" transparent style="position: relative; height: calc(100vh - 64px); background-image: url('https://sflightx.com/resources/static/sflightx_com/maya-block-5-liftoff.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; display: flex; align-items: flex-end; z-index: 0; color: white; overflow: hidden;">
+            <!-- Black Overlay -->
+            <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.25); z-index: -1;"></div>
+            
+            <!-- Content -->
+            <h5 class="md-typescale-headline-medium" style="padding: 16px 0px 0px 16px;">
+                SFlightX launches advanced technologies<br>from Earth to Space
+            </h5>
         </div>
-
-        <div class="banner" id="semi">
-            <img src="https://sflightx.com/resources/static/sflightx_com/GkT5JaTXcAA4IfP.jpg"
-                alt="image of Maya Block 6">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        
+        <div class="container" indent="all">
+            <img src="https://sflightx.com/resources/static/sflightx_com/GkT5JaTXcAA4IfP.jpg" alt="image of Maya Block 6">
+            <div class="container" id="static" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <h4 class="md-typescale-headline-large">Maya Block 6</h4>
                     <p class="md-typescale-body-large">Maya Block 6, is our company's flagship rocket. Featuring
@@ -85,12 +82,10 @@
                 </div>
             </div>
         </div>
-
-        <div class="banner" id="semi">
-            <img src="https://sflightx.com/resources/static/sflightx_com/GopOnLkW0AAhlt6.jpg"
-                alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        
+        <div class="container" indent="all">
+            <img src="https://sflightx.com/resources/static/sflightx_com/GopOnLkW0AAhlt6.jpg" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
+            <div class="container" id="static" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <h4 class="md-typescale-headline-large">State-of-the-art Launch Complexes</h4>
                     <md-suggestion-chip class="md-typescale-body-large">FEATURE</md-suggestion-chip>
@@ -104,11 +99,9 @@
                 </div>
             </div>
         </div>
-        <div class="banner" id="semi">
-            <img src="https://sflightx.com/resources/static/ssr/86aRvan.png"
-                alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="container" indent="all">
+            <img src="https://sflightx.com/resources/static/ssr/86aRvan.png" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
+            <div class="container" id="static" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <h4 class="md-typescale-headline-large">Sky Shield Reaction Mission</h4>
                     <md-suggestion-chip class="md-typescale-body-large">RECENT MISSION</md-suggestion-chip>
@@ -122,11 +115,9 @@
                 </div>
             </div>
         </div>
-        <div class="banner" id="semi">
-            <img src="https://sflightx.com/resources/static/dss_2/GopO1oQX0AArgsx.jpg" alt="DSS-2 Mission"
-                class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="container" indent="all">
+            <img src="https://sflightx.com/resources/static/dss_2/GopO1oQX0AArgsx.jpg" alt="DSS-2 Mission" class="banner-img">
+            <div class="container" id="static" style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div>
                     <h4 class="md-typescale-headline-large">DSS-2 Mission</h4>
                     <md-suggestion-chip class="md-typescale-body-large">NEXT MISSION</md-suggestion-chip>
@@ -164,10 +155,9 @@
         -->
         <footer>
             <div id="horizontal-footer">
-
+                
                 <div id="footer-logo">
-                    <a href="https://sflightx.com"><img id="footer-logo" src="https://sflightx.com/resources/static/logo.png"
-                            alt="sFlightX Logo" /></a>
+                    <a href="https://sflightx.com"><img id="footer-logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" /></a>
                     <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
                         New
                         Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
@@ -175,32 +165,22 @@
                 </div>
                 <div id="legal-link">
                     <div id="icon-link">
-                        <a href="https://x.com/SFlightXJNO"><img
-                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://youtube.com/@sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://facebook.com/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://bsky.app/profile/sflightx.com"><img
-                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://simplerockets.com/u/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
+                        <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
+                        <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
+                        <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
+                        <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
+                        <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
                     </div>
                     <div class="text-link">
                         <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
                         <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
                     </div>
                 </div>
-
+                
             </div>
         </footer>
     </main>
-
+    
     <script src="https://sflightx.com/resources/function/drawer.js"></script>
     <script src="https://sflightx.com/resources/function/scroll.js"></script>
     <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
