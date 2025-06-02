@@ -92,23 +92,20 @@
             </div>
         </div>
 
-        <div id="modelViewer" style="width: 600px; height: 400px;"></div>
-
-        <div class="container" semi indent="all">
-            <img src="https://sflightx.com/resources/database/static/sflightx_com/GkT5JaTXcAA4IfP.jpg"
-                alt="image of Maya Block 6">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
-                <div id="content">
+        <!-- 3D Model Viewer with overlayed text on the left -->
+        <div style="position: relative; width: 100%; height: 75vh; margin-bottom: 2rem;">
+            <div id="modelViewer" style="width: 100%; height: 100%; position: absolute; inset: 0; z-index: 0;"></div>
+            <div class="container" semi indent="all"
+                style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
+                <div class="container" id="static" transparent
+                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 480px; min-width: 320px;">
                     <h4 class="md-typescale-headline-large">Maya Block 6</h4>
-                    <p class="md-typescale-body-large">Maya Block 6, is our company's flagship rocket. Featuring
-                        enormous upgrades from Block 1
-                        to Block 5, this version is the most ambitious yet in terms of rapid reuse and reliability.</p>
-                </div>
-                <div style="display: flex; justify-content: flex-start;">
-                    <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
-                        <h4>Learn More</h4>
-                    </md-filled-tonal-button>
+                    <p class="md-typescale-body-large">Maya Block 6 is our company's flagship rocket. Featuring enormous upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse and reliability.</p>
+                    <div style="display: flex; justify-content: flex-start;">
+                        <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
+                            <h4>Learn More</h4>
+                        </md-filled-tonal-button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -232,8 +229,96 @@
     <script src="https://sflightx.com/resources/function/scroll.js"></script>
     <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
     <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
+            }
+        }
+        </script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'https://unpkg.com/three@0.153.0/examples/jsm/controls/OrbitControls.js';
+        import { OBJLoader } from 'https://unpkg.com/three@0.153.0/examples/jsm/loaders/OBJLoader.js';
 
-    <script type="module" src="../resources/design/layout/3d/import.js"></script>
+        const container = document.getElementById('modelViewer');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x22232a);
+
+        const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.set(50, -50, 150);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.18); // Even dimmer ambient for more shadow
+        scene.add(ambientLight);
+
+        // "East" is positive X in Three.js by default
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 4.5); // Strong, but not blown out
+        directionalLight.position.set(50, 0, 0); // East: +X axis
+        directionalLight.castShadow = true;
+        scene.add(directionalLight);
+
+        // Optional: add a subtle fill light from the west for softer shadow edge
+        const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+        fillLight.position.set(-50, 0, 0); // West: -X axis
+        scene.add(fillLight);
+
+        // Controls (disable dragging)
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableRotate = false;
+        controls.enablePan = false;
+        controls.enableZoom = false;
+
+        // Load OBJ model
+        let loadedObject = null;
+        const objLoader = new OBJLoader();
+        objLoader.load(
+            'https://sflightx.com/resources/database/model/maya_block_6.obj',
+            function (object) {
+                // Make all materials darker and more matte
+                object.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material = new THREE.MeshStandardMaterial({
+                            color: 0x555555, // Even dimmer gray
+                            roughness: 0.8,
+                            metalness: 0.1
+                        });
+                    }
+                });
+                object.scale.set(1, 1, 1);
+                object.position.y = -1;
+                scene.add(object);
+                loadedObject = object;
+            },
+            undefined,
+            function (error) {
+                console.error('An error happened loading the OBJ model:', error);
+            }
+        );
+
+        // Animation loop with automated rotation
+        function animate() {
+            requestAnimationFrame(animate);
+            if (loadedObject) {
+                loadedObject.rotation.y += 0.005; // Auto-rotate
+            }
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        });
+    </script>
 </body>
 
 
