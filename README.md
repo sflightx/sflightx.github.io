@@ -36,3 +36,10 @@ Contact
 
 Have feedback, want to submit an article, or report an issue?  
 Visit https://sflightx.com/contact or reach out through our community channels.
+
+Migration Update
+
+Teams are currently migrating the website to the version 4 resource. Some may look buggy, or awkward. The list is the subdirectory with completed merge:
+
+- /bp
+

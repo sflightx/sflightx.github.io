@@ -10,7 +10,7 @@
     <meta name="description"
         content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/database/logo/logo.png" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <meta property="og:url" content="sflightx.com" />
 
     <meta name="twitter:card" content="summary" />
@@ -18,9 +18,9 @@
     <meta name="twitter:title" content="sFlightX" />
     <meta name="twitter:description"
         content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
-    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo/logo.png" />
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <title>SFlightX</title>
-    <link rel="icon" type="image/png" href="https://sflightx.com/resources/database/static/logo.png">
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
     <script type="importmap">
         {
@@ -34,7 +34,7 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-dependency.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
@@ -50,7 +50,7 @@
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img src="https://sflightx.com/resources/database/logo/logo.png" alt="sFlightX Logo" />
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
         <div style="display: flex; gap: 1rem;">
@@ -98,9 +98,11 @@
             <div class="container" semi indent="all"
                 style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
                 <div class="container" id="static" transparent
-                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 480px; min-width: 320px;">
+                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 320px; min-width: 240px;">
                     <h4 class="md-typescale-headline-large">Maya Block 6</h4>
-                    <p class="md-typescale-body-large">Maya Block 6 is our company's flagship rocket. Featuring enormous upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse and reliability.</p>
+                    <p class="md-typescale-body-large">Maya Block 6 is our company's flagship rocket. Featuring enormous
+                        upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse
+                        and reliability.</p>
                     <div style="display: flex; justify-content: flex-start;">
                         <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
                             <h4>Learn More</h4>
@@ -166,69 +168,12 @@
                 </div>
             </div>
         </div>
-        <!--
-        <div class="banner" semi indent="all">
-            <img src="https://sflightx.com/resources/database/static/logo-full.png" alt="sFlightX Logo" class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
-                <div id="content">
-                    <h4 class="md-typescale-headline-large">Invite our Discord Bot</h4>
-                    <md-suggestion-chip class="md-typescale-body-large">NEWS</md-suggestion-chip>
-                    <p>Add the bot to your server. Sometimes dead, just awaiting signal acquisition...from
-                        <b>MARS</b>!
-                    </p>
-                </div>
-                <div style="display: flex; justify-content: flex-start;">
-                    <md-filled-tonal-button href="https://sflightx.com/invite/discord">
-                        <h4>Add to Server</h4>
-                    </md-filled-tonal-button>
-                </div>
-            </div>
-        </div>
-        -->
-        <footer>
-            <div id="horizontal-footer">
+        <sflightx-footer></sflightx-footer>
 
-                <div id="footer-logo">
-                    <a href="https://sflightx.com"><img id="footer-logo"
-                            src="https://sflightx.com/resources/database/logo/logo.png" alt="sFlightX Logo" /></a>
-                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
-                        New
-                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
-                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
-                </div>
-                <div id="legal-link">
-                    <div id="icon-link">
-                        <a href="https://x.com/SFlightXJNO"><img
-                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://youtube.com/@sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://facebook.com/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://bsky.app/profile/sflightx.com"><img
-                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://simplerockets.com/u/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                    </div>
-                    <div class="text-link">
-                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
-                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
-                    </div>
-                </div>
-
-            </div>
-        </footer>
     </main>
 
-    <script src="https://sflightx.com/resources/function/drawer.js"></script>
-    <script src="https://sflightx.com/resources/function/scroll.js"></script>
-    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
-    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
     <script type="importmap">
         {
             "imports": {
@@ -236,89 +181,7 @@
             }
         }
         </script>
-    <script type="module">
-        import * as THREE from 'three';
-        import { OrbitControls } from 'https://unpkg.com/three@0.153.0/examples/jsm/controls/OrbitControls.js';
-        import { OBJLoader } from 'https://unpkg.com/three@0.153.0/examples/jsm/loaders/OBJLoader.js';
-
-        const container = document.getElementById('modelViewer');
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x22232a);
-
-        const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.set(50, -50, 150);
-
-        const renderer = new THREE.WebGLRenderer({ antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
-
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.18); // Even dimmer ambient for more shadow
-        scene.add(ambientLight);
-
-        // "East" is positive X in Three.js by default
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 4.5); // Strong, but not blown out
-        directionalLight.position.set(50, 0, 0); // East: +X axis
-        directionalLight.castShadow = true;
-        scene.add(directionalLight);
-
-        // Optional: add a subtle fill light from the west for softer shadow edge
-        const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
-        fillLight.position.set(-50, 0, 0); // West: -X axis
-        scene.add(fillLight);
-
-        // Controls (disable dragging)
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableRotate = false;
-        controls.enablePan = false;
-        controls.enableZoom = false;
-
-        // Load OBJ model
-        let loadedObject = null;
-        const objLoader = new OBJLoader();
-        objLoader.load(
-            'https://sflightx.com/resources/database/model/maya_block_6.obj',
-            function (object) {
-                // Make all materials darker and more matte
-                object.traverse((child) => {
-                    if (child.isMesh) {
-                        child.material = new THREE.MeshStandardMaterial({
-                            color: 0x555555, // Even dimmer gray
-                            roughness: 0.8,
-                            metalness: 0.1
-                        });
-                    }
-                });
-                object.scale.set(1, 1, 1);
-                object.position.y = -1;
-                scene.add(object);
-                loadedObject = object;
-            },
-            undefined,
-            function (error) {
-                console.error('An error happened loading the OBJ model:', error);
-            }
-        );
-
-        // Animation loop with automated rotation
-        function animate() {
-            requestAnimationFrame(animate);
-            if (loadedObject) {
-                loadedObject.rotation.y += 0.005; // Auto-rotate
-            }
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        // Handle resize
-        window.addEventListener('resize', () => {
-            const width = container.clientWidth;
-            const height = container.clientHeight;
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-            renderer.setSize(width, height);
-        });
-    </script>
+    <script type="module" src="https://sflightx.com/resources/v4/element/3d/import.js"></script>
 </body>
 
 
