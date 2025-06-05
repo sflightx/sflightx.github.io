@@ -8,136 +8,261 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Privacy Policy">
     <meta property="og:image" content="https://i.imgur.com/unbXdTh.png" />
-    <meta property="og:url" content="sflightx.com/legal/privacy_policy" />
+    <meta property="og:url" content="SFlightX.com/legal/privacy_policy" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@sFlightXJNO" />
+    <meta name="twitter:site" content="@SFlightXJNO" />
     <meta name="twitter:title" content="Privacy Policy" />
-    <meta name="twitter:description" content="sFlightX Privacy Policy" content="https://i.imgur.com/unbXdTh.png">
-    <title>sFlightX - Privacy Policy</title>
-    <link rel="icon" type="image/png" href="https://i.imgur.com/unbXdTh.png">
-    <link rel="stylesheet" href="../../resources/main/import.css">
-    <link rel="stylesheet" href="../../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/primary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/anim/main-anim.css">
+    <meta name="twitter:description" content="SFlightX Privacy Policy" content="https://i.imgur.com/unbXdTh.png">
+    <title>SFlightX - Privacy Policy</title>
+    <script type="importmap">
+        {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+  </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <link rel="stylesheet" href="https://SFlightX.com/resources/v4/element/material-dependency.css" />
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 16px;
+        }
+
+        #article {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        #logo {
+            height: 108px;
+        }
+
+        @media screen and (min-width: 768px) {
+            #article {
+                padding: 5vh 10vw;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
     <header>
-        <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo"></a>
-        <ul id="nav_list">
-            <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/"><b>VEHICLE</b></a><p></p></li>
-            <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-            <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-            <li><a href="https://athena.sflightx.com/"><b>ATHENA</b></a><p></p></li>
-        </ul>
-        <span class="material-symbols-outlined" id="menu">menu</span>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://SFlightX.com">
+                <img src="https://SFlightX.com/resources/v4/database/logo/logo.png" alt="SFlightX Logo" />
+            </a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
+                    id="themeToggle"></md-switch></label>
+        </div>
     </header>
     <main>
-        <div class="banner-full" style="background-image: url('https://i.imgur.com/RdB32zT.png'); background-color: rgb(34, 34, 34); height: auto;">
-            <a href="https://sflightx.com"><img id="banner-logo" src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-            <h1 id="banner-title"><b>sFLightX</b> Privacy Policy <br><p id="subtext" style="font-size: 0.65em;">June 10, 2024</p></h1>
+        <div id="article" head indent="all">
+            <a href="https://SFlightX.com">
+                <img id="logo" src="https://SFlightX.com/resources/v4/database/logo/logo.png" alt="SFlightX Logo">
+            </a>
+            <h4 class="md-typescale-headline-large"><b>SFlightX</b> Privacy Policy</h4>
+            <h6 class="md-typescale-headline-small">June 10, 2024</h6>
         </div>
-        <img class="header-thumbnail" src="https://i.imgur.com/6IYFlcs.jpg">
-        <p>This <span><b>Privacy Policy</b></span> describes Our policies and procedures on the collection, use and disclosure of Your information when You use sFlightX services and tells You about Your privacy rights and how the law protects You.</p>
-        <div class="intro" id="intro">
-            <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the Privacy Policy Template.</p>
-        </div>
-        <div class="iad" id="iad">
-            <h1>INTERPRETATION AND DEFINITIONS</h1>
-            <h2>Interpretations</h2>
-            <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-            <h2>Definitions</h2>
-            <h3>For the purposes of this Privacy Policy:</h3>
-            <p><b>Account</b> means a unique account created for You to access our Service or parts of our Service.</p>
-            <p><b>Affiliate</b> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
-            <p><b>Application</b> means the software program provided by the Company downloaded by You on any electronic device, named sFlightX. Company (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to sFlightX.</p>
-            <p><b>Country</b> refers to the Philippines.</p>
-            <p><b>Device</b> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
-            <p><b>Personal Data</b> is any information that relates to an identified or identifiable individual.</p>
-            <p><b>Service</b> refers to the Application.</p>
-            <p><b>Service Provider</b> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
-            <p><b>Usage Data</b> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
-            <p><b>You</b> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
-        </div>
-        <div class="cod" id="cod">
-            <h1>COLLECTING AND USING YOUR PERSONAL DATA</h1>
-            <h2>Types of Data Collected</h2>
-            <h3>Personal Data</h3>
-            <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:<br><br>• Email Address<br>• Usage Data</p>
-            <h3>Usage Data</h3>
-            <p><b>Usage Data</b> is collected automatically when using the Service. Usage Data may include information such as <i>Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</i> When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data. We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
-            <h2>Use of Your Personal Data</h2>
-            <h3>The Company may use Personal Data for the following purposes:</h3>
-            <p><b>To provide and maintain our Service</b> including to monitor the usage of our Service.</p>
-            <p><b>To manage Your Account:</b> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
-            <p><b>For the performance of a contract:</b> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
-            <p><b>To contact You:</b> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
-            <p><b>To provide You</b> with news, special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information.</p>
-            <p><b>To manage Your requests:</b> To attend and manage Your requests to Us.</p>
-            <p><b>For business transfers:</b> We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred.</p>
-            <p><b>For other purposes:</b> We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
-            <h3>We may share Your personal information in the following situations:</h3>
-            <p><b>With Service Providers:</b> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.</p>
-            <p><b>For business transfers:</b> We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company.</p>
-            <p><b>With Affiliates:</b> We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us.</p>
-            <p><b>With business partners:</b> We may share Your information with Our business partners to offer You certain products, services or promotions.</p>
-            <p><b>With other users:</b> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</p>
-            <p><b>With Your consent:</b> We may disclose Your personal information for any other purpose with Your consent.</p>
-            <h2>Retention of Your Personal Data</h2>
-            <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies. The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
-            <h2>Transfer of Your Personal Data</h2>
-            <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction. Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer. The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
-            <h2>Disclosure of Your Personal Data</h2>
-            <h3>Business Transactions</h3>
-            <p>If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy. Law enforcementUnder certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
-            <h3>Other legal requirements</h3>
-            <h4>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</h4>
-            <p><b>Comply with a legal obligation,</b> Protect and defend the rights or property of the Company</p>
-            <p><b>Prevent or investigate</b> possible wrongdoing in connection with the Service</p>
-            <p><b>Protect the personal safety</b> of Users of the Service or the public</p>
-            <p><b>Protect against legal liability</b>.</p>
-            <h2>Security of Your Personal Data</h2>
-            <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-        </div>
-        <div class="cp" id="cp">
-            <h1>CHILDREN'S PRIVACY</h1>
-            <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers. If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
-            <h2>Links to Other Websites</h2>
-            <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit. We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-        </div>
-        <div class="cttp" id="cttp">
-            <h1>CHANGES TO THIS PRIVACY POLICY</h1>
-            <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page. We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last Updated" date at the top of this Privacy Policy. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
-        </div>
-        <div class="cu" id="cu">
-            <h1>CONTACT US</h1>
-            <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-            <p>Email: sflightx@gmail.com or spaceflightxploration@gmail.com</p>
-            <p>X (formerly Twitter): @SFlightXJNO</p>
+
+        <div id="article" head indent="all">
+            <img class="header-thumbnail"
+                src="https://SFlightX.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg"
+                alt="Privacy Policy Thumbnail">
+
+            <div class="container" indent="all" shape="rounded" transparent>
+                <p class="md-typescale-body-large">
+                    This <b>Privacy Policy</b> describes Our policies and procedures on the collection, use, and
+                    disclosure of Your information when You use SFlightX services and tells You about Your privacy
+                    rights and how the law protects You.
+                </p>
+                <div id="intro">
+                    <p class="md-typescale-body-large">
+                        We use Your Personal data to provide and improve the Service. By using the Service, You agree to
+                        the collection and use of information in accordance with this Privacy Policy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container" indent="all" shape="rounded" id="iad">
+                <h4 class="md-typescale-headline-large">INTERPRETATION AND DEFINITIONS</h4>
+
+                <h5 class="md-typescale-headline-medium">Interpretations</h5>
+                <p class="md-typescale-body-large">
+                    Words with capitalized initial letters have meanings defined under the following conditions. These
+                    definitions apply whether the terms appear in singular or plural.
+                </p>
+
+                <h5 class="md-typescale-headline-medium">Definitions</h5>
+                <h6 class="md-typescale-headline-small">For the purposes of this Privacy Policy:</h6>
+
+                <p class="md-typescale-body-large"><b>Account</b> means a unique account created for You to access our
+                    Service or parts of our Service.</p>
+                <p class="md-typescale-body-large"><b>Affiliate</b> means an entity that controls, is controlled by, or
+                    is under common control with a party.</p>
+                <p class="md-typescale-body-large"><b>Application</b> means the software program provided by the Company
+                    downloaded by You, named SFlightX.</p>
+                <p class="md-typescale-body-large"><b>Company</b> (referred to as either "the Company", "We", "Us" or
+                    "Our") refers to SFlightX.</p>
+                <p class="md-typescale-body-large"><b>Country</b> refers to the Philippines.</p>
+                <p class="md-typescale-body-large"><b>Device</b> means any device that can access the Service such as a
+                    computer, cellphone, or digital tablet.</p>
+                <p class="md-typescale-body-large"><b>Personal Data</b> is any information that relates to an identified
+                    or identifiable individual.</p>
+                <p class="md-typescale-body-large"><b>Service</b> refers to the Application.</p>
+                <p class="md-typescale-body-large"><b>Service Provider</b> means any person who processes data on behalf
+                    of the Company.</p>
+                <p class="md-typescale-body-large"><b>Usage Data</b> refers to data collected automatically, either
+                    generated by the use of the Service or from the Service infrastructure.</p>
+                <p class="md-typescale-body-large"><b>You</b> means the individual accessing or using the Service, or
+                    the entity on whose behalf such individual is acting.</p>
+            </div>
+
+            <div class="container" indent="all" shape="rounded" id="cod">
+                <h4 class="md-typescale-headline-large">COLLECTING AND USING YOUR PERSONAL DATA</h4>
+
+                <h5 class="md-typescale-headline-medium">Types of Data Collected</h5>
+
+                <h6 class="md-typescale-headline-small">Personal Data</h6>
+                <p class="md-typescale-body-large">
+                    While using Our Service, We may ask You to provide personally identifiable information, such
+                    as:<br><br>
+                    • Email Address<br>
+                    • Usage Data
+                </p>
+
+                <h6 class="md-typescale-headline-small">Usage Data</h6>
+                <p class="md-typescale-body-large">
+                    <b>Usage Data</b> is collected automatically when using the Service. This may include Your Device's
+                    IP address, browser type and version, pages visited, visit timestamps, time spent on pages, and
+                    diagnostic data. If You use a mobile device, We may collect mobile-specific information such as
+                    device type, ID, IP address, OS, browser, and related identifiers.
+                </p>
+
+                <h5 class="md-typescale-headline-medium">Use of Your Personal Data</h5>
+                <h6 class="md-typescale-headline-small">The Company may use Personal Data for the following purposes:
+                </h6>
+
+                <p class="md-typescale-body-large"><b>To provide and maintain our Service,</b> including monitoring
+                    usage.</p>
+                <p class="md-typescale-body-large"><b>To manage Your Account:</b> enabling access to user
+                    functionalities.</p>
+                <p class="md-typescale-body-large"><b>For contract performance:</b> fulfilling purchases or agreements
+                    made through the Service.</p>
+                <p class="md-typescale-body-large"><b>To contact You:</b> via various communication methods, such as
+                    push notifications or email.</p>
+                <p class="md-typescale-body-large"><b>To provide You</b> with news, special offers, and updates about
+                    related products or services.</p>
+                <p class="md-typescale-body-large"><b>To manage requests:</b> handling Your inquiries or feedback.</p>
+                <p class="md-typescale-body-large"><b>For business transfers:</b> in scenarios like mergers or
+                    acquisitions.</p>
+                <p class="md-typescale-body-large"><b>For other purposes:</b> including analytics, performance
+                    evaluation, and service improvement.</p>
+
+                <h6 class="md-typescale-headline-small">We may share Your personal information in the following
+                    situations:</h6>
+                <p class="md-typescale-body-large"><b>With Service Providers:</b> to support our services and
+                    communications.</p>
+                <p class="md-typescale-body-large"><b>For business transfers:</b> in case of mergers, sales, or
+                    acquisitions.</p>
+                <p class="md-typescale-body-large"><b>With Affiliates:</b> who are required to honor this Privacy
+                    Policy.</p>
+                <p class="md-typescale-body-large"><b>With business partners:</b> to offer services or promotions.</p>
+                <p class="md-typescale-body-large"><b>With other users:</b> when You engage publicly within the
+                    platform.</p>
+                <p class="md-typescale-body-large"><b>With Your consent:</b> for any other purpose You authorize.</p>
+
+                <h5 class="md-typescale-headline-medium">Retention of Your Personal Data</h5>
+                <p class="md-typescale-body-large">
+                    The Company retains Your Personal Data only as long as necessary to fulfill the purposes outlined in
+                    this Privacy Policy, comply with legal obligations, resolve disputes, and enforce agreements. Usage
+                    Data may be retained longer for analysis, security, or legal compliance.
+                </p>
+
+                <h5 class="md-typescale-headline-medium">Transfer of Your Personal Data</h5>
+                <p class="md-typescale-body-large">
+                    Your data may be transferred to — and maintained on — computers outside of Your jurisdiction. We
+                    ensure adequate protection of data transferred internationally and require secure handling in
+                    accordance with this Privacy Policy.
+                </p>
+
+                <h5 class="md-typescale-headline-medium">Disclosure of Your Personal Data</h5>
+                <h6 class="md-typescale-headline-small">Business Transactions</h6>
+                <p class="md-typescale-body-large">
+                    If the Company is involved in a merger, acquisition, or asset sale, Your Personal Data may be
+                    transferred. Notice will be provided before any such change takes effect.
+                </p>
+
+                <h6 class="md-typescale-headline-small">Law Enforcement</h6>
+                <p class="md-typescale-body-large">
+                    The Company may disclose Your Personal Data when required by law or in response to valid public
+                    authority requests (e.g., court or government agency).
+                </p>
+                <h5 class="md-typescale-headline-medium">Security</h5>
+                <p class="md-typescale-body-large">
+                    We implement industry-standard protections but cannot guarantee 100% security due to the nature of
+                    the internet.
+                </p>
+            </div>
+            <div class="container" indent="all" shape="rounded" id="cp">
+                <h4 class="md-typescale-headline-large">CHILDREN'S PRIVACY</h4>
+                <p class="md-typescale-body-large">
+                    Our services are not intended for children under 13. If we learn we have collected data from a
+                    child, we will delete it unless verified parental consent is obtained.
+                </p>
+
+                <h5 class="md-typescale-headline-medium">Links to Other Sites</h5>
+                <p class="md-typescale-body-large">
+                    We may link to third-party sites. We are not responsible for their privacy practices and encourage
+                    you to read their policies.
+                </p>
+            </div>
+
+            <div class="container" indent="all" shape="rounded" id="cttp">
+                <h4 class="md-typescale-headline-large">CHANGES TO THIS PRIVACY POLICY</h4>
+                <p class="md-typescale-body-large">
+                    We may update this Privacy Policy periodically. Any changes will be posted on this page with the
+                    "Last updated" date revised. Continued use of the Service after changes means you accept the revised
+                    terms.
+                </p>
+            </div>
+            <div class="container" indent="all" shape="rounded" id="contact">
+                <h4 class="md-typescale-headline-large">CONTACT US</h4>
+                <p class="md-typescale-body-large">
+                    If you have any questions, concerns, or feedback about this Privacy Policy or how we handle your
+                    data, you may contact us through the following:
+                </p>
+                <ul class="md-typescale-body-large">
+                    <li>Email: <a href="mailto:sflightxapp@gmail.com">sflightxapp@gmail.com</a></li>
+                    <li>Website: <a href="https://SFlightX.com">https://SFlightX.com</a></li>
+                </ul>
+            </div>
         </div>
     </main>
-    <footer id="footer">
-        <div>
-            <p>© 2021-2024 Spaceflight Exploration</p>
-            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
-        </div>
-        <div id="footer-link">
-            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
-        </div>
-    </footer>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../../resources/main/init.js"></script>
-    <script src="../../resources/sflightx.github.io/startup.js"></script>
-    <script src="../../resources/auth/authentication.js"></script>
+
+    <SFlightX-footer></SFlightX-footer>
+    <script src="https://SFlightX.com/resources/v4/dependency.js"></script>
+    <script src="https://SFlightX.com/resources/v4/data/drawer/primary.js"></script>
 </body>
 
 </html>
