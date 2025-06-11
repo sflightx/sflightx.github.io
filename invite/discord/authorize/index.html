@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="version" content="0.1">
     <meta name="version_date" content="5-18-2024">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Maya">
-    <meta property="og:image"
-        content="https://i.imgur.com/YeVZaEG.png" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <meta property="og:url" content="sflightx.com/vehicle/maya" />
-    
+
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@sFlightXJNO" />
     <meta name="twitter:title" content="Maya" />
     <meta name="twitter:description"
         content="Maya Block 6 is a two staged rocket that can lift 30t to LEO at expended mode."
-        content="https://i.imgur.com/YeVZaEG.png">
+        content="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <title>sFlightX - Maya</title>
-
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/Iwc5mxo.png">
-    
-    <link rel="stylesheet" href="../../../../resources/vehicle/maya.css">
-    <link rel="stylesheet" href="../../../../resources/main/import.css">
-    <link rel="stylesheet" href="../../../../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../../../../resources/main/primary-layout.css">
+    <title>SFlightX | Authorize</title>
+    <link rel="icon" type="image/x-icon" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <script type="importmap">
+        {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+            }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
     <header>
-        <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo" ></a>
-        <ul id="nav_list">
-            <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/"><b>VEHICLE</b></a><p></p></li>
-            <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-            <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-            <li><a href="https://athena.sflightx.com/"><b>ATHENA</b></a><p></p></li>
-            
-            <!--li><b>|</b></li>
-            <li class="logged-content"><a href="#footer"><b>CHATS</b></a><p></p></li>
-            <li class="logged-content"><a href="#footer"><b>PROFILE</b></a><p></p></li-->
-        </ul>
-        <span class="material-symbols-outlined" id="menu">menu</span>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
+                    id="themeToggle"></md-switch></label>
+        </div>
     </header>
     <main>
-        <!-- Content of the main section -->
-        <div class="banner" style="margin: 15vh 5vw;">
+        <div class="container" transparent desktop-gap>
             <h1>Redirecting...</h1>
-            <p id="banner-title" style="color: grey;"><a href="https://discord.com/oauth2/authorize?client_id=955364482719285259&scope=bot&permissions=274878097472">Click Here</a> if you are not redirected...</p>
+            <p id="banner-title" style="color: grey;"><a
+                    href="https://discord.com/oauth2/authorize?client_id=955364482719285259&scope=bot&permissions=274878097472">Click
+                    Here</a> if you are not redirected...</p>
         </div>
+        <sflightx-footer></sflightx-footer>
     </main>
-    <footer id="footer">
-        <div>
-            <p>© 2021-2024 Spaceflight Exploration</p>
-            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
-        </div>
-        <div id="footer-link">
-            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
-        </div>
-    </footer>
-
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../../../../resources/main/init.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
 </body>
+
 </html>

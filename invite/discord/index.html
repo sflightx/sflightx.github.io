@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="version" content="0.1">
     <meta name="version_date" content="5-18-2024">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Maya">
-    <meta property="og:image" content="https://sflightx.com/resources/database/logo/logo.png" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <meta property="og:url" content="sflightx.com/vehicle/maya" />
 
     <meta name="twitter:card" content="summary" />
@@ -15,25 +15,24 @@
     <meta name="twitter:title" content="Maya" />
     <meta name="twitter:description"
         content="Maya Block 6 is a two staged rocket that can lift 30t to LEO at expended mode."
-        content="https://sflightx.com/resources/database/logo/logo.png">
+        content="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <title>sFlightX - Maya</title>
+    <title>SFlightX - JNO Spaceflight Discord Bot</title>
 
-    <link rel="icon" type="image/x-icon" href="https://sflightx.com/resources/database/logo/logo.png">
+    <link rel="icon" type="image/x-icon" href="https://sflightx.com/resources/v4/database/logo/logo.png">
     <script type="importmap">
-        {
-      "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
-      }
+    {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
     }
-  </script>
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-dependency.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
@@ -49,7 +48,7 @@
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img src="https://sflightx.com/resources/database/logo/logo.png" alt="sFlightX Logo" />
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
         <div style="display: flex; gap: 1rem;">
@@ -57,91 +56,36 @@
                     id="themeToggle"></md-switch></label>
         </div>
     </header>
-    <main>
-        <!-- Content of the main section -->
-        <div class="banner-full">
-            <h1>JNO Spaceflight Discord Bot</h1>
-            <p id="banner-title" style="color: grey;">Add the bot to your server. Sometimes dead, just awaiting signal
-                acquisition...from <b>MARS</b>!</p>
-            <p>See more below.</p>
-            <button style="height: 7.5vh;"
+    <main indent="all">
+        <div class="container" shape="rounded" content desktop-gap>
+            <h3 class="md-typescale-display-medium">JNO Spaceflight Discord Bot</h3>
+            <p class="md-typescale-body-large">Add the bot to your server. Sometimes dead, just awaiting
+                signal acquisition...from <b>MARS</b>!</p>
+            <md-filled-tonal-button
                 onclick="window.location.href='https://discord.com/oauth2/authorize?client_id=955364482719285259&scope=bot&permissions=274878097472'">Add
-                Bot To Server</button>
+                Bot To Server</md-filled-tonal-button>
         </div>
 
-        <div class="detail">
-            <div class="detail-container">
-                <h1 id="detail-title">JNO Company Announcements</h1>
-                <p>Stay in touch with the latest announcements from all Juno: New Origin companies.</p>
-                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1883514223495700738';">
-                    <h6><b>Learn More</b></h6>
-                </button>
-            </div>
+        <div class="container" transparent content indent="all">
+            <h4 class="md-typescale-title-large">JNO Company Announcements</h4>
+            <p class="md-typescale-body-large">Stay in touch with the latest announcements from all Juno: New Origin
+                companies.</p>
+            <md-outlined-button onclick="window.location.href='';">
+                <h6><b>Learn More</b></h6>
+            </md-outlined-button>
         </div>
-        <div class="detail">
-            <div class="detail-container">
-                <h1 id="detail-title">Real-Time Droo Notice Of Restricted Areas (NORA) </h1>
-                <p>NORAs are released by the Central Aeronautics and Space Administration to secure a populated area or
-                    property from damage when a launch is imminent.</p>
-                <button onclick="window.location.href='https://x.com/sFlightXJNO/status/1883514223495700738';">
-                    <h6><b>Learn More</b></h6>
-                </button>
-            </div>
+        <div class="container" transparent content indent="all">
+            <h4 class="md-typescale-title-large">Currently in Development</h4>
+            <p class="md-typescale-body-large">We will announce the stable version soon.</p>
+            <md-outlined-button onclick="window.location.href='';">
+                <h6><b>Learn More</b></h6>
+            </md-outlined-button>
         </div>
-
-        <div class="detail">
-            <div class="detail-container">
-                <h1 id="detail-title">In Partnership with Droo Authorities</h1>
-                <div>
-                    <a href="https://sflightx.com"><img src="https://sflightx.com/resources/database/logo/logo.png"></a>
-                    <a href=""><img src=""></a>
-                </div>
-            </div>
-
-        </div>
-        <footer>
-            <div id="horizontal-footer">
-
-                <div id="footer-logo">
-                    <a href="https://sflightx.com"><img id="footer-logo"
-                            src="https://sflightx.com/resources/database/logo/logo.png" alt="sFlightX Logo" /></a>
-                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
-                        New
-                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
-                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
-                </div>
-                <div id="legal-link">
-                    <div id="icon-link">
-                        <a href="https://x.com/SFlightXJNO"><img
-                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://youtube.com/@sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://facebook.com/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://bsky.app/profile/sflightx.com"><img
-                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://simplerockets.com/u/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                    </div>
-                    <div class="text-link">
-                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
-                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
-                    </div>
-                </div>
-
-            </div>
-        </footer>
+        <sflightx-footer></sflightx-footer>
     </main>
 
-    <script src="https://sflightx.com/resources/function/drawer.js"></script>
-    <script src="https://sflightx.com/resources/function/scroll.js"></script>
-    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
-    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
 </body>
 
 </html>

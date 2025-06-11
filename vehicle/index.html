@@ -1,70 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="version" content="0.1">
     <meta name="version_date" content="5-18-2024">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="sFlightX - Vehicles">
-    <meta property="og:image"
-        content="https://i.imgur.com/unbXdTh.png" />
+    <meta property="og:image" content="https://i.imgur.com/unbXdTh.png" />
     <meta property="og:url" content="sflightx.com/vehicle/" />
-    
+
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@sFlightXJNO" />
     <meta name="twitter:title" content="sFlightX - Vehicles" />
-    <meta name="twitter:description"
-        content="See the list of our fleet of rockets in operational!"
+    <meta name="twitter:description" content="See the list of our fleet of rockets in operational!"
         content="https://i.imgur.com/unbXdTh.png">
 
-    <title>sFlightX - Vehicles</title>
+    <title>SFlightX - Vehicles</title>
 
-    <link rel="stylesheet" href="../../resources/main/import.css">
-    <link rel="stylesheet" href="../../resources/main/secondary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/primary-layout.css">
-    <link rel="stylesheet" href="../../resources/main/anim/main-anim.css">
+    <link rel="icon" type="image/x-icon" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <script type="importmap">
+    {
+        "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+        }
+    }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <style>
+        .vehicle-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .vehicle-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
     <header>
-        <a href="https://sflightx.com"><img src="https://i.imgur.com/unbXdTh.png" alt="sFlightX Logo"></a>
-        <ul id="nav_list">
-            <li><a href="https://sflightx.com/launches"><b>LAUNCHES</b></a><p></p></li>
-            <li><a href="https://sflightx.com/vehicle/"><b>VEHICLE</b></a><p></p></li>
-            <li><a href="https://sflightx.com/missions"><b>MISSIONS</b></a><p></p></li>
-            <li><a href="https://omegalink.sflightx.com/"><b>OMEGALINK</b></a><p></p></li>
-            <li><a href="https://athena.sflightx.com/"><b>ATHENA</b></a><p></p></li>
-        </ul>
-        <span class="material-symbols-outlined" id="menu">menu</span>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
+                    id="themeToggle"></md-switch></label>
+        </div>
     </header>
-    <main style="padding-top: 10vh;">
-        <!-- Content of the main section -->
-        <div class="sticky" id="settings">
-            <input type="checkbox" id="real-hardware-toggle">
-            <label for="real-hardware-toggle">Enable Real Flight Hardwares</label>
+    <div class="app-bar" style="display: flex; position:sticky;top:72px;z-index:10;background:var(--md-sys-color-surface-container);" indent="all">
+                <h1 class="md-typescale-headline-large">JNO Vehicles</h1>
+            </div>
+    <main>
+        <div indent="all">
+            
+            <div id="data" indent="all"></div>
         </div>
-        
+        <sflightx-footer></sflightx-footer>
     </main>
-    <footer id="footer">
-        <div>
-            <p>© 2021-2024 Spaceflight Exploration</p>
-            <p><a href="https://sflightx.com/legal/terms.html">Terms of Use</a> | <a href="https://sflightx.com/legal/privacy_policy.html">Privacy Policy</a></p>
-        </div>
-        <div id="footer-link">
-            <a href="https://x.com/SFlightXJNO"><img src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://youtube.com/@sflightx"><img src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://facebook.com/sflightx"><img src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://bsky.app/profile/sflightx.com"><img src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF" class="footer-link-img"></a>
-            <a href="https://simplerockets.com/u/sflightx"><img src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF" class="footer-link-img"></a>
-        </div>
-    </footer>
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
-    <script src="../../resources/main/init.js"></script>
-    <script src="../../resources/sflightx.github.io/startup.js"></script>
-    <script src="../../resources/auth/authentication.js"></script>
+    
+    <script type="module" src="https://sflightx.com/resources/v4/function/serviceAuth/initializeFirebase.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
+    <script type="module">
+        
+        const firebasePath = 'static/vehicle';
+        import { db } from 'https://sflightx.com/resources/v4/function/serviceAuth/initializeFirebase.js';
+        import { ref, get } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js';
+        // Fetch data from Firebase Realtime Database
+        async function fetchVehicles() {
+            try {
+                const snapshot = await get(ref(db, firebasePath));
+                const data = snapshot.val();
+                return Object.entries(data || {}).map(([id, value]) => ({
+                    id,
+                    name: value.name,
+                    key: value.key,
+                    thumbnail: value.thumbnail,
+                    companyId: value.companyId,
+                    intent: value.intent // Make sure intent is included
+                }));
+            } catch (error) {
+                console.error('Error fetching vehicles:', error);
+                return [];
+            }
+        }
+
+        // Render vehicles using Material 3 cards
+        async function renderVehicles() {
+            const vehicles = await fetchVehicles();
+            const dataDiv = document.getElementById('data');
+            if (!dataDiv) {
+                console.error('Error: #data element not found.');
+                return;
+            }
+            // Clear previous content
+            dataDiv.innerHTML = '';
+
+            const container = document.createElement('div');
+            container.style.display = 'grid';
+            container.style.gridTemplateColumns = 'repeat(auto-fit, minmax(320px, 1fr))';
+            container.style.gap = '1rem';
+
+            // Helper function to get company name by companyId key
+            async function getCompanyName(companyId) {
+                try {
+                    const companySnapshot = await get(ref(db, `static/company/${companyId}/name`));
+                    return companySnapshot.exists() ? companySnapshot.val() : companyId;
+                } catch (e) {
+                    console.error('Error fetching company name:', e);
+                    return companyId;
+                }
+            }
+
+            // Render all vehicle cards with company names
+            await Promise.all(
+                vehicles.map(async (vehicle, idx) => {
+                    const card = document.createElement('div');
+                    card.classList.add('vehicle-card');
+                    card.style.width = '100%';
+                    card.style.borderRadius = '12px';
+                    card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+                    card.style.background = "var(--md-sys-color-surface-container)";
+                    card.style.overflow = 'hidden';
+                    card.style.marginBottom = '1rem';
+                    card.style.cursor = 'pointer';
+
+                    const companyName = await getCompanyName(vehicle.companyId);
+
+                    card.innerHTML = `
+                        <img src="${vehicle.thumbnail}" alt="${vehicle.name}" style="width:100%;height:180px;object-fit:cover;border-radius:12px 12px 0 0;">
+                        <div style="padding: 1rem;">
+                            <div class="md-typescale-title-medium">${vehicle.name}</div>
+                            <div class="md-typescale-body-small" style="color:gray;">${companyName}</div>
+                        </div>
+                    `;
+
+                    card.addEventListener('click', () => {
+                        if (!vehicle.intent) return;
+                        if (vehicle.intent.startsWith('http://') || vehicle.intent.startsWith('https://')) {
+                            window.location.href = vehicle.intent;
+                        } else {
+                            window.location.href = `https://sflightx.com/vehicle/${vehicle.intent}.html`;
+                        }
+                    });
+
+                    container.appendChild(card);
+                })
+            );
+
+            dataDiv.appendChild(container);
+        }
+
+        // Wait for DOM and then render
+        function initializePage() {
+            renderVehicles();
+        }
+
+        window.addEventListener('DOMContentLoaded', initializePage);
+    </script>
+
 </body>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
 </html>

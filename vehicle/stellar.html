@@ -10,7 +10,7 @@
     <meta name="description"
         content="Stellar is an orbital spaceplane designed to transport droodnauts to Mars. It is capable of carrying 30t to Low Earth Orbit and is designed to be a fully reusable rocket." />
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <meta property="og:url" content="sflightx.com/vehicle/stellar" />
 
     <meta name="twitter:card" content="summary" />
@@ -18,29 +18,31 @@
     <meta name="twitter:title" content="sFlightX" />
     <meta name="twitter:description"
         content="Stellar is an orbital spaceplane designed to transport droodnauts to Mars. It is capable of carrying 30t to Low Earth Orbit and is designed to be a fully reusable rocket." />
-    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png" />
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
     <title>SFlightX - Stellar</title>
-    <link rel="icon" type="image/png" href="https://sflightx.com/resources/static/logo.png">
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
     <script type="importmap">
-        {
-          "imports": {
+    {
+        "imports": {
             "@material/web/": "https://esm.run/@material/web/"
-          }
         }
-      </script>
+    }
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-imports.css" />
-    <link rel="stylesheet" href="../../resources/design/material-primary.css" />
-    <link rel="stylesheet" href="../../resources/design/material-secondary.css" />
-    <link rel="stylesheet" href="https://sflightx.com/resources/design/material-scheme.css" />
-    <link rel="stylesheet" href="https://help.sflightx.com/main.css" />
-    <link rel="stylesheet" href="https://help.sflightx.com/tailwind.css" />
+    <style>
+        #img {
+            height: 75vh;
+            background-image: url('https://sflightx.com/resources/v4/database/image/sflightx_com/qS1262v.png');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
@@ -56,77 +58,36 @@
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-            <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo" />
+            <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
         <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
     </header>
     <main>
-        <div style="height: 10vh;"></div>
-        <!-- Content of the main section -->
-        <div class="banner" id="full"
-            style="background-image: url('https://sflightx.com/resources/static/sflightx_com/qS1262v.png');">
-            <h5 class="md-typescale-headline-medium">Fully reusable spaceplane designed for LDO transport</h5>
+        <div class="banner" id="img">
+            <h5 class="md-typescale-headline-medium" indent="all">Fully reusable second stage designed for LDO transport</h5>
         </div>
-        <div class="banner" id="stat">
-            <div class="container" id="stat">
-                <h1 class="md-typescale-display-large">0</h1>
+        <div id="grid" stat>
+            <div class="container" indent="all" transparent center>
+                <h1 class="md-typescale-display-large">1</h1>
                 <h4 class="md-typescale-title-large">Total Launches</h4>
             </div>
-            <div class="container" id="stat">
+            <div class="container" indent="all" transparent center>
                 <h1 class="md-typescale-display-large">0</h1>
                 <h4 class="md-typescale-title-large">Total Recoveries</h4>
             </div>
-            <div class="container" id="stat">
-                <h1 class="md-typescale-display-large">0</h1>
+            <div class="container" indent="all" transparent center>
+                <h1 class="md-typescale-display-large">1</h1>
                 <h4 class="md-typescale-title-large">Total Payload</h4>
             </div>
-            <div class="container" id="stat">
+            <div class="container" indent="all" transparent center>
                 <h1 class="md-typescale-display-large">0</h1>
                 <h4 class="md-typescale-title-large">Total Landings</h4>
             </div>
         </div>
-        <footer>
-            <div id="horizontal-footer">
-
-                <div id="footer-logo">
-                    <a href="https://sflightx.com"><img id="footer_logo" src="https://sflightx.com/resources/static/logo.png"
-                            alt="sFlightX Logo" /></a>
-                    <p class="md-typescale-body-medium">SFlightX is not affiliated with Spaceflight Simulator or Juno:
-                        New
-                        Origins. This website is not affiliated with Space Exploration Technologies (SpaceX).</p>
-                    <p class="md-typescale-body-medium">© 2021-2025 SFlightX. All rights reserved.</p>
-                </div>
-                <div id="legal-link">
-                    <div id="icon-link">
-                        <a href="https://x.com/SFlightXJNO"><img
-                                src="https://img.icons8.com/?size=100&id=Q33YQBzI2lZs&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://youtube.com/@sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85162&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://facebook.com/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=85126&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://bsky.app/profile/sflightx.com"><img
-                                src="https://img.icons8.com/?size=100&id=MGqlXOe8ksH0&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                        <a href="https://simplerockets.com/u/sflightx"><img
-                                src="https://img.icons8.com/?size=100&id=COgXDnufRVRP&format=png&color=FFFFFF"
-                                class="footer-link-img"></a>
-                    </div>
-                    <div class="text-link">
-                        <a href="https://sflightx.com/legal/terms" target="_self">Terms of Service</a>
-                        <a href="https://sflightx.com/legal/privacy" target="_self">Privacy Policy</a>
-                    </div>
-                </div>
-
-            </div>
-        </footer>
+        <sflightx-footer></sflightx-footer>
     </main>
-    <script src="https://sflightx.com/resources/function/drawer.js"></script>
-    <script src="https://sflightx.com/resources/function/scroll.js"></script>
-    <script src="https://sflightx.com/resources/function/theme-mode.js"></script>
-    <script src="https://sflightx.com/resources/data/main-navigation.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
 </body>
 </html>

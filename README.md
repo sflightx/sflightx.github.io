@@ -41,5 +41,16 @@ Migration Update
 
 Teams are currently migrating the website to the version 4 resource. Some may look buggy, or awkward. The list is the subdirectory with completed merge:
 
+- /index
 - /bp
+- /invite
+- /launches
+- /legal
+- /missions
+- /portfolio
+- /team
+- /vehicle
+
+`Completed on June 11, 2025.`
+
 
