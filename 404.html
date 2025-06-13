@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="version" content="1.4">
+    <meta name="author" content="SFlightX">
+    <meta name="version_date" content="04-23-2025">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="description"
+        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
+    <meta property="og:url" content="sflightx.com" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@SFlightXJNO" />
+    <meta name="twitter:title" content="sFlightX" />
+    <meta name="twitter:description"
+        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
+    <title>SFlightX</title>
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <script type="importmap">
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+    </script>
+    <script type="module">
+        import '@material/web/all.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
+</head>
+
+<body>
+    <div id="side-sheet">
+        <div id="side-sheet-header">
+            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
+        </div>
+        <nav id="navItems"></nav>
+    </div>
+    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+    <header>
+        <div class="logo">
+            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+            </a>
+        </div>
+        <div style="display: flex; gap: 1rem;">
+            <!--md-outlined-button href="https://auth.sflightx.com" style="margin: 8px 0px;"
+                class="md-typescale-title-small">Log In</md-outlined-button-->
+            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
+                    id="themeToggle"></md-switch></label>
+        </div>
+    </header>
+    <main>
+        <div desktop-gap>
+            <h1 class="md-typescale-headline-large">404 - Page Not Found</h1>
+            <p class="md-typescale-body-large">The page you are looking for does not exist or has been moved.</p>
+            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com" class="md-typescale-body-large">homepage</a>.</p>
+            <br>
+            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com" class="md-typescale-body-large">Contact Us</a>.</p>
+
+        </div>
+        <sflightx-footer></sflightx-footer>
+
+    </main>
+
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+        renderNavigation(navData);
+    </script>
+</body>
+
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+</body>
+
+</html>
