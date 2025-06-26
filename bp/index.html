@@ -105,6 +105,12 @@
                 console.error("Error loading release:", err);
             });
     </script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+        renderNavigation(navData);
+    </script>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>

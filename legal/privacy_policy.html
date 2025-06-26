@@ -261,8 +261,12 @@
     </main>
 
     <SFlightX-footer></SFlightX-footer>
-    <script src="https://SFlightX.com/resources/v4/dependency.js"></script>
-    <script src="https://SFlightX.com/resources/v4/data/drawer/primary.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+        renderNavigation(navData);
+    </script>
 </body>
 
 </html>
