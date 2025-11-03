@@ -63,33 +63,38 @@
     </header>
     <main>
         <div class="container"
-            style="position: relative; height: 150vh; background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; overflow: hidden; padding-top: 15vh;">
+            style="position: relative; height: 150vh; display: flex; align-items: center; justify-content: center; background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; overflow: hidden;">
             <div
-                style="position: absolute; inset: 0; background: color-mix(in srgb, var(--md-sys-color-surface) 50%, transparent); z-index: -1;">
+            style="position: absolute; inset: 0; background: color-mix(in srgb, var(--md-sys-color-surface) 50%, transparent); z-index: 0;">
             </div>
             <div
-                style="height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; text-align: center; margin-bottom: 10vh;">
-                <h5 class="md-typescale-headline-medium">
-                    SFlightX launches advanced technologies<br>from Earth to Space
-                </h5>
-                <div id="grid" stat>
-                    <div class="container" indent="all" transparent>
-                        <h1 class="md-typescale-display-large">17</h1>
-                        <h4 class="md-typescale-title-large">Total Launches</h4>
-                    </div>
-                    <div class="container" indent="all" transparent>
-                        <h1 class="md-typescale-display-large">1</h1>
-                        <h4 class="md-typescale-title-large">Total Recoveries</h4>
-                    </div>
-                    <div class="container" indent="all" transparent>
-                        <h1 class="md-typescale-display-large">14</h1>
-                        <h4 class="md-typescale-title-large">Total Payload</h4>
-                    </div>
-                    <div class="container" indent="all" transparent>
-                        <h1 class="md-typescale-display-large">2</h1>
-                        <h4 class="md-typescale-title-large">Total Landings</h4>
-                    </div>
+            style="position: relative; z-index: 1; width: 100%; max-width: 1100px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 1rem;">
+            <h5 class="md-typescale-headline-medium" style="margin: 0 0 1.5rem;">
+                SFlightX launches advanced technologies<br>from Earth to Space
+            </h5>
+            <div id="grid" stat
+                style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%;">
+                <div class="container" indent="all" transparent
+                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+                <h1 class="md-typescale-display-large" style="margin: 0;">17</h1>
+                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Launches</h4>
                 </div>
+                <div class="container" indent="all" transparent
+                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+                <h1 class="md-typescale-display-large" style="margin: 0;">1</h1>
+                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Recoveries</h4>
+                </div>
+                <div class="container" indent="all" transparent
+                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+                <h1 class="md-typescale-display-large" style="margin: 0;">14</h1>
+                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Payload</h4>
+                </div>
+                <div class="container" indent="all" transparent
+                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
+                <h1 class="md-typescale-display-large" style="margin: 0;">2</h1>
+                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Landings</h4>
+                </div>
+            </div>
             </div>
         </div>
 
@@ -105,7 +110,7 @@
                         upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse
                         and reliability.</p>
                     <div style="display: flex; justify-content: flex-start;">
-                        <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
+                        <md-filled-tonal-button href="https://sflightx.com/vehicle/maya">
                             <h4>Learn More</h4>
                         </md-filled-tonal-button>
                     </div>
@@ -113,14 +118,14 @@
             </div>
         </div>
 
-        <div class="container" semi indent="all">
+        <div class="container" semi desktop-gap indent="all">
             <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/GopOnLkW0AAhlt6.jpg"
                 alt="Launch Complex C, at Bataan Space Center." class="banner-img">
             <div class="container" id="static"
                 style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div id="content">
                     <h4 class="md-typescale-headline-large">State-of-the-art Launch Complexes</h4>
-                    <md-suggestion-chip class="md-typescale-body-large">FEATURE</md-suggestion-chip>
+                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">FEATURE</md-suggestion-chip>
                     <p>Orbital Launch Complex and Suborbital Launch Complex for Maya and Stellar are the
                         company's world class launchpads in Droo and RSS in Juno: New Origins.</p>
                 </div>
@@ -138,7 +143,7 @@
                 style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div id="content">
                     <h4 class="md-typescale-headline-large">Sky Shield Reaction Mission</h4>
-                    <md-suggestion-chip class="md-typescale-body-large">RECENT MISSION</md-suggestion-chip>
+                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">RECENT MISSION</md-suggestion-chip>
                     <p>Maya Block 6 lifted off at January 30, 15:52 UTC from Pad A. This mission carried 5 Sky
                         Shield Reaction Satellites to Low Droo Orbit.</p>
                 </div>
@@ -156,7 +161,7 @@
                 style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
                 <div id="content">
                     <h4 class="md-typescale-headline-large">DSS-2 Mission</h4>
-                    <md-suggestion-chip class="md-typescale-body-large">NEXT MISSION</md-suggestion-chip>
+                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">NEXT MISSION</md-suggestion-chip>
                     <p>DSS-2 is second of the contracted Athena Missions to expand human presence to space. The
                         mission will carry the Serenity Module for the first-ever in-space autonomous docking system
                         built
