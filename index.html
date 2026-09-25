@@ -3,26 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.4">
+    <meta name="version" content="1.8">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <meta property="og:url" content="sflightx.com" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="SFlightX">
     <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
+        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+
     <title>SFlightX</title>
+
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+
     <script type="importmap">
     {
       "imports": {
@@ -35,18 +46,242 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
+
+    <!-- Global & Page-Specific Stylesheets -->
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css" />
+
+    <!-- Hero Background Image Styling Integration -->
+    <style>
+        .hero-container::before {
+            background: color-mix(in srgb, var(--md-sys-color-surface) 25%, transparent);
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        .hero-container {
+            background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 3rem;
+        }
+
+        .hero-left {
+            flex: 0 0 70%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            gap: 1.5rem;
+        }
+
+        .hero-left img {
+            max-height: 50px;
+            width: auto;
+        }
+
+        .hero-right {
+            flex: 0 0 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 440px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border-glass);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(10, 13, 20, 0.1) 0%, rgba(10, 13, 20, 0.7) 100%);
+        }
+
+        .hero-nav-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-nav-buttons md-filled-tonal-button,
+        .hero-nav-buttons md-outlined-button {
+            --md-sys-color-surface: var(--surface-glass);
+        }
+
+        /* --- 3D Viewer & Split Sections --- */
+        .viewer-section {
+            position: relative;
+            width: 100%;
+            height: 85vh;
+            background: #0d121c;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        #modelViewer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .viewer-overlay-box {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 5%;
+            pointer-events: none;
+        }
+
+        .floating-info-card {
+            pointer-events: auto;
+            background: var(--surface-glass) !important;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-glass) !important;
+            border-radius: 1.5rem !important;
+            padding: 2.5rem !important;
+            max-width: 380px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* --- Feature / Mission Banners Layout --- */
+        .content-showcase {
+            max-width: 1200px;
+            margin: 6rem auto;
+            width: 90%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .content-showcase:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-showcase:nth-child(even)>* {
+            direction: ltr;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-glass);
+            transition: var(--transition-smooth);
+        }
+
+        .banner-img:hover {
+            transform: scale(1.02);
+        }
+
+        .showcase-text-card {
+            background: var(--surface-glass);
+            border: 1px solid var(--border-glass);
+            backdrop-filter: blur(16px);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            height: 100%;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-left,
+            .hero-right {
+                flex: 1;
+                width: 100%;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-image-wrapper {
+                height: 280px;
+            }
+
+            .hero-nav-buttons {
+                justify-content: center;
+            }
+
+            .content-showcase,
+            .content-showcase:nth-child(even) {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 2rem;
+            }
+
+            .viewer-overlay-box {
+                padding-left: 0;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Side Sheet Navigation Panel -->
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
-        <nav id="navItems"></nav>
+        <nav id="navItems" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;"></nav>
     </div>
+
+    <!-- Backdrop Overlay -->
     <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <!-- Header Navbar -->
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
@@ -54,63 +289,51 @@
                 <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
-        <div style="display: flex; gap: 1rem;">
-            <!--md-outlined-button href="https://auth.sflightx.com" style="margin: 8px 0px;"
-                class="md-typescale-title-small">Log In</md-outlined-button-->
-            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
-                    id="themeToggle"></md-switch></label>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded" style="color: #9ca3af;">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
     </header>
+
     <main>
-        <div class="container"
-            style="position: relative; height: 150vh; display: flex; align-items: center; justify-content: center; background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: 0; overflow: hidden;">
-            <div
-            style="position: absolute; inset: 0; background: color-mix(in srgb, var(--md-sys-color-surface) 50%, transparent); z-index: 0;">
-            </div>
-            <div
-            style="position: relative; z-index: 1; width: 100%; max-width: 1100px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 1rem;">
-            <h5 class="md-typescale-headline-medium" style="margin: 0 0 1.5rem;">
-                SFlightX launches advanced technologies<br>from Earth to Space
-            </h5>
-            <div id="grid" stat
-                style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; width: 100%;">
-                <div class="container" indent="all" transparent
-                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
-                <h1 class="md-typescale-display-large" style="margin: 0;">17</h1>
-                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Launches</h4>
+        <!-- Hero Section with Background Image -->
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="md-typescale-display-large">
+                        SFlightX launches advanced technologies from Earth to Space
+                    </h1>
+                    <div class="hero-nav-buttons">
+                        <md-filled-tonal-button href="https://sflightx.com/launches">
+                            Launches
+                        </md-filled-tonal-button>
+                        <md-filled-tonal-button href="https://app.sflightx.com">
+                            SFlightX App
+                        </md-filled-tonal-button>
+                        <md-filled-tonal-button href="https://omegalink.sflightx.com">
+                            OmegaLink
+                        </md-filled-tonal-button>
+                    </div>
                 </div>
-                <div class="container" indent="all" transparent
-                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
-                <h1 class="md-typescale-display-large" style="margin: 0;">1</h1>
-                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Recoveries</h4>
+                <div class="hero-right">
+
                 </div>
-                <div class="container" indent="all" transparent
-                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
-                <h1 class="md-typescale-display-large" style="margin: 0;">14</h1>
-                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Payload</h4>
-                </div>
-                <div class="container" indent="all" transparent
-                style="min-width: 180px; flex: 1 1 200px; display:flex; flex-direction:column; align-items:center; padding:1rem;">
-                <h1 class="md-typescale-display-large" style="margin: 0;">2</h1>
-                <h4 class="md-typescale-title-large" style="margin: .5rem 0 0;">Total Landings</h4>
-                </div>
-            </div>
             </div>
         </div>
 
-        <!-- 3D Model Viewer with overlayed text on the left -->
-        <div style="position: relative; width: 100%; height: 75vh; margin-bottom: 2rem;">
-            <div id="modelViewer" style="width: 100%; height: 100%; position: absolute; inset: 0; z-index: 0;"></div>
-            <div class="container" semi indent="all"
-                style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
-                <div class="container" id="static" transparent
-                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 320px; min-width: 240px;">
-                    <h4 class="md-typescale-headline-large">Maya Block 6</h4>
-                    <p class="md-typescale-body-large">Maya Block 6 is our company's flagship rocket. Featuring enormous
-                        upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse
-                        and reliability.</p>
-                    <div style="display: flex; justify-content: flex-start;">
-                        <md-filled-tonal-button href="https://sflightx.com/vehicle/maya">
+        <!-- 3D Model Viewer Showcase Section -->
+        <div class="viewer-section">
+            <div id="modelViewer"></div>
+            <div class="container viewer-overlay-box" semi indent="all">
+                <div class="container floating-info-card" id="static" transparent>
+                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">Stellar Block 1</h4>
+                    <p class="md-typescale-body-large" style="color: #9ca3af; line-height: 1.6;">Stellar is our fully
+                    reusable launch vehicle designed to carry payloads orbit. Both stages uses catch recovery system to ensure safe landing and reusability.
+                    </p>
+                    <div style="display: flex; justify-content: flex-start; margin-top: 0.5rem;">
+                        <md-filled-tonal-button href="https://sflightx.com/vehicle/stellar">
                             <h4>Learn More</h4>
                         </md-filled-tonal-button>
                     </div>
@@ -118,16 +341,19 @@
             </div>
         </div>
 
-        <div class="container" semi desktop-gap indent="all">
+        <!-- Content Showcase Section 1: Launch Complexes -->
+        <div class="content-showcase">
             <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/GopOnLkW0AAhlt6.jpg"
                 alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
-                <div id="content">
-                    <h4 class="md-typescale-headline-large">State-of-the-art Launch Complexes</h4>
-                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">FEATURE</md-suggestion-chip>
-                    <p>Orbital Launch Complex and Suborbital Launch Complex for Maya and Stellar are the
-                        company's world class launchpads in Droo and RSS in Juno: New Origins.</p>
+            <div class="container showcase-text-card" id="static">
+                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <md-suggestion-chip style="align-self: flex-start;"
+                        class="md-typescale-body-large">FEATURE</md-suggestion-chip>
+                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">State-of-the-art Launch Complexes
+                    </h4>
+                    <p style="color: #9ca3af; line-height: 1.6;">Orbital Launch Complex and Suborbital Launch Complex
+                        for Maya and Stellar are the company's world class launchpads in Droo and RSS in Juno: New
+                        Origins.</p>
                 </div>
                 <div style="display: flex; justify-content: flex-start;">
                     <md-filled-tonal-button href="https://sflightx.com/ambition">
@@ -136,16 +362,18 @@
                 </div>
             </div>
         </div>
-        <div class="container" semi indent="all">
+
+        <!-- Content Showcase Section 2: Sky Shield Reaction Mission -->
+        <div class="content-showcase">
             <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/ssr/86aRvan.png"
                 alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
-                <div id="content">
-                    <h4 class="md-typescale-headline-large">Sky Shield Reaction Mission</h4>
-                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">RECENT MISSION</md-suggestion-chip>
-                    <p>Maya Block 6 lifted off at January 30, 15:52 UTC from Pad A. This mission carried 5 Sky
-                        Shield Reaction Satellites to Low Droo Orbit.</p>
+            <div class="container showcase-text-card" id="static">
+                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">RECENT
+                        MISSION</md-suggestion-chip>
+                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">Sky Shield Reaction Mission</h4>
+                    <p style="color: #9ca3af; line-height: 1.6;">Maya Block 6 lifted off at January 30, 15:52 UTC from
+                        Pad A. This mission carried 5 Sky Shield Reaction Satellites to Low Droo Orbit.</p>
                 </div>
                 <div style="display: flex; justify-content: flex-start;">
                     <md-filled-tonal-button href="https://sflightx.com/missions?id=sky-shield-reaction-mission">
@@ -154,18 +382,19 @@
                 </div>
             </div>
         </div>
-        <div class="container" semi indent="all">
+
+        <!-- Content Showcase Section 3: DSS-2 Mission -->
+        <div class="content-showcase">
             <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg"
                 alt="DSS-2 Mission" class="banner-img">
-            <div class="container" id="static"
-                style="margin: 0; display: flex; flex-direction: column; justify-content: space-between;">
-                <div id="content">
-                    <h4 class="md-typescale-headline-large">DSS-2 Mission</h4>
-                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">NEXT MISSION</md-suggestion-chip>
-                    <p>DSS-2 is second of the contracted Athena Missions to expand human presence to space. The
-                        mission will carry the Serenity Module for the first-ever in-space autonomous docking system
-                        built
-                        by sFlightX together with OmegaLink.</p>
+            <div class="container showcase-text-card" id="static">
+                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">NEXT
+                        MISSION</md-suggestion-chip>
+                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">DSS-2 Mission</h4>
+                    <p style="color: #9ca3af; line-height: 1.6;">DSS-2 is second of the contracted Athena Missions to
+                        expand human presence to space. The mission will carry the Serenity Module for the first-ever
+                        in-space autonomous docking system built by sFlightX together with OmegaLink.</p>
                 </div>
                 <div style="display: flex; justify-content: flex-start;">
                     <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
@@ -174,23 +403,28 @@
                 </div>
             </div>
         </div>
-        <sflightx-footer></sflightx-footer>
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
 
     </main>
 
+    <!-- Dependencies & Scripts -->
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+        renderNavigation(navData);
+    </script>
     <script type="importmap">
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
             }
         }
-        </script>
+    </script>
+
+    <!-- External Scripts -->
     <script type="module" src="https://sflightx.com/resources/v4/element/3d/import.js"></script>
 </body>
 
