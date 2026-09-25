@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.5">
+    <meta name="version" content="1.6">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
@@ -52,11 +52,10 @@
     <style>
         main {
             padding: 2rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .content-wrapper {
+            margin-top: 5rem;
             padding: 0 1rem;
         }
 
@@ -101,8 +100,14 @@
             background-color: var(--md-sys-color-surface-container-low, rgba(255, 255, 255, 0.03));
             border: 1px solid var(--md-sys-color-outline-variant, rgba(255, 255, 255, 0.08));
             transition: transform 0.2s ease, box-shadow 0.2s ease;
-            height: 100%;
+            height: auto; /* Fixed unexpected layout height elongation */
+            min-height: 100px;
             box-sizing: border-box;
+        }
+
+        .container img {
+            height: 30vh;
+            max-width: 30vh;
         }
 
         .container:hover {
@@ -125,14 +130,13 @@
         }
 
         .profile-info {
-            overflow: hidden;
+            flex: 1;
+            min-width: 0; /* Ensures flex child allows text wrapping nicely */
         }
 
         .profile-info h2 {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
             margin: 0 0 0.2rem 0;
+            word-break: break-word;
         }
 
         .profile-info p {
@@ -165,7 +169,7 @@
         <nav id="navItems"></nav>
     </div>
     
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
     
     <header>
         <div class="logo">
@@ -180,7 +184,7 @@
         </label>
     </header>
 
-    <main>
+    <main desktop-gap>
         <div class="content-wrapper">
             <h1 class="md-typescale-display-large page-title">SFlightX Organizational Chart</h1>
 
@@ -238,7 +242,7 @@
                     <img src="https://sflightx.com/resources/static/logo.png" alt="StarJNO's Profile" class="profile"
                         onerror="this.src='https://placehold.co/72x72/222/fff?text=D'">
                     <div class="profile-info">
-                        <h2 class="md-typescale-headline-small" style="font-size: 1.1rem;">デストロイヤー 元SFSプレイヤー</h2>
+                        <h2 class="md-typescale-headline-small" style="font-size: 1.05rem;">デストロイヤー 元SFSプレイヤー</h2>
                         <p class="md-typescale-title-small">starjnomro7288</p>
                         <p class="md-typescale-body-small" style="opacity: 0.8;">Discord Server</p>
                     </div>
@@ -248,6 +252,7 @@
 
         <sflightx-footer></sflightx-footer>
     </main>
+
     <!-- Dependencies & Scripts -->
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
     <script type="module">
