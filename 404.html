@@ -51,9 +51,15 @@
         #error-container {
             margin-top: 5rem;
         }
+
         sflightx-footer {
             display: block;
             margin-top: 2rem;
+        }
+
+        #modelViewer,
+        #modelViewer canvas {
+            pointer-events: none !important;
         }
     </style>
 </head>
@@ -85,9 +91,11 @@
         <div id="error-container">
             <h1 class="md-typescale-headline-large">404 - Page Not Found</h1>
             <p class="md-typescale-body-large">The page you are looking for does not exist or has been moved.</p>
-            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com" class="md-typescale-body-large">homepage</a>.</p>
+            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com"
+                    class="md-typescale-body-large">homepage</a>.</p>
             <br>
-            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com" class="md-typescale-body-large">Contact Us</a>.</p>
+            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com"
+                    class="md-typescale-body-large">Contact Us</a>.</p>
 
         </div>
         <sflightx-footer></sflightx-footer>
@@ -102,15 +110,15 @@
         renderNavigation(navData);
     </script>
     <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
-            }
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.153.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/"
         }
-    </script>
+    }
 
     <!-- External Scripts -->
-    <script type="module" src="https://sflightx.com/resources/v4/element/3d/import.js"></script>
+    <script type="module" src="../resources/v4/element/3d/import.js"></script>
 </body>
 
 
