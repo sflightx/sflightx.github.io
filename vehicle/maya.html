@@ -36,8 +36,8 @@
     </script>
     <style>
         #img {
-            height: 75vh;
-            background-image: url('https://sflightx.com/resources/v4/database/image/sflightx_com/GkT5JaTXcAA4IfP.jpg');
+            height: 50vh;
+            background-image: url('https://sflightx.com/resources/v4/database/image/sflightx_com/vehicle/maya-block-7.png');
             background-size: cover;
             background-position: center;
         }
@@ -58,15 +58,17 @@
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-            <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
             </a>
         </div>
         <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
     </header>
     <main>
         <div id="img" indent="all">
-            <h5 class="md-typescale-headline-medium" style="color: black;">Partially reusable medium-lift
-                rocket<br>virtually made in the Philippines.</h5>
+            <div desktop-gap>
+                <h5 class="md-typescale-headline-medium">Partially reusable medium-lift
+                    rocket<br>virtually made in the Philippines.</h5>
+            </div>
         </div>
         <div id="grid" stat>
             <div class="container" indent="all" transparent center>
@@ -94,12 +96,12 @@
                 style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
                 <div class="container" id="static" transparent
                     style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 320px; min-width: 240px;">
-                    <h4 class="md-typescale-headline-large">Maya Block 6</h4>
-                    <p class="md-typescale-body-large">Maya Block 6 is our company's flagship rocket. Featuring enormous
+                    <h4 class="md-typescale-headline-large">Maya Block 7</h4>
+                    <p class="md-typescale-body-large">Maya Block 7 is our company's flagship rocket. Featuring enormous
                         upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse
                         and reliability.</p>
                     <div style="display: flex; justify-content: flex-start;">
-                        <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
+                        <md-filled-tonal-button href="https://sflightx.com/missions?id=rtf-mission-one">
                             <h4>Learn More</h4>
                         </md-filled-tonal-button>
                     </div>
@@ -181,11 +183,12 @@
         <sflightx-footer></sflightx-footer>
     </main>
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
+       
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+        renderNavigation(navData);
+    </script>
     <script type="importmap">
         {
             "imports": {
