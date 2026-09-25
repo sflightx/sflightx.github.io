@@ -7,30 +7,27 @@
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <meta property="og:url" content="sflightx.com" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="sflightx.com">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="sFlightX">
+    <meta name="twitter:description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    
     <title>SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
     <!-- Google Fonts & Material Symbols -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696"
-        crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696" crossorigin="anonymous"></script>
 
     <script type="importmap">
     {
@@ -46,7 +43,8 @@
     </script>
 
     <!-- Global & Page-Specific Stylesheets -->
-    <link rel="stylesheet" href="../resources/v4/dependency.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
     <style>
         #error-container {
             margin-top: 5rem;
@@ -55,11 +53,6 @@
         sflightx-footer {
             display: block;
             margin-top: 2rem;
-        }
-
-        #modelViewer,
-        #modelViewer canvas {
-            pointer-events: none !important;
         }
     </style>
 </head>
@@ -72,59 +65,49 @@
         </div>
         <nav id="navItems"></nav>
     </div>
+    
     <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+    
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
         <div style="display: flex; gap: 1rem;">
-            <!--md-outlined-button href="https://auth.sflightx.com" style="margin: 8px 0px;"
-                class="md-typescale-title-small">Log In</md-outlined-button-->
-            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
-                    id="themeToggle"></md-switch></label>
+            <!--
+            <md-outlined-button href="https://auth.sflightx.com" style="margin: 8px 0px;" class="md-typescale-title-small">Log In</md-outlined-button>
+            -->
+            <label>
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
     </header>
+
     <main desktop-gap>
         <div id="error-container">
             <h1 class="md-typescale-headline-large">404 - Page Not Found</h1>
             <p class="md-typescale-body-large">The page you are looking for does not exist or has been moved.</p>
-            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com"
-                    class="md-typescale-body-large">homepage</a>.</p>
+            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com" class="md-typescale-body-large">homepage</a>.</p>
             <br>
-            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com"
-                    class="md-typescale-body-large">Contact Us</a>.</p>
-
+            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com" class="md-typescale-body-large">Contact Us</a>.</p>
         </div>
         <sflightx-footer></sflightx-footer>
-
     </main>
 
     <!-- Dependencies & Scripts -->
-    <script src="../resources/v4/dependency.js"></script>
+    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
     <script type="module">
-        import { renderNavigation } from '../resources/v4/data/drawer/nav-loader.js';
-        import { navData } from '../resources/v4/data/drawer/sflightx_com/index.js';
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
         renderNavigation(navData);
     </script>
-    <script type="importmap">
-    {
-        "imports": {
-            "three": "https://unpkg.com/three@0.153.0/build/three.module.js",
-            "three/addons/": "https://unpkg.com/three@0.153.0/examples/jsm/"
-        }
-    }
 
-    <!-- External Scripts -->
-    <script type="module" src="../resources/v4/element/3d/import.js"></script>
-</body>
-
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 </body>
 
 </html>
