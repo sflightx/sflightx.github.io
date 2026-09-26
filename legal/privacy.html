@@ -3,53 +3,231 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="0.2">
+    <meta name="version" content="0.3">
+    <meta name="author" content="SFlightX">
     <meta name="version_date" content="03-09-2025">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Privacy Policy">
-    <meta property="og:image" content="https://i.imgur.com/unbXdTh.png" />
-    <meta property="og:url" content="SFlightX.com/legal/privacy_policy" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="Privacy Policy" />
-    <meta name="twitter:description" content="SFlightX Privacy Policy" content="https://i.imgur.com/unbXdTh.png">
-    <title>SFlightX - Privacy Policy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SFlightX Privacy Policy — how we collect, use, and protect your data.">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com/legal/privacy">
+    <meta property="og:title" content="Privacy Policy | SFlightX">
+    <meta property="og:description" content="SFlightX Privacy Policy — how we collect, use, and protect your data.">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="Privacy Policy | SFlightX">
+    <meta name="twitter:description" content="SFlightX Privacy Policy — how we collect, use, and protect your data.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <title>Privacy Policy | SFlightX</title>
+    <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <script type="importmap">
-        {
+    {
       "imports": {
         "@material/web/": "https://esm.run/@material/web/"
       }
     }
-  </script>
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    <link rel="stylesheet" href="https://SFlightX.com/resources/v4/element/material-dependency.css" />
+
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
     <style>
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-top: 16px;
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
         }
 
-        #article {
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        /* Title + date live inside the fixed site header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-page {
+            flex: 1;
+            min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
         }
 
-        #logo {
-            height: 108px;
+        .header-page h1 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
         }
 
-        @media screen and (min-width: 768px) {
-            #article {
-                padding: 5vh 10vw;
+        .header-page time {
+            margin: 0.1rem 0 0;
+            font-size: 0.72rem;
+            color: var(--md-sys-color-on-surface-variant);
+            white-space: nowrap;
+        }
+
+        header .logo {
+            flex-shrink: 0;
+        }
+
+        header .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 5.5rem;
+        }
+
+        .legal {
+            width: min(800px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 1.5rem 0 3rem;
+        }
+
+        .legal-hero {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 1.25rem;
+            margin-bottom: 1.75rem;
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .legal section {
+            margin-bottom: 1.75rem;
+            padding: 1.4rem 1.5rem;
+            border-radius: 1.15rem;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+        }
+
+        .legal h2 {
+            margin: 0 0 0.85rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .legal h3 {
+            margin: 1.15rem 0 0.45rem;
+            font-size: 1.05rem;
+            font-weight: 650;
+        }
+
+        .legal h4 {
+            margin: 0.9rem 0 0.35rem;
+            font-size: 0.95rem;
+            font-weight: 650;
+        }
+
+        .legal p,
+        .legal li {
+            margin: 0 0 0.75rem;
+            line-height: 1.65;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .legal p:last-child,
+        .legal ul:last-child {
+            margin-bottom: 0;
+        }
+
+        .legal ul {
+            margin: 0 0 0.75rem;
+            padding-left: 1.2rem;
+        }
+
+        @media (max-width: 968px) {
+            main {
+                padding-top: 5rem;
+            }
+
+            .header-page h1 {
+                font-size: 0.95rem;
+            }
+
+            /* Date drops on narrow phones to avoid crowding the logo + theme switch */
+            .header-page time {
+                display: none;
+            }
+
+            .legal {
+                width: calc(100% - 2.3rem);
+                padding: 1rem 0 2.5rem;
+            }
+
+            .legal section {
+                padding: 1.15rem 1.1rem;
+            }
+
+            .legal-hero {
+                height: 160px;
+                border-radius: 1rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .header-page h1 {
+                font-size: 0.88rem;
             }
         }
     </style>
@@ -58,239 +236,237 @@
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <div id="locItems" hidden></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
-            <a href="https://SFlightX.com">
-                <img src="https://SFlightX.com/resources/v4/database/logo/logo.png" alt="SFlightX Logo" />
+            <a href="https://sflightx.com">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="SFlightX Logo">
             </a>
         </div>
-        <div style="display: flex; gap: 1rem;">
-            <label><span class="material-symbols-rounded">dark_mode</span><md-switch
-                    id="themeToggle"></md-switch></label>
+
+        <div class="header-page">
+            <h1>Privacy Policy</h1>
+            <time datetime="2025-11-03">Last updated November 03, 2025</time>
+        </div>
+
+        <div class="header-actions">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
     </header>
+
     <main>
-        <div id="article" head indent="all">
-            <a href="https://SFlightX.com">
-                <img id="logo" src="https://SFlightX.com/resources/v4/database/logo/logo.png" alt="SFlightX Logo">
-            </a>
-            <h4 class="md-typescale-headline-large"><b>SFlightX</b> Privacy Policy</h4>
-            <h6 class="md-typescale-headline-small">November 03, 2025</h6>
-        </div>
+        <article class="legal">
+            <img class="legal-hero"
+                src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg"
+                alt="">
 
-        <div id="article" head indent="all">
-            <img class="header-thumbnail"
-                src="https://SFlightX.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg"
-                alt="Privacy Policy Thumbnail">
-
-            <div class="container" indent="all" shape="rounded" transparent>
-                <p class="md-typescale-body-large">
-                    This <b>Privacy Policy</b> describes Our policies and procedures on the collection, use, and
-                    disclosure of Your information when You use SFlightX services and tells You about Your privacy
-                    rights and how the law protects You.
+            <section>
+                <p>
+                    This <strong>Privacy Policy</strong> describes our policies and procedures on the collection, use,
+                    and disclosure of your information when you use SFlightX services, and tells you about your privacy
+                    rights and how the law protects you.
                 </p>
-                <div id="intro">
-                    <p class="md-typescale-body-large">
-                        We use Your Personal data to provide and improve the Service. By using the Service, You agree to
-                        the collection and use of information in accordance with this Privacy Policy.
-                    </p>
-                </div>
-            </div>
+                <p>
+                    We use your personal data to provide and improve the Service. By using the Service, you agree to the
+                    collection and use of information in accordance with this Privacy Policy.
+                </p>
+            </section>
 
-            <div class="container" indent="all" shape="rounded" id="iad">
-                <h4 class="md-typescale-headline-large">INTERPRETATION AND DEFINITIONS</h4>
-
-                <h5 class="md-typescale-headline-medium">Interpretations</h5>
-                <p class="md-typescale-body-large">
+            <section id="iad">
+                <h2>Interpretation and definitions</h2>
+                <h3>Interpretations</h3>
+                <p>
                     Words with capitalized initial letters have meanings defined under the following conditions. These
                     definitions apply whether the terms appear in singular or plural.
                 </p>
+                <h3>Definitions</h3>
+                <p>For the purposes of this Privacy Policy:</p>
+                <p><strong>Account</strong> means a unique account created for you to access our Service or parts of our Service.</p>
+                <p><strong>Affiliate</strong> means an entity that controls, is controlled by, or is under common control with a party.</p>
+                <p><strong>Application</strong> means the software program provided by the Company, named SFlightX.</p>
+                <p><strong>Company</strong> (referred to as either “the Company”, “We”, “Us” or “Our”) refers to SFlightX.</p>
+                <p><strong>Country</strong> refers to the Philippines.</p>
+                <p><strong>Device</strong> means any device that can access the Service such as a computer, cellphone, or digital tablet.</p>
+                <p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
+                <p><strong>Service</strong> refers to the Application.</p>
+                <p><strong>Service Provider</strong> means any person who processes data on behalf of the Company.</p>
+                <p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure.</p>
+                <p><strong>You</strong> means the individual accessing or using the Service, or the entity on whose behalf such individual is acting.</p>
+            </section>
 
-                <h5 class="md-typescale-headline-medium">Definitions</h5>
-                <h6 class="md-typescale-headline-small">For the purposes of this Privacy Policy:</h6>
-
-                <p class="md-typescale-body-large"><b>Account</b> means a unique account created for You to access our
-                    Service or parts of our Service.</p>
-                <p class="md-typescale-body-large"><b>Affiliate</b> means an entity that controls, is controlled by, or
-                    is under common control with a party.</p>
-                <p class="md-typescale-body-large"><b>Application</b> means the software program provided by the Company
-                    downloaded by You, named SFlightX.</p>
-                <p class="md-typescale-body-large"><b>Company</b> (referred to as either "the Company", "We", "Us" or
-                    "Our") refers to SFlightX.</p>
-                <p class="md-typescale-body-large"><b>Country</b> refers to the Philippines.</p>
-                <p class="md-typescale-body-large"><b>Device</b> means any device that can access the Service such as a
-                    computer, cellphone, or digital tablet.</p>
-                <p class="md-typescale-body-large"><b>Personal Data</b> is any information that relates to an identified
-                    or identifiable individual.</p>
-                <p class="md-typescale-body-large"><b>Service</b> refers to the Application.</p>
-                <p class="md-typescale-body-large"><b>Service Provider</b> means any person who processes data on behalf
-                    of the Company.</p>
-                <p class="md-typescale-body-large"><b>Usage Data</b> refers to data collected automatically, either
-                    generated by the use of the Service or from the Service infrastructure.</p>
-                <p class="md-typescale-body-large"><b>You</b> means the individual accessing or using the Service, or
-                    the entity on whose behalf such individual is acting.</p>
-            </div>
-
-            <div class="container" indent="all" shape="rounded" id="cod">
-                <h4 class="md-typescale-headline-large">COLLECTING AND USING YOUR PERSONAL DATA</h4>
-
-                <h5 class="md-typescale-headline-medium">Types of Data Collected</h5>
-
-                <h6 class="md-typescale-headline-small">Personal Data</h6>
-                <p class="md-typescale-body-large">
-                    While using Our Service, We may ask You to provide personally identifiable information, such
-                    as:<br><br>
-                    • Email Address<br>
-                    • Usage Data
-                </p>
-
-                <h6 class="md-typescale-headline-small">Usage Data</h6>
-                <p class="md-typescale-body-large">
-                    <b>Usage Data</b> is collected automatically when using the Service. This may include Your Device's
-                    IP address, browser type and version, pages visited, visit timestamps, time spent on pages, and
-                    diagnostic data. If You use a mobile device, We may collect mobile-specific information such as
+            <section id="cod">
+                <h2>Collecting and using your personal data</h2>
+                <h3>Types of data collected</h3>
+                <h4>Personal data</h4>
+                <p>While using our Service, we may ask you to provide personally identifiable information, such as:</p>
+                <ul>
+                    <li>Email address</li>
+                    <li>Usage data</li>
+                </ul>
+                <h4>Usage data</h4>
+                <p>
+                    <strong>Usage Data</strong> is collected automatically when using the Service. This may include your
+                    device’s IP address, browser type and version, pages visited, visit timestamps, time spent on pages,
+                    and diagnostic data. If you use a mobile device, we may collect mobile-specific information such as
                     device type, ID, IP address, OS, browser, and related identifiers.
                 </p>
-
-                <h5 class="md-typescale-headline-medium">Use of Your Personal Data</h5>
-                <h6 class="md-typescale-headline-small">The Company may use Personal Data for the following purposes:
-                </h6>
-
-                <p class="md-typescale-body-large"><b>To provide and maintain our Service,</b> including monitoring
-                    usage.</p>
-                <p class="md-typescale-body-large"><b>To manage Your Account:</b> enabling access to user
-                    functionalities.</p>
-                <p class="md-typescale-body-large"><b>For contract performance:</b> fulfilling purchases or agreements
-                    made through the Service.</p>
-                <p class="md-typescale-body-large"><b>To contact You:</b> via various communication methods, such as
-                    push notifications or email.</p>
-                <p class="md-typescale-body-large"><b>To provide You</b> with news, special offers, and updates about
-                    related products or services.</p>
-                <p class="md-typescale-body-large"><b>To manage requests:</b> handling Your inquiries or feedback.</p>
-                <p class="md-typescale-body-large"><b>For business transfers:</b> in scenarios like mergers or
-                    acquisitions.</p>
-                <p class="md-typescale-body-large"><b>For other purposes:</b> including analytics, performance
-                    evaluation, and service improvement.</p>
-
-                <h6 class="md-typescale-headline-small">We may share Your personal information in the following
-                    situations:</h6>
-                <p class="md-typescale-body-large"><b>With Service Providers:</b> to support our services and
-                    communications.</p>
-                <p class="md-typescale-body-large"><b>For business transfers:</b> in case of mergers, sales, or
-                    acquisitions.</p>
-                <p class="md-typescale-body-large"><b>With Affiliates:</b> who are required to honor this Privacy
-                    Policy.</p>
-                <p class="md-typescale-body-large"><b>With business partners:</b> to offer services or promotions.</p>
-                <p class="md-typescale-body-large"><b>With other users:</b> when You engage publicly within the
-                    platform.</p>
-                <p class="md-typescale-body-large"><b>With Your consent:</b> for any other purpose You authorize.</p>
-
-                <h5 class="md-typescale-headline-medium">Retention of Your Personal Data</h5>
-                <p class="md-typescale-body-large">
-                    The Company retains Your Personal Data only as long as necessary to fulfill the purposes outlined in
+                <h3>Use of your personal data</h3>
+                <p>The Company may use personal data for the following purposes:</p>
+                <p><strong>To provide and maintain our Service,</strong> including monitoring usage.</p>
+                <p><strong>To manage your account:</strong> enabling access to user functionalities.</p>
+                <p><strong>For contract performance:</strong> fulfilling purchases or agreements made through the Service.</p>
+                <p><strong>To contact you:</strong> via various communication methods, such as push notifications or email.</p>
+                <p><strong>To provide you</strong> with news, special offers, and updates about related products or services.</p>
+                <p><strong>To manage requests:</strong> handling your inquiries or feedback.</p>
+                <p><strong>For business transfers:</strong> in scenarios like mergers or acquisitions.</p>
+                <p><strong>For other purposes:</strong> including analytics, performance evaluation, and service improvement.</p>
+                <h4>We may share your personal information in the following situations:</h4>
+                <p><strong>With service providers:</strong> to support our services and communications.</p>
+                <p><strong>For business transfers:</strong> in case of mergers, sales, or acquisitions.</p>
+                <p><strong>With affiliates:</strong> who are required to honor this Privacy Policy.</p>
+                <p><strong>With business partners:</strong> to offer services or promotions.</p>
+                <p><strong>With other users:</strong> when you engage publicly within the platform.</p>
+                <p><strong>With your consent:</strong> for any other purpose you authorize.</p>
+                <h3>Retention of your personal data</h3>
+                <p>
+                    The Company retains your personal data only as long as necessary to fulfill the purposes outlined in
                     this Privacy Policy, comply with legal obligations, resolve disputes, and enforce agreements. Usage
-                    Data may be retained longer for analysis, security, or legal compliance.
+                    data may be retained longer for analysis, security, or legal compliance.
                 </p>
-
-                <h5 class="md-typescale-headline-medium">Transfer of Your Personal Data</h5>
-                <p class="md-typescale-body-large">
-                    Your data may be transferred to — and maintained on — computers outside of Your jurisdiction. We
+                <h3>Transfer of your personal data</h3>
+                <p>
+                    Your data may be transferred to — and maintained on — computers outside of your jurisdiction. We
                     ensure adequate protection of data transferred internationally and require secure handling in
                     accordance with this Privacy Policy.
                 </p>
-
-                <h5 class="md-typescale-headline-medium">Disclosure of Your Personal Data</h5>
-                <h6 class="md-typescale-headline-small">Business Transactions</h6>
-                <p class="md-typescale-body-large">
-                    If the Company is involved in a merger, acquisition, or asset sale, Your Personal Data may be
+                <h3>Disclosure of your personal data</h3>
+                <h4>Business transactions</h4>
+                <p>
+                    If the Company is involved in a merger, acquisition, or asset sale, your personal data may be
                     transferred. Notice will be provided before any such change takes effect.
                 </p>
-
-                <h6 class="md-typescale-headline-small">Law Enforcement</h6>
-                <p class="md-typescale-body-large">
-                    The Company may disclose Your Personal Data when required by law or in response to valid public
+                <h4>Law enforcement</h4>
+                <p>
+                    The Company may disclose your personal data when required by law or in response to valid public
                     authority requests (e.g., court or government agency).
                 </p>
-                <h5 class="md-typescale-headline-medium">Security</h5>
-                <p class="md-typescale-body-large">
+                <h3>Security</h3>
+                <p>
                     We implement industry-standard protections but cannot guarantee 100% security due to the nature of
                     the internet.
                 </p>
-                <h5 class="md-typescale-headline-medium">Your Data Protection Rights</h5>
-                <p class="md-typescale-body-large">
-                    Depending on your location you may have the following rights regarding your personal data: the right to access, correct or update, erase, restrict or object to processing, eligibility for data portability, and the right to withdraw consent at any time.
-                    To exercise these rights, please contact us at <a href="mailto:sflightx@gmail.com">sflightx@gmail.com</a> We will respond to your request as soon as possible.
+                <h3>Your data protection rights</h3>
+                <p>
+                    Depending on your location you may have the following rights regarding your personal data: the right
+                    to access, correct or update, erase, restrict or object to processing, eligibility for data
+                    portability, and the right to withdraw consent at any time. To exercise these rights, please contact
+                    us at <a href="mailto:sflightx@gmail.com">sflightx@gmail.com</a>. We will respond to your request as
+                    soon as possible.
                 </p>
-            </div>
-            <div class="container" indent="all" shape="rounded" id="cp">
-                <h4 class="md-typescale-headline-large">ADVERTISING AND THIRD-PARTY NETWORKS</h4>
-                <p class="md-typescale-body-large">
-                    Our Service displays advertisements provided by third-party ad networks (for example, Google AdMob, Meta Audience Network). These ad networks may use cookies, mobile advertising identifiers (such as Google Advertising ID or Apple IDFA), and similar technologies to serve personalized ads based on your device, usage or interests.
-                </p>
-                <p class="md-typescale-body-large">
-                    You have choices about whether you want to receive personalized ads. On Android you can go to the app's App Settings → Permissions → “Disable Personalized Ads”.
-                </p>
-                <p class="md-typescale-body-large">
-                    If you do not want personalized ads, we can show you non-personalized ads (ads based on general context, not your profile).
-                </p>
-                <p class="md-typescale-body-large">
-                    We are not responsible for the privacy practices of the ad networks; please review the privacy policies of the ad networks we work such as <a href="https://policies.google.com/privacy">Google on how they handle your data.</a>
-                </p>
+            </section>
 
-                <h5 class="md-typescale-headline-medium">Cookies and Tracking Technologies</h5>
-                <p class="md-typescale-body-large">
-                    We use cookies and similar tracking technologies (including mobile identifiers) to collect Usage Data and to display ads. You can manage cookies via your browser/device settings; and on mobile you can reset or disable your advertising identifier to limit interest-based advertising.
+            <section id="ads">
+                <h2>Advertising and third-party networks</h2>
+                <p>
+                    Our Service displays advertisements provided by third-party ad networks (for example, Google AdMob,
+                    Meta Audience Network). These ad networks may use cookies, mobile advertising identifiers (such as
+                    Google Advertising ID or Apple IDFA), and similar technologies to serve personalized ads based on
+                    your device, usage, or interests.
                 </p>
-            </div>
-            <div class="container" indent="all" shape="rounded" id="cp">
-                <h4 class="md-typescale-headline-large">CHILDREN'S PRIVACY</h4>
-                <p class="md-typescale-body-large">
-                    Our Service is not directed to children under 13. We do not knowingly collect personal data from children under that age without parental consent.
-                    If you are a parent or guardian and believe we have collected data from your child, please contact us and we will delete such data.
+                <p>
+                    You have choices about whether you want to receive personalized ads. On Android you can go to the
+                    app’s App Settings → Permissions → “Disable Personalized Ads”.
                 </p>
+                <p>
+                    If you do not want personalized ads, we can show you non-personalized ads (ads based on general
+                    context, not your profile).
+                </p>
+                <p>
+                    We are not responsible for the privacy practices of the ad networks; please review the privacy
+                    policies of the ad networks we work with, such as
+                    <a href="https://policies.google.com/privacy">Google’s privacy policy</a>.
+                </p>
+                <h3>Cookies and tracking technologies</h3>
+                <p>
+                    We use cookies and similar tracking technologies (including mobile identifiers) to collect usage
+                    data and to display ads. You can manage cookies via your browser/device settings; and on mobile you
+                    can reset or disable your advertising identifier to limit interest-based advertising.
+                </p>
+            </section>
 
-                <h5 class="md-typescale-headline-medium">Links to Other Sites</h5>
-                <p class="md-typescale-body-large">
+            <section id="children">
+                <h2>Children’s privacy</h2>
+                <p>
+                    Our Service is not directed to children under 13. We do not knowingly collect personal data from
+                    children under that age without parental consent. If you are a parent or guardian and believe we
+                    have collected data from your child, please contact us and we will delete such data.
+                </p>
+                <h3>Links to other sites</h3>
+                <p>
                     We may link to third-party sites. We are not responsible for their privacy practices and encourage
                     you to read their policies.
                 </p>
-            </div>
+            </section>
 
-            <div class="container" indent="all" shape="rounded" id="cttp">
-                <h4 class="md-typescale-headline-large">CHANGES TO THIS PRIVACY POLICY</h4>
-                <p class="md-typescale-body-large">
-                    We may update this Privacy Policy from time to time. If the changes are significant we will provide a prominent notice
-                    (e.g., via email or in-app notification) in addition to updating the “Last updated” date at the top of this page.
+            <section id="changes">
+                <h2>Changes to this privacy policy</h2>
+                <p>
+                    We may update this Privacy Policy from time to time. If the changes are significant we will provide
+                    a prominent notice (e.g., via email or in-app notification) in addition to updating the “Last
+                    updated” date at the top of this page.
                 </p>
-            </div>
-            <div class="container" indent="all" shape="rounded" id="contact">
-                <h4 class="md-typescale-headline-large">CONTACT US</h4>
-                <p class="md-typescale-body-large">
+            </section>
+
+            <section id="contact">
+                <h2>Contact us</h2>
+                <p>
                     If you have any questions, concerns, or feedback about this Privacy Policy or how we handle your
                     data, you may contact us through the following:
                 </p>
-                <ul class="md-typescale-body-large">
+                <ul>
                     <li>Email: <a href="mailto:sflightx@gmail.com">sflightx@gmail.com</a></li>
                     <li>Website: <a href="https://sflightx.com">https://sflightx.com</a></li>
                 </ul>
-            </div>
+            </section>
+        </article>
+
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
         </div>
     </main>
 
-    <SFlightX-footer></SFlightX-footer>
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

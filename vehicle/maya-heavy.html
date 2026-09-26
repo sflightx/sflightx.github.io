@@ -3,31 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.2">
+    <meta name="version" content="1.3">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="Maya Heavy is a two-stage three-core rocket that can lift 90t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the three first stage being capable of landing back on the launch pad.">
-    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png
-    " />
-    <meta property="og:url" content="sflightx.com/vehicle/maya-heavy" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maya Heavy is a two-stage three-core rocket that can lift 90t to Low Earth Orbit. Partially reusable with first stages capable of landing back on the pad.">
+    <meta name="keywords" content="SFlightX, Maya Heavy, Rocket, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com/vehicle/maya-heavy">
+    <meta property="og:title" content="Maya Heavy | SFlightX">
+    <meta property="og:description" content="Partially reusable heavy-lift rocket capable of transporting heavy cargo missions to space.">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description"
-        content="Maya Heavy is a two-stage three-core rocket that can lift 90t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the three first stage being capable of landing back on the launch pad." />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <title>SFlightX - Maya Heavy</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="Maya Heavy | SFlightX">
+    <meta name="twitter:description" content="Partially reusable heavy-lift rocket capable of transporting heavy cargo missions to space.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/image/sflightx_com/2qU30TJ.jpeg">
+
+    <title>Maya Heavy | SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script type="importmap">
     {
-        "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
-        }
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
     }
     </script>
     <script type="module">
@@ -35,69 +40,278 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
+
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
     <style>
-        #img {
-            height: 75vh;
-            background-image: url('https://sflightx.com/resources/v4/database/image/sflightx_com/2qU30TJ.jpeg');
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-page {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .header-page h1 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        header .logo,
+        header .header-actions {
+            flex-shrink: 0;
+        }
+
+        header .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 78vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 7.5rem 1.5rem 3.5rem;
+            color: #fff;
+            background-image:
+                linear-gradient(rgba(10, 13, 20, 0.35), rgba(10, 13, 20, 0.88)),
+                url('https://sflightx.com/resources/v4/database/image/sflightx_com/2qU30TJ.jpeg');
             background-size: cover;
             background-position: center;
         }
+
+        .hero-inner {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+            max-width: 40rem;
+        }
+
+        .kicker {
+            display: inline-flex;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(170, 199, 255, 0.35);
+            background: rgba(65, 95, 145, 0.28);
+            color: #c6d8ff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .hero-inner h2 {
+            margin: 0.85rem 0 0.75rem;
+            font-size: clamp(2.4rem, 7vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+        }
+
+        .hero-inner p {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.65;
+            color: rgba(226, 226, 233, 0.88);
+        }
+
+        .stats {
+            width: min(1100px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 2.75rem 0 3.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem 2rem;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            color: var(--md-sys-color-primary);
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 0.55rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        @media (max-width: 968px) {
+            .header-page h1 {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 6.5rem 1.15rem 2.75rem;
+            }
+
+            .stats {
+                width: calc(100% - 2.3rem);
+                grid-template-columns: 1fr 1fr;
+                gap: 1.75rem 1.25rem;
+                padding: 2.25rem 0 2.75rem;
+                text-align: center;
+            }
+        }
     </style>
-    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <div id="locItems" hidden></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
-    </header>
-    <main>
-        <div id="img" center>
-            <h5 class="md-typescale-headline-medium">Partially resuable heavy lift rocket capable of transporting heavy
-                cargo missions to
-                space.
-            </h5>
 
+        <div class="header-page">
+            <h1>Maya Heavy</h1>
         </div>
-        <div id="grid" stat>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">1</h1>
-                <h4 class="md-typescale-title-large">Total Launches</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">0</h1>
-                <h4 class="md-typescale-title-large">Total Recoveries</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">1</h1>
-                <h4 class="md-typescale-title-large">Total Payload</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">0</h1>
-                <h4 class="md-typescale-title-large">Total Landings</h4>
-            </div>
+
+        <div class="header-actions">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
-        <sflightx-footer></sflightx-footer>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <span class="kicker">Heavy lift</span>
+                <h2>Maya Heavy</h2>
+                <p>
+                    Partially reusable heavy-lift rocket capable of transporting heavy cargo missions to space.
+                    Three-core first stage, up to 90t to low Earth orbit.
+                </p>
+            </div>
+        </section>
+
+        <section class="stats" aria-label="Maya Heavy statistics">
+            <div class="stat">
+                <strong>1</strong>
+                <span>Total launches</span>
+            </div>
+            <div class="stat">
+                <strong>0</strong>
+                <span>Total recoveries</span>
+            </div>
+            <div class="stat">
+                <strong>1</strong>
+                <span>Total payload</span>
+            </div>
+            <div class="stat">
+                <strong>0</strong>
+                <span>Total landings</span>
+            </div>
+        </section>
+
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
     </main>
+
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

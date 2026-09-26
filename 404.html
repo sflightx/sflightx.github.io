@@ -3,29 +3,31 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.4">
+    <meta name="version" content="1.5">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Page not found. Return to SFlightX for JNO payloads to Droo, Earth, and beyond.">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
+    <meta name="robots" content="noindex">
     <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
-    <meta property="og:url" content="sflightx.com">
+    <meta property="og:url" content="https://sflightx.com">
+    <meta property="og:title" content="404 — SFlightX">
+    <meta property="og:description" content="This trajectory does not exist. Return to SFlightX.">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SFlightXJNO">
-    <meta name="twitter:title" content="sFlightX">
-    <meta name="twitter:description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="twitter:title" content="404 — SFlightX">
+    <meta name="twitter:description" content="This trajectory does not exist. Return to SFlightX.">
     <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
-    
-    <title>SFlightX</title>
+
+    <title>404 — SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <!-- Google Fonts & Material Symbols -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696" crossorigin="anonymous"></script>
 
@@ -42,17 +44,198 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <!-- Global & Page-Specific Stylesheets -->
     <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
 
     <style>
-        #error-container {
-            margin-top: 5rem;
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
         }
 
-        sflightx-footer {
-            display: block;
-            margin-top: 2rem;
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .error-hero {
+            position: relative;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            padding: 7.5rem 1.5rem 4rem;
+            color: var(--md-sys-color-on-surface);
+            background-image:
+                linear-gradient(rgba(10, 13, 20, 0.72), rgba(10, 13, 20, 0.88)),
+                url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .error-hero::before {
+            content: '';
+            position: absolute;
+            width: 42vw;
+            height: 42vw;
+            max-width: 520px;
+            max-height: 520px;
+            right: -6vw;
+            bottom: -8vw;
+            border-radius: 50%;
+            border: 1px solid rgba(170, 199, 255, 0.18);
+            box-shadow:
+                0 0 0 28px rgba(170, 199, 255, 0.04),
+                0 0 80px rgba(65, 95, 145, 0.25);
+            pointer-events: none;
+        }
+
+        .error-inner {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto 0 0;
+        }
+
+        .error-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 180, 171, 0.35);
+            background: rgba(186, 26, 26, 0.18);
+            color: #ffb4ab;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            width: max-content;
+        }
+
+        .error-kicker .pulse {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ffb4ab;
+            box-shadow: 0 0 10px #ffb4ab;
+            animation: pulse 1.6s ease-in-out infinite;
+        }
+
+        .error-code {
+            margin: 0.35rem 0 0.4rem;
+            font-size: clamp(5.5rem, 14vw, 9.5rem);
+            font-weight: 800;
+            letter-spacing: -0.06em;
+            line-height: 0.9;
+            background: linear-gradient(180deg, #ffffff 10%, var(--md-sys-color-primary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .error-title {
+            margin: 0 0 1rem;
+            font-size: clamp(1.6rem, 3vw, 2.4rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+
+        .error-copy {
+            max-width: 36rem;
+            margin: 0 0 1.75rem;
+            color: rgba(226, 226, 233, 0.82);
+            line-height: 1.65;
+            font-size: 1.05rem;
+        }
+
+        .error-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .error-footer-wrap {
+            margin-top: auto;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.35; transform: scale(0.7); }
+        }
+
+        @media (max-width: 968px) {
+            .error-hero {
+                padding: 6.5rem 1.15rem 2.5rem;
+                align-items: flex-start;
+            }
+
+            .error-hero::before {
+                width: 70vw;
+                height: 70vw;
+                right: -20vw;
+                bottom: auto;
+                top: 4rem;
+                opacity: 0.7;
+            }
+
+            .error-inner {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .error-code {
+                font-size: clamp(4.4rem, 28vw, 6.5rem);
+            }
+
+            .error-copy {
+                font-size: 0.98rem;
+            }
+
+            .error-actions {
+                width: 100%;
+            }
+
+            .error-actions md-filled-tonal-button,
+            .error-actions md-outlined-button {
+                flex: 1 1 auto;
+            }
         }
     </style>
 </head>
@@ -60,14 +243,15 @@
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    
+
+    <div id="locItems" hidden></div>
     <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
-    
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
@@ -75,37 +259,60 @@
                 <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <div style="display: flex; gap: 1rem;">
-            <!--
-            <md-outlined-button href="https://auth.sflightx.com" style="margin: 8px 0px;" class="md-typescale-title-small">Log In</md-outlined-button>
-            -->
-            <label>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
                 <span class="material-symbols-rounded">dark_mode</span>
                 <md-switch id="themeToggle"></md-switch>
             </label>
         </div>
     </header>
 
-    <main desktop-gap>
-        <div id="error-container">
-            <h1 class="md-typescale-headline-large">404 - Page Not Found</h1>
-            <p class="md-typescale-body-large">The page you are looking for does not exist or has been moved.</p>
-            <p class="md-typescale-body-large">Please check the URL or return to the <a href="https://sflightx.com" class="md-typescale-body-large">homepage</a>.</p>
-            <br>
-            <p class="md-typescale-body-large">Website is down? <a href="mailto:sflightx@gmail.com" class="md-typescale-body-large">Contact Us</a>.</p>
+    <main>
+        <section class="error-hero" aria-labelledby="error-title" >
+            <div class="error-inner" desktop-gap>
+                <span class="error-kicker"><span class="pulse" aria-hidden="true"></span> Off-nominal</span>
+                <p class="error-code" aria-hidden="true">404</p>
+                <h1 id="error-title" class="error-title">This trajectory does not exist</h1>
+                <p class="error-copy">
+                    The page you requested is not on any published flight path. It may have been moved, retired, or never launched. Check the URL, or return to a known pad.
+                </p>
+                <div class="error-actions">
+                    <md-filled-tonal-button href="https://sflightx.com">
+                        Homepage
+                    </md-filled-tonal-button>
+                    <md-outlined-button href="mailto:sflightx@gmail.com">
+                        Contact us
+                    </md-outlined-button>
+                </div>
+            </div>
+        </section>
+
+        <div class="error-footer-wrap" desktop-gap>
+            <sflightx-footer></sflightx-footer>
         </div>
-        <sflightx-footer></sflightx-footer>
     </main>
 
-    <!-- Dependencies & Scripts -->
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
     <script type="module">
         import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
         import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
     </script>
 
-    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 </body>

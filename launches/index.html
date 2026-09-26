@@ -3,75 +3,258 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="0.3">
+    <meta name="version" content="0.4">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-24-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description" content="Our next and recent launches.">
-    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <meta property="og:url" content="sflightx.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Upcoming and recent SFlightX launches for Juno: New Origins.">
+    <meta name="keywords" content="SFlightX, Launches, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com/launches">
+    <meta property="og:title" content="Launches | SFlightX">
+    <meta property="og:description" content="Upcoming and recent SFlightX launches for Juno: New Origins.">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description" content="Our next and recent launches." />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <title>SFlightX - Launches</title>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="Launches | SFlightX">
+    <meta name="twitter:description" content="Upcoming and recent SFlightX launches for Juno: New Origins.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <title>Launches | SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
     <script type="importmap">
-        {
-          "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
-          }
-        }
-      </script>
+    {
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/"
+      }
+    }
+    </script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 5.5rem;
+        }
+
+        .launches {
+            width: min(1100px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 0 0 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        #full-launch {
+            width: 100%;
+            min-height: 12rem;
+        }
+
+        #full-launch:empty::before {
+            content: 'Loading next launch…';
+            display: block;
+            color: var(--md-sys-color-on-surface-variant);
+            padding: 1rem 0;
+        }
+
+        /* getRecent.js: #scroll-grid > #grid.banner > .container */
+        #scroll-grid {
+            width: 100%;
+        }
+
+        #scroll-grid #grid,
+        #scroll-grid .banner {
+            display: grid !important;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+            width: 100%;
+            margin: 0;
+        }
+
+        #scroll-grid .container {
+            width: 100%;
+            max-width: none;
+            margin: 0 !important;
+            height: 100%;
+            border-radius: 1.25rem !important;
+            overflow: hidden !important;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+            transform: translateY(0);
+            transition:
+                transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+                border-color 0.28s ease;
+            will-change: transform;
+        }
+
+        #scroll-grid .container img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0 !important;
+            /* dependency.css rounds all imgs */
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        #scroll-grid .container:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+            border-color: color-mix(in srgb, var(--md-sys-color-primary) 35%, var(--md-sys-color-outline-variant));
+        }
+
+        #scroll-grid .container:hover img {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 968px) {
+            main {
+                padding-top: 5rem;
+            }
+
+            .launches {
+                width: calc(100% - 2.3rem);
+                gap: 1.35rem;
+            }
+
+            #scroll-grid #grid,
+            #scroll-grid .banner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #scroll-grid .container,
+            #scroll-grid .container img {
+                transition: none;
+            }
+
+            #scroll-grid .container:hover {
+                transform: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <div id="locItems" hidden></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
-    </header>
-    <main desktop-gap>
-        <div class="banner" id="full-launch">
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
-        <div id="scroll-grid" class="grid-container"></div>
-        <sflightx-footer></sflightx-footer>
+    </header>
+
+    <main>
+        <div class="launches">
+            <div class="banner" id="full-launch"></div>
+            <div id="scroll-grid" class="grid-container"></div>
+        </div>
+
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
     </main>
+
     <script type="module" src="https://sflightx.com/resources/v4/function/serviceAuth/initializeFirebase.js"></script>
     <script type="module" src="https://sflightx.com/resources/v4/function/manifest/getUpcoming.js"></script>
     <script type="module" src="https://sflightx.com/resources/v4/function/manifest/getRecent.js"></script>
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+    </script>
 </body>
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
 
 </html>

@@ -3,35 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.6">
+    <meta name="version" content="1.7">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
-    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/static/logo.png">
-    <meta property="og:url" content="sflightx.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SFlightX organizational chart — leadership and Discord moderators.">
+    <meta name="keywords" content="SFlightX, Team, Moderators, Spaceflight Simulator, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com">
+    <meta property="og:title" content="Organizational Chart | SFlightX">
+    <meta property="og:description" content="SFlightX organizational chart — leadership and Discord moderators.">
 
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@SFlightXJNO">
-    <meta name="twitter:title" content="sFlightX">
-    <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
-    <meta name="twitter:image" content="https://sflightx.com/resources/static/logo.png">
+    <meta name="twitter:title" content="Organizational Chart | SFlightX">
+    <meta name="twitter:description" content="SFlightX organizational chart — leadership and Discord moderators.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <title>SFlightX - Organizational Chart</title>
+    <title>Organizational Chart | SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <!-- Google Fonts & Material Symbols -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696"
-        crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696" crossorigin="anonymous"></script>
 
     <script type="importmap">
     {
@@ -46,116 +43,257 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <!-- Global & Page-Specific Stylesheets -->
     <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
 
     <style>
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-page {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .header-page h1 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        header .logo,
+        header .header-actions {
+            flex-shrink: 0;
+        }
+
+        header .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
         main {
-            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            padding-top: 5.5rem;
         }
 
-        .content-wrapper {
-            margin-top: 5rem;
-            padding: 0 1rem;
+        .org {
+            width: min(1100px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 1.5rem 0 3rem;
         }
 
-        /* Hero container for CEO (full width center) */
-        .ceo-section {
+        .kicker {
+            display: inline-flex;
+            padding: 0.35rem 0.8rem;
+            border-radius: 999px;
+            border: 1px solid color-mix(in srgb, var(--md-sys-color-primary) 40%, transparent);
+            background: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+            color: var(--md-sys-color-primary);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .section-label {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin: 2rem 0 1rem;
+        }
+
+        .section-label h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-label span {
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 0.9rem;
+        }
+
+        .ceo {
             display: flex;
             justify-content: center;
-            margin-bottom: 3rem;
+            margin-bottom: 0.5rem;
         }
 
-        .ceo-container {
-            width: 100%;
-            max-width: 600px;
+        .person {
+            display: flex;
+            align-items: center;
+            gap: 1.15rem;
+            padding: 1.2rem 1.25rem;
+            border-radius: 1.25rem;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+            box-sizing: border-box;
+            min-height: 100px;
+            transition:
+                transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+                box-shadow 0.25s ease,
+                border-color 0.25s ease;
         }
 
-        /* Responsive Grid for Moderators and Teams */
-        .grid-container {
+        .person:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.24);
+            border-color: color-mix(in srgb, var(--md-sys-color-primary) 35%, var(--md-sys-color-outline-variant));
+        }
+
+        .person--ceo {
+            width: min(100%, 420px);
+            padding: 1.4rem 1.5rem;
+        }
+
+        .person img {
+            width: 72px;
+            height: 72px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--md-sys-color-primary);
+            flex-shrink: 0;
+            background: var(--md-sys-color-surface-variant);
+        }
+
+        .person--ceo img {
+            width: 88px;
+            height: 88px;
+        }
+
+        .person-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .person-info h3 {
+            margin: 0 0 0.15rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+            overflow-wrap: anywhere;
+        }
+
+        .person--ceo .person-info h3 {
+            font-size: 1.35rem;
+        }
+
+        .person-info .handle {
+            margin: 0 0 0.25rem;
+            color: var(--md-sys-color-primary);
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .person-info .role {
+            margin: 0;
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 0.9rem;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
+            gap: 1.15rem;
         }
 
-        @media (min-width: 768px) {
-            .grid-container {
+        @media (min-width: 720px) {
+            .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
-            .grid-container {
+            .grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        /* Card Component Styling */
-        .container {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.25rem;
-            background-color: var(--md-sys-color-surface-container-low, rgba(255, 255, 255, 0.03));
-            border: 1px solid var(--md-sys-color-outline-variant, rgba(255, 255, 255, 0.08));
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            height: auto; /* Fixed unexpected layout height elongation */
-            min-height: 100px;
-            box-sizing: border-box;
+        @media (max-width: 968px) {
+            main {
+                padding-top: 5rem;
+            }
+
+            .header-page h1 {
+                font-size: 0.92rem;
+            }
+
+            .org {
+                width: calc(100% - 2.2rem);
+                padding: 1rem 0 2.5rem;
+            }
+
+            .person {
+                padding: 1.05rem 1.1rem;
+            }
         }
 
-        .container img {
-            height: 30vh;
-            max-width: 30vh;
-        }
+        @media (prefers-reduced-motion: reduce) {
+            .person {
+                transition: none;
+            }
 
-        .container:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-        }
-
-        [shape="rounded"] {
-            border-radius: 16px;
-        }
-
-        .profile {
-            width: 72px;
-            height: 72px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--md-sys-color-primary, #6750A4);
-            flex-shrink: 0;
-            background-color: #333;
-        }
-
-        .profile-info {
-            flex: 1;
-            min-width: 0; /* Ensures flex child allows text wrapping nicely */
-        }
-
-        .profile-info h2 {
-            margin: 0 0 0.2rem 0;
-            word-break: break-word;
-        }
-
-        .profile-info p {
-            margin: 0;
-        }
-
-        h1.page-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .section-header {
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        sflightx-footer {
-            display: block;
-            margin-top: 4rem;
+            .person:hover {
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -163,102 +301,123 @@
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    
+
+    <div id="locItems" hidden></div>
     <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
-    
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img id="logo" src="https://sflightx.com/resources/static/logo.png" alt="sFlightX Logo">
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <label>
-            <span class="material-symbols-rounded">dark_mode</span>
-            <md-switch id="themeToggle"></md-switch>
-        </label>
+
+        <div class="header-page">
+            <h1>Organizational Chart</h1>
+        </div>
+
+        <div class="header-actions">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
+        </div>
     </header>
 
-    <main desktop-gap>
-        <div class="content-wrapper">
-            <h1 class="md-typescale-display-large page-title">SFlightX Organizational Chart</h1>
-
-            <!-- CEO Section -->
-            <div class="ceo-section">
-                <div class="container ceo-container" shape="rounded">
+    <main>
+        <div class="org">
+            <div class="ceo">
+                <article class="person person--ceo">
                     <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/teams/starglenn.jpg"
-                        alt="Edrick's Profile" class="profile"
-                        onerror="this.src='https://placehold.co/72x72/222/fff?text=CEO'">
-                    <div class="profile-info">
-                        <h2 class="md-typescale-headline-medium">Edrick</h2>
-                        <p class="md-typescale-title-small">@starglenn_</p>
-                        <p class="md-typescale-body-medium" style="opacity: 0.8;">CEO, SFlightX</p>
+                        alt="Edrick"
+                        onerror="this.src='https://placehold.co/88x88/222/fff?text=CEO'">
+                    <div class="person-info">
+                        <span class="kicker">Leadership</span>
+                        <h3>Edrick</h3>
+                        <p class="handle">@starglenn_</p>
+                        <p class="role">CEO, SFlightX</p>
                     </div>
-                </div>
+                </article>
             </div>
 
-            <!-- Moderators Section Header -->
-            <h4 class="md-typescale-display-small section-header">Moderators</h4>
-            <h6 class="md-typescale-headline-medium section-header" style="margin-top: 1.5rem;">Discord</h6>
+            <div class="section-label">
+                <h2>Moderators</h2>
+                <span>Discord</span>
+            </div>
 
-            <!-- Responsive Grid for Moderators -->
-            <div class="grid-container">
-                <div class="container" shape="rounded">
-                    <img src="https://sflightx.com/resources/static/logo.png" alt="Mafia's Profile" class="profile"
+            <div class="grid">
+                <article class="person">
+                    <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="Mafia"
                         onerror="this.src='https://placehold.co/72x72/222/fff?text=M'">
-                    <div class="profile-info">
-                        <h2 class="md-typescale-headline-small">Mafia</h2>
-                        <p class="md-typescale-title-small">@spacemafia24</p>
-                        <p class="md-typescale-body-small" style="opacity: 0.8;">Discord Moderator</p>
+                    <div class="person-info">
+                        <h3>Mafia</h3>
+                        <p class="handle">@spacemafia24</p>
+                        <p class="role">Discord moderator</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="container" shape="rounded">
-                    <img src="https://i.imgur.com/dDvxUJX.jpeg" alt="LeComrad1917's Profile" class="profile"
+                <article class="person">
+                    <img src="https://i.imgur.com/dDvxUJX.jpeg" alt="LeComrad1917"
                         onerror="this.src='https://placehold.co/72x72/222/fff?text=LC'">
-                    <div class="profile-info">
-                        <h2 class="md-typescale-headline-small">LeComrad1917</h2>
-                        <p class="md-typescale-title-small">@lecomrad1917</p>
-                        <p class="md-typescale-body-small" style="opacity: 0.8;">Discord Server</p>
+                    <div class="person-info">
+                        <h3>LeComrad1917</h3>
+                        <p class="handle">@lecomrad1917</p>
+                        <p class="role">Discord server</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="container" shape="rounded">
-                    <img src="https://sflightx.com/resources/static/logo.png" alt="Stone's Profile" class="profile"
+                <article class="person">
+                    <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="Stone"
                         onerror="this.src='https://placehold.co/72x72/222/fff?text=S'">
-                    <div class="profile-info">
-                        <h2 class="md-typescale-headline-small">Stone</h2>
-                        <p class="md-typescale-title-small">stone8502</p>
-                        <p class="md-typescale-body-small" style="opacity: 0.8;">Discord Server</p>
+                    <div class="person-info">
+                        <h3>Stone</h3>
+                        <p class="handle">stone8502</p>
+                        <p class="role">Discord server</p>
                     </div>
-                </div>
+                </article>
 
-                <div class="container" shape="rounded">
-                    <img src="https://sflightx.com/resources/static/logo.png" alt="StarJNO's Profile" class="profile"
-                        onerror="this.src='https://placehold.co/72x72/222/fff?text=D'">
-                    <div class="profile-info">
-                        <h2 class="md-typescale-headline-small" style="font-size: 1.05rem;">デストロイヤー 元SFSプレイヤー</h2>
-                        <p class="md-typescale-title-small">starjnomro7288</p>
-                        <p class="md-typescale-body-small" style="opacity: 0.8;">Discord Server</p>
+                <article class="person">
+                    <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="StarJNO"
+                        onerror="this.src='https://placehold.co/72x72/222/fff?text=SJ'">
+                    <div class="person-info">
+                        <h3>デストロイヤー 元SFSプレイヤー</h3>
+                        <p class="handle">starjnomro7288</p>
+                        <p class="role">Discord server</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
 
-        <sflightx-footer></sflightx-footer>
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
     </main>
 
-    <!-- Dependencies & Scripts -->
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
     <script type="module">
         import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
         import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
     </script>
 </body>
 

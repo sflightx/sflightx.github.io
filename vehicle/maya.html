@@ -3,30 +3,37 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.2">
+    <meta name="version" content="1.3">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="Maya is a two-stage rocket that can lift 30t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the first stage being capable of landing back on the launch pad.">
-    <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <meta property="og:url" content="sflightx.com/vehicle/maya" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maya is a two-stage rocket that can lift 30t to Low Earth Orbit. Partially reusable with a first stage that can land back on the pad.">
+    <meta name="keywords" content="SFlightX, Maya, Rocket, Juno: New Origins">
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/image/sflightx_com/vehicle/maya-block-7.png">
+    <meta property="og:url" content="https://sflightx.com/vehicle/maya">
+    <meta property="og:title" content="Maya | SFlightX">
+    <meta property="og:description" content="Partially reusable medium-lift rocket, virtually made in the Philippines.">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description"
-        content="Maya is a two-stage rocket that can lift 30t to Low Earth Orbit. It is designed to be a partially reusable rocket, with the first stage being capable of landing back on the launch pad." />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <title>SFlightX</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="Maya | SFlightX">
+    <meta name="twitter:description" content="Partially reusable medium-lift rocket, virtually made in the Philippines.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/image/sflightx_com/vehicle/maya-block-7.png">
+
+    <title>Maya | SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script type="importmap">
     {
-        "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
-        }
+      "imports": {
+        "@material/web/": "https://esm.run/@material/web/",
+        "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
+      }
     }
     </script>
     <script type="module">
@@ -34,168 +41,498 @@
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
+
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
     <style>
-        #img {
-            height: 50vh;
-            background-image: url('https://sflightx.com/resources/v4/database/image/sflightx_com/vehicle/maya-block-7.png');
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .header-page {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
+        }
+
+        .header-page h1 {
+            margin: 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        header .logo,
+        header .header-actions {
+            flex-shrink: 0;
+        }
+
+        header .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 72vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 7.5rem 1.5rem 3.25rem;
+            color: #fff;
+            background-image:
+                linear-gradient(rgba(10, 13, 20, 0.4), rgba(10, 13, 20, 0.88)),
+                url('https://sflightx.com/resources/v4/database/image/sflightx_com/vehicle/maya-block-7.png');
             background-size: cover;
             background-position: center;
         }
+
+        .hero-inner {
+            width: min(1100px, 100%);
+            margin: 0 auto;
+            max-width: 40rem;
+        }
+
+        .kicker {
+            display: inline-flex;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(170, 199, 255, 0.35);
+            background: rgba(65, 95, 145, 0.28);
+            color: #c6d8ff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .hero-inner h2 {
+            margin: 0.85rem 0 0.75rem;
+            font-size: clamp(2.4rem, 7vw, 4.2rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 0.95;
+        }
+
+        .hero-inner p {
+            margin: 0;
+            font-size: 1.08rem;
+            line-height: 1.65;
+            color: rgba(226, 226, 233, 0.88);
+        }
+
+        .stats {
+            width: min(1100px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 2.5rem 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem 2rem;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: clamp(2.4rem, 4vw, 3.4rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1;
+            color: var(--md-sys-color-primary);
+        }
+
+        .stat span {
+            display: block;
+            margin-top: 0.55rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .viewer-section {
+            position: relative;
+            width: min(1100px, calc(100% - 2.5rem));
+            margin: 0.5rem auto 2.5rem;
+            height: 70vh;
+            min-height: 420px;
+            border-radius: 1.35rem;
+            overflow: hidden;
+            border: 1px solid var(--md-sys-color-outline-variant);
+            background: #1c1d24;
+        }
+
+        #modelViewer {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .viewer-card {
+            position: relative;
+            z-index: 1;
+            max-width: 320px;
+            margin: 1.5rem;
+            padding: 1.35rem 1.4rem 1.45rem;
+            border-radius: 1.15rem;
+            background: color-mix(in srgb, var(--md-sys-color-surface) 88%, transparent);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        .viewer-card h3 {
+            margin: 0 0 0.6rem;
+            font-size: 1.35rem;
+            font-weight: 750;
+            letter-spacing: -0.02em;
+        }
+
+        .viewer-card p {
+            margin: 0 0 1.1rem;
+            line-height: 1.6;
+            color: var(--md-sys-color-on-surface-variant);
+            font-size: 0.98rem;
+        }
+
+        .content {
+            width: min(800px, calc(100% - 2.5rem));
+            margin: 0 auto 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .panel {
+            border-radius: 1.25rem;
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+            overflow: hidden;
+        }
+
+        .panel-title {
+            margin: 0;
+            padding: 1.25rem 1.35rem 0.35rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .panel md-list {
+            --md-list-container-color: transparent;
+            --md-list-item-container-color: transparent;
+            --md-list-item-trailing-supporting-text-color: var(--md-sys-color-primary);
+            width: 100%;
+            background: transparent;
+        }
+
+        .panel md-list-item [slot="trailing-supporting-text"] {
+            font-variant-numeric: tabular-nums;
+            font-weight: 650;
+            white-space: nowrap;
+        }
+
+        .spec-group {
+            padding: 0.35rem 0 0.15rem;
+        }
+
+        .spec-group-label {
+            margin: 0;
+            padding: 0.85rem 1.35rem 0.25rem;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--md-sys-color-primary);
+        }
+
+        .showcase {
+            padding: 1.25rem 1.25rem 1.35rem;
+        }
+
+        .showcase h3 {
+            margin: 0 0 1rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .showcase iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border: 0;
+            border-radius: 1rem;
+            display: block;
+            background: #000;
+        }
+
+        @media (max-width: 968px) {
+            .header-page h1 {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                min-height: 100svh;
+                padding: 6.5rem 1.15rem 2.5rem;
+            }
+
+            .stats {
+                width: calc(100% - 2.3rem);
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem 1.15rem;
+                text-align: center;
+            }
+
+            .viewer-section {
+                width: calc(100% - 2.3rem);
+                height: 52svh;
+                min-height: 340px;
+                border-radius: 1.1rem;
+            }
+
+            .viewer-card {
+                margin: 1rem;
+                max-width: calc(100% - 2rem);
+                padding: 1.1rem 1.1rem 1.2rem;
+            }
+
+            .content {
+                width: calc(100% - 2.3rem);
+            }
+        }
     </style>
-    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
 </head>
 
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <div id="locItems" hidden></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
+
+        <div class="header-page">
+            <h1>Maya</h1>
+        </div>
+
+        <div class="header-actions">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
+        </div>
     </header>
+
     <main>
-        <div id="img" indent="all">
-            <div desktop-gap>
-                <h5 class="md-typescale-headline-medium">Partially reusable medium-lift
-                    rocket<br>virtually made in the Philippines.</h5>
+        <section class="hero">
+            <div class="hero-inner">
+                <span class="kicker">Medium lift</span>
+                <h2>Maya</h2>
+                <p>
+                    Partially reusable medium-lift rocket, virtually made in the Philippines.
+                    Two stages, first stage recoverable — up to about 30t to low Earth orbit.
+                </p>
             </div>
-        </div>
-        <div id="grid" stat>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">17</h1>
-                <h4 class="md-typescale-title-large">Total Launches</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">1</h1>
-                <h4 class="md-typescale-title-large">Total Recoveries</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">14</h1>
-                <h4 class="md-typescale-title-large">Total Payload</h4>
-            </div>
-            <div class="container" indent="all" transparent center>
-                <h1 class="md-typescale-display-large">2</h1>
-                <h4 class="md-typescale-title-large">Total Landings</h4>
-            </div>
-        </div>
+        </section>
 
-        <!-- 3D Model Viewer with overlayed text on the left -->
-        <div style="position: relative; width: 100%; height: 75vh; margin-bottom: 2rem;">
-            <div id="modelViewer" style="width: 100%; height: 100%; position: absolute; inset: 0; z-index: 0;"></div>
-            <div class="container" semi indent="all"
-                style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
-                <div class="container" id="static" transparent
-                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 320px; min-width: 240px;">
-                    <h4 class="md-typescale-headline-large">Maya Block 7</h4>
-                    <p class="md-typescale-body-large">Maya Block 7 is our company's flagship rocket. Featuring enormous
-                        upgrades from Block 1 to Block 5, this version is the most ambitious yet in terms of rapid reuse
-                        and reliability.</p>
-                    <div style="display: flex; justify-content: flex-start;">
-                        <md-filled-tonal-button href="https://sflightx.com/missions?id=rtf-mission-one">
-                            <h4>Learn More</h4>
-                        </md-filled-tonal-button>
-                    </div>
+        <section class="stats" aria-label="Maya statistics">
+            <div class="stat">
+                <strong>17</strong>
+                <span>Total launches</span>
+            </div>
+            <div class="stat">
+                <strong>1</strong>
+                <span>Total recoveries</span>
+            </div>
+            <div class="stat">
+                <strong>14</strong>
+                <span>Total payload</span>
+            </div>
+            <div class="stat">
+                <strong>2</strong>
+                <span>Total landings</span>
+            </div>
+        </section>
+
+        <section class="viewer-section" aria-label="Maya 3D model">
+            <div id="modelViewer"></div>
+            <div class="viewer-card">
+                <h3>Maya Block 7</h3>
+                <p>
+                    Flagship vehicle with upgrades from Block 1 through Block 5 — built for rapid reuse and reliability.
+                </p>
+                <md-filled-tonal-button href="https://sflightx.com/missions?id=rtf-mission-one">
+                    Learn more
+                </md-filled-tonal-button>
+            </div>
+        </section>
+
+        <div class="content">
+            <section class="panel">
+                <h3 class="panel-title">Specifications</h3>
+
+                <div class="spec-group">
+                    <p class="spec-group-label">Vehicle</p>
+                    <md-list>
+                        <md-list-item>
+                            <div slot="headline">Height</div>
+                            <div slot="trailing-supporting-text">110 m / 360.9 ft</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Diameter</div>
+                            <div slot="trailing-supporting-text">5 m / 16.4 ft</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Dry mass</div>
+                            <div slot="trailing-supporting-text">210,000 kg / 480,000 lbs</div>
+                        </md-list-item>
+                    </md-list>
                 </div>
-            </div>
-        </div>
 
-        <div class="container" transparent indent="all" style="width: 100%;">
-            <md-list style="width: 100%;"><br><br>
-                <md-header>Specifications</md-header>
-                <md-list-item>
-                    <div slot="headline">Height</div>
-                    <div slot="trailing-supporting-text">110 m / 360.9 ft</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Diameter</div>
-                    <div slot="trailing-supporting-text">5 m / 16.4 ft</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Dry Mass</div>
-                    <div slot="trailing-supporting-text">210,000 kg / 480,000 lbs</div>
-                </md-list-item><br><br>
+                <div class="spec-group">
+                    <p class="spec-group-label">Payload capacity</p>
+                    <md-list>
+                        <md-list-item>
+                            <div slot="headline">Low Droo Orbit</div>
+                            <div slot="trailing-supporting-text">25,500 kg / 56,200 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">GTO (Droo)</div>
+                            <div slot="trailing-supporting-text">9,750 kg / 21,500 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Luna</div>
+                            <div slot="trailing-supporting-text">6,000 kg / 13,200 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Cylero</div>
+                            <div slot="trailing-supporting-text">4,500 kg / 9,920 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Low Earth Orbit</div>
+                            <div slot="trailing-supporting-text">15,000 kg / 33,070 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Geosynchronous Transfer Orbit</div>
+                            <div slot="trailing-supporting-text">5,000 kg / 11,000 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">the Moon</div>
+                            <div slot="trailing-supporting-text">4,000 kg / 8,800 lbs</div>
+                        </md-list-item>
+                        <md-list-item>
+                            <div slot="headline">Mars</div>
+                            <div slot="trailing-supporting-text">2,500 kg / 5,500 lbs</div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </section>
 
-                <md-header>Payload Capacities</md-header>
-                <md-list-item>
-                    <div slot="headline">Low Droo Orbit</div>
-                    <div slot="trailing-supporting-text">25,500 kg / 56,200 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Geosynchronous Transfer Orbit (Droo)</div>
-                    <div slot="trailing-supporting-text">9,750 kg / 21,500 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Luna</div>
-                    <div slot="trailing-supporting-text">6,000 kg / 13,200 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Cylero</div>
-                    <div slot="trailing-supporting-text">4,500 kg / 9,920 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Low Earth Orbit</div>
-                    <div slot="trailing-supporting-text">15,000 kg / 33,070 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Geosynchronous Transfer Orbit</div>
-                    <div slot="trailing-supporting-text">5,000 kg / 11,000 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">the Moon</div>
-                    <div slot="trailing-supporting-text">4,000 kg / 8,800 lbs</div>
-                </md-list-item>
-                <md-divider></md-divider>
-                <md-list-item>
-                    <div slot="headline">Mars</div>
-                    <div slot="trailing-supporting-text">2,500 kg / 5,500 lbs</div>
-                </md-list-item>
-            </md-list>
-        </div>
-
-        <div class="container" transparent indent="all">
-            <h3 class="md-typescale-display-small">Maya Showcase</h3>
-            <div style="width: 100%;">
-                <iframe src="https://www.youtube.com/embed/iX08QiihNwc?si=1UDGrDSDe8KSJFga" title="YouTube video player"
-                    frameborder="0"
+            <section class="panel showcase">
+                <h3>Maya showcase</h3>
+                <iframe
+                    src="https://www.youtube.com/embed/iX08QiihNwc?si=1UDGrDSDe8KSJFga"
+                    title="Maya showcase"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="false"
-                    style="width: 100%; aspect-ratio: 16/9; border-radius: 24px;"></iframe>
-            </div>
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </section>
         </div>
-        <sflightx-footer></sflightx-footer>
+
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
     </main>
+
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-       
     <script type="module">
         import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
         import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
-            }
+
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
         }
-        </script>
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+    </script>
     <script type="module" src="https://sflightx.com/resources/v4/element/3d/import.js"></script>
 </body>
 

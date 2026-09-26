@@ -7,8 +7,7 @@
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
     <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
     <meta property="og:url" content="https://sflightx.com">
@@ -16,28 +15,42 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@SFlightXJNO">
     <meta name="twitter:title" content="SFlightX">
-    <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="twitter:description" content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
     <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
 
     <title>SFlightX</title>
 
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
 
-    <!-- Google Fonts & Material Symbols -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696"
-        crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            corePlugins: {
+                preflight: false
+            },
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3847112193670696" crossorigin="anonymous"></script>
 
     <script type="importmap">
     {
       "imports": {
-        "@material/web/": "https://esm.run/@material/web/"
+        "@material/web/": "https://esm.run/@material/web/",
+        "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
       }
     }
     </script>
@@ -47,29 +60,101 @@
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
 
-    <!-- Global & Page-Specific Stylesheets -->
     <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css" />
 
-    <!-- Hero Background Image Styling Integration -->
     <style>
-        .hero-container::before {
-            background: color-mix(in srgb, var(--md-sys-color-surface) 25%, transparent);
-            content: '';
-            position: absolute;
+        body {
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        /* Production side-sheet: slide via left, not Tailwind translate */
+        #side-sheet {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 320px;
+            max-width: 88vw;
+            height: 100%;
+            background: #111827;
+            border-right: 1px solid var(--border-glass);
+            z-index: 50;
+            transform: none;
+            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+        }
+
+        #side-sheet.open {
+            left: 0;
+        }
+
+        #side-sheet-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        #navItems {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+            --md-list-item-hover-state-layer-color: #ffffff;
+        }
+
+        #backdrop {
+            position: fixed;
             inset: 0;
-            z-index: 1;
+            z-index: 40;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            transition: opacity 0.3s ease;
+        }
+
+        #backdrop.hidden {
+            display: none;
         }
 
         .hero-container {
-            background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
             position: relative;
-            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75)), url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
             padding: 7rem 2rem 4rem 2rem;
         }
 
@@ -94,37 +179,12 @@
             gap: 1.5rem;
         }
 
-        .hero-left img {
-            max-height: 50px;
-            width: auto;
-        }
-
         .hero-right {
-            flex: 0 0 70%;
+            flex: 0 0 30%;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
             width: 100%;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            width: 100%;
-            height: 440px;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            border: 1px solid var(--border-glass);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-            background-image: url('https://sflightx.com/resources/v4/database/image/planet/droo_ta.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .hero-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(10, 13, 20, 0.1) 0%, rgba(10, 13, 20, 0.7) 100%);
         }
 
         .hero-nav-buttons {
@@ -133,55 +193,57 @@
             flex-wrap: wrap;
         }
 
-        .hero-nav-buttons md-filled-tonal-button,
-        .hero-nav-buttons md-outlined-button {
-            --md-sys-color-surface: var(--surface-glass);
-        }
-
-        /* --- 3D Viewer & Split Sections --- */
         .viewer-section {
             position: relative;
             width: 100%;
             height: 85vh;
+            min-height: 620px;
             background: #0d121c;
             overflow: hidden;
-            border-bottom: 1px solid var(--border-glass);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         #modelViewer {
-            width: 100%;
-            height: 100%;
             position: absolute;
             inset: 0;
+            width: 100%;
+            height: 100%;
             z-index: 0;
         }
 
-        .viewer-overlay-box {
+        .viewer-overlay {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             height: 100%;
+            width: min(42%, 460px);
             display: flex;
             align-items: center;
-            padding-left: 5%;
+            padding: 2.5rem 1.5rem 2.5rem 5%;
             pointer-events: none;
         }
 
-        .floating-info-card {
+        .viewer-info-card {
             pointer-events: auto;
-            background: var(--surface-glass) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-glass) !important;
-            border-radius: 1.5rem !important;
-            padding: 2.5rem !important;
-            max-width: 380px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
         }
 
-        /* --- Feature / Mission Banners Layout --- */
+        .viewer-section::after {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 42%;
+            background: linear-gradient(to right, #0d121c 18%, rgba(13, 18, 28, 0.55) 55%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
         .content-showcase {
             max-width: 1200px;
             margin: 6rem auto;
@@ -206,8 +268,8 @@
             object-fit: cover;
             border-radius: 1.5rem;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border: 1px solid var(--border-glass);
-            transition: var(--transition-smooth);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
         }
 
         .banner-img:hover {
@@ -215,8 +277,8 @@
         }
 
         .showcase-text-card {
-            background: var(--surface-glass);
-            border: 1px solid var(--border-glass);
+            background: rgba(15, 23, 42, 0.75);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(16px);
             border-radius: 1.5rem;
             padding: 2.5rem;
@@ -229,10 +291,16 @@
         }
 
         @media (max-width: 968px) {
+            .hero-container {
+                min-height: 100svh;
+                padding: 6rem 1.25rem 3rem;
+            }
+
             .hero-content {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
+                gap: 1.5rem;
             }
 
             .hero-left,
@@ -243,69 +311,106 @@
                 text-align: center;
             }
 
-            .hero-image-wrapper {
-                height: 280px;
-            }
-
             .hero-nav-buttons {
                 justify-content: center;
+                width: 100%;
+            }
+
+            .viewer-section {
+                height: auto;
+                min-height: 0;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .viewer-section::after {
+                display: none;
+            }
+
+            #modelViewer {
+                position: relative;
+                inset: auto;
+                width: 100%;
+                height: 52svh;
+                min-height: 280px;
+                max-height: 420px;
+            }
+
+            .viewer-overlay {
+                width: 100%;
+                height: auto;
+                max-width: none;
+                padding: 1rem 1.25rem 1.75rem;
+                align-items: stretch;
+            }
+
+            .viewer-info-card {
+                padding: 1.35rem 1.25rem 1.5rem;
+                border-radius: 1.25rem;
             }
 
             .content-showcase,
             .content-showcase:nth-child(even) {
                 grid-template-columns: 1fr;
                 direction: ltr;
-                gap: 2rem;
+                gap: 1.5rem;
+                margin: 3rem auto;
+                width: 92%;
             }
 
-            .viewer-overlay-box {
-                padding-left: 0;
-                justify-content: center;
-                align-items: flex-end;
-                padding-bottom: 2rem;
+            .banner-img {
+                height: 220px;
+                border-radius: 1.15rem;
+            }
+
+            .showcase-text-card {
+                padding: 1.5rem;
+                height: auto;
             }
         }
     </style>
 </head>
 
-<body>
-    <!-- Side Sheet Navigation Panel -->
+<body class="bg-slate-50 dark:bg-slate-950 min-h-screen flex flex-col transition-colors duration-300">
+
+    <!-- Production side sheet (opened by #side-sheet.open, not Tailwind translate) -->
     <div id="side-sheet">
         <div id="side-sheet-header">
             <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
-        <nav id="navItems" style="padding: 1rem; display: flex; flex-direction: column; gap: 0.5rem;"></nav>
+        <nav id="navItems"></nav>
     </div>
 
-    <!-- Backdrop Overlay -->
-    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+    <!-- Required by nav-loader.js (it clones the list here) -->
+    <div id="locItems" hidden></div>
 
-    <!-- Header Navbar -->
-    <header>
-        <div class="logo">
-            <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
-            <a href="https://sflightx.com">
-                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+    <div id="backdrop" class="hidden" onclick="toggleSideSheet()"></div>
+
+    <header class="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3 sm:gap-4 logo">
+            <span class="material-symbols-rounded cursor-pointer hover:text-blue-500 transition-colors text-2xl" onclick="toggleSideSheet()" id="menu">menu</span>
+            <a href="https://sflightx.com" class="flex items-center gap-2">
+                <img src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" class="h-8 w-8 object-contain" />
+                <span class="font-bold text-lg tracking-tight hidden sm:inline">SFlightX</span>
             </a>
         </div>
-        <div style="display: flex; gap: 1rem; align-items: center;">
-            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-                <span class="material-symbols-rounded" style="color: #9ca3af;">dark_mode</span>
+        <div class="flex items-center gap-4">
+            <label class="flex items-center gap-2 cursor-pointer bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700">
+                <span class="material-symbols-rounded text-lg text-amber-500 dark:text-amber-400">dark_mode</span>
                 <md-switch id="themeToggle"></md-switch>
             </label>
         </div>
     </header>
 
-    <main>
-        <!-- Hero Section with Background Image -->
+    <main class="flex-1 flex flex-col">
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-left">
-                    <h1 class="md-typescale-display-large">
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight drop-shadow-md">
                         SFlightX launches advanced technologies from Earth to Space
                     </h1>
-                    <div class="hero-nav-buttons">
+                    <div class="hero-nav-buttons pt-4">
                         <md-filled-tonal-button href="https://sflightx.com/launches">
                             Launches
                         </md-filled-tonal-button>
@@ -317,120 +422,221 @@
                         </md-filled-tonal-button>
                     </div>
                 </div>
-                <div class="hero-right">
-
-                </div>
+                <div class="hero-right"></div>
             </div>
         </div>
 
-        <!-- 3D Model Viewer Showcase Section -->
         <div class="viewer-section">
-            <div id="modelViewer" style="width: 100%; height: 100%; position: absolute; inset: 0; z-index: 0;"></div>
-            <div class="container" semi indent="all"
-                style="position: relative; z-index: 1; height: 100%; display: flex; align-items: flex-start; background: none; box-shadow: none;">
-                <div class="container" id="static" transparent
-                    style="margin: 2rem 0 0 2rem; background: var(--md-sys-color-surface); border-radius: 1rem; padding: 2rem; max-width: 320px; min-width: 240px;">
-                    <h4 class="md-typescale-headline-large">Stellar Block 1</h4>
-                    <p class="md-typescale-body-large">Stellar is our fully
-                    reusable launch vehicle designed to carry payloads orbit. Both stages uses catch recovery system to ensure safe landing and reusability.
+            <div id="modelViewer"></div>
+            <div class="viewer-overlay">
+                <div class="viewer-info-card">
+                    <h4 class="text-2xl font-bold mb-3">Stellar Block 1</h4>
+                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                        Stellar is our fully reusable launch vehicle designed to carry payloads to orbit. Both stages use catch recovery systems to ensure safe landings and reusability.
                     </p>
-                    <div style="display: flex; justify-content: flex-start;">
-                        <md-filled-tonal-button href="https://sflightx.com/vehicle/stellar">
-                            <h4>Learn More</h4>
-                        </md-filled-tonal-button>
-                    </div>
+                    <md-filled-tonal-button href="https://sflightx.com/vehicle/stellar">
+                        Learn More
+                    </md-filled-tonal-button>
                 </div>
             </div>
         </div>
 
-        <!-- Content Showcase Section 1: Launch Complexes -->
         <div class="content-showcase">
-            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/GopOnLkW0AAhlt6.jpg"
-                alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container showcase-text-card" id="static">
-                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <md-suggestion-chip style="align-self: flex-start;"
-                        class="md-typescale-body-large">FEATURE</md-suggestion-chip>
-                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">State-of-the-art Launch Complexes
-                    </h4>
-                    <p style="color: #9ca3af; line-height: 1.6;">Orbital Launch Complex and Suborbital Launch Complex
-                        for Maya and Stellar are the company's world class launchpads in Droo and RSS in Juno: New
-                        Origins.</p>
+            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/GopOnLkW0AAhlt6.jpg" alt="Launch Complex C, at Bataan Space Center." class="banner-img">
+            <div class="showcase-text-card">
+                <div class="flex flex-col gap-4">
+                    <span class="inline-block bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 text-xs font-semibold px-4 py-2 rounded-full border border-blue-200 dark:border-blue-800 uppercase tracking-widest w-max">
+                        Feature
+                    </span>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold tracking-tight">State-of-the-art Launch Complexes</h4>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Orbital Launch Complex and Suborbital Launch Complex for Maya and Stellar are the company's world-class launchpads in Droo and RSS in Juno: New Origins.
+                    </p>
                 </div>
-                <div style="display: flex; justify-content: flex-start;">
+                <div>
                     <md-filled-tonal-button href="https://sflightx.com/ambition">
-                        <h4>Learn More</h4>
+                        Learn More
                     </md-filled-tonal-button>
                 </div>
             </div>
         </div>
 
-        <!-- Content Showcase Section 2: Sky Shield Reaction Mission -->
         <div class="content-showcase">
-            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/ssr/86aRvan.png"
-                alt="Launch Complex C, at Bataan Space Center." class="banner-img">
-            <div class="container showcase-text-card" id="static">
-                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">RECENT
-                        MISSION</md-suggestion-chip>
-                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">Sky Shield Reaction Mission</h4>
-                    <p style="color: #9ca3af; line-height: 1.6;">Maya Block 6 lifted off at January 30, 15:52 UTC from
-                        Pad A. This mission carried 5 Sky Shield Reaction Satellites to Low Droo Orbit.</p>
+            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/ssr/86aRvan.png" alt="Sky Shield Reaction Mission" class="banner-img">
+            <div class="showcase-text-card">
+                <div class="flex flex-col gap-4">
+                    <span class="inline-block bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400 text-xs font-semibold px-4 py-2 rounded-full border border-amber-200 dark:border-amber-800 uppercase tracking-widest w-max">
+                        Recent Mission
+                    </span>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Sky Shield Reaction Mission</h4>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                        Maya Block 6 lifted off on January 30, 15:52 UTC from Pad A. This mission carried 5 Sky Shield Reaction Satellites to Low Droo Orbit.
+                    </p>
                 </div>
-                <div style="display: flex; justify-content: flex-start;">
+                <div>
                     <md-filled-tonal-button href="https://sflightx.com/missions?id=sky-shield-reaction-mission">
-                        <h4>Learn More</h4>
+                        Learn More
                     </md-filled-tonal-button>
                 </div>
             </div>
         </div>
 
-        <!-- Content Showcase Section 3: DSS-2 Mission -->
         <div class="content-showcase">
-            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg"
-                alt="DSS-2 Mission" class="banner-img">
-            <div class="container showcase-text-card" id="static">
-                <div id="content" style="display: flex; flex-direction: column; gap: 1rem;">
-                    <md-suggestion-chip style="align-self: flex-start;" class="md-typescale-body-large">NEXT
-                        MISSION</md-suggestion-chip>
-                    <h4 class="md-typescale-headline-large" style="font-weight: 700;">DSS-2 Mission</h4>
-                    <p style="color: #9ca3af; line-height: 1.6;">DSS-2 is second of the contracted Athena Missions to
-                        expand human presence to space. The mission will carry the Serenity Module for the first-ever
-                        in-space autonomous docking system built by sFlightX together with OmegaLink.</p>
+            <img src="https://sflightx.com/resources/v4/database/image/sflightx_com/mission/dss_2/GopO1oQX0AArgsx.jpg" alt="DSS-2 Mission" class="banner-img">
+            <div class="showcase-text-card">
+                <div class="flex flex-col gap-4">
+                    <span class="inline-block bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 text-xs font-semibold px-4 py-2 rounded-full border border-emerald-200 dark:border-emerald-800 uppercase tracking-widest w-max">
+                        Next Mission
+                    </span>
+                    <h4 class="text-2xl sm:text-3xl font-extrabold tracking-tight">DSS-2 Mission</h4>
+                    <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                        DSS-2 is the second of the contracted Athena Missions to expand human presence into space. The mission will carry the Serenity Module for the first-ever in-space autonomous docking system built by sFlightX together with OmegaLink.
+                    </p>
                 </div>
-                <div style="display: flex; justify-content: flex-start;">
+                <div>
                     <md-filled-tonal-button href="https://sflightx.com/missions?id=dss_2-mission">
-                        <h4>Learn More</h4>
+                        Learn More
                     </md-filled-tonal-button>
                 </div>
             </div>
         </div>
-        <div desktop-gap>
+        
+        <div class="mt-12" desktop-gap>
             <sflightx-footer></sflightx-footer>
         </div>
-
     </main>
 
-    <!-- Dependencies & Scripts -->
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
     <script type="module">
         import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
         import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.153.0/build/three.module.js"
-            }
+        
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error("Navigation drawer failed to load", e);
+        }
+
+        // nav-loader binds toggleDrawer (for #drawer). Close the production side-sheet instead.
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+
+        function applyTheme(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+            document.body.classList.toggle('dark-theme', isDark);
+            document.body.classList.toggle('light-theme', !isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('input', (e) => {
+                applyTheme(e.target.selected);
+            });
+
+            const savedTheme = localStorage.getItem('theme');
+            const isDark = savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            themeToggle.selected = isDark;
+            applyTheme(isDark);
         }
     </script>
 
-    <!-- External Scripts -->
-    <script type="module" src="https://sflightx.com/resources/v4/element/3d/import.js"></script>
+    <script type="module">
+        import * as THREE from 'three';
+        import { OBJLoader } from 'https://unpkg.com/three@0.153.0/examples/jsm/loaders/OBJLoader.js';
+
+        const container = document.getElementById('modelViewer');
+        if (!container) throw new Error('Missing #modelViewer');
+
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x0d121c);
+
+        const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.domElement.style.pointerEvents = 'none';
+        renderer.domElement.style.display = 'block';
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
+        container.appendChild(renderer.domElement);
+
+        scene.add(new THREE.AmbientLight(0xffffff, 0.18));
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 4.5);
+        directionalLight.position.set(50, 0, 0);
+        scene.add(directionalLight);
+
+        const fillLight = new THREE.DirectionalLight(0xffffff, 0.3);
+        fillLight.position.set(-50, 0, 0);
+        scene.add(fillLight);
+
+        let loadedObject = null;
+        const objLoader = new OBJLoader();
+        objLoader.load(
+            'https://sflightx.com/resources/v4/database/model/maya_block_6.obj',
+            (object) => {
+                object.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material = new THREE.MeshStandardMaterial({
+                            color: 0x555555,
+                            roughness: 0.8,
+                            metalness: 0.1
+                        });
+                    }
+                });
+                object.scale.set(0.75, 0.75, 0.75);
+                object.position.y = -1;
+                scene.add(object);
+                loadedObject = object;
+                frameModel();
+            },
+            undefined,
+            (error) => console.error('Failed to load OBJ model:', error)
+        );
+
+        function isDesktop() {
+            return window.innerWidth >= 968;
+        }
+
+        function frameModel() {
+            const width = Math.max(container.clientWidth, 1);
+            const height = Math.max(container.clientHeight, 1);
+
+            camera.aspect = width / height;
+
+            if (isDesktop()) {
+                camera.position.set(38, -22, 86);
+                camera.lookAt(0, 6, 0);
+                const shift = width * 0.32;
+                camera.setViewOffset(width + shift, height, 0, 0, width, height);
+            } else {
+                camera.clearViewOffset();
+                camera.position.set(12, -8, 115);
+                camera.lookAt(0, 12, 0);
+            }
+
+            camera.updateProjectionMatrix();
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            renderer.setSize(width, height, false);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            if (loadedObject) loadedObject.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', frameModel);
+        frameModel();
+    </script>
 </body>
 
-<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 

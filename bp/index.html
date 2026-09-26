@@ -3,24 +3,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="version" content="1.4">
+    <meta name="version" content="1.5">
     <meta name="author" content="SFlightX">
     <meta name="version_date" content="04-23-2025">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download the SFlightX App for Juno: New Origins — latest release, changelog, and APK.">
     <meta name="keywords" content="SFlightX, App, Tutorial, Help, Spaceflight Simulator, Juno: New Origins">
-    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <meta property="og:url" content="sflightx.com" />
+    <meta property="og:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+    <meta property="og:url" content="https://sflightx.com">
+    <meta property="og:title" content="Download SFlightX App">
+    <meta property="og:description" content="Get the latest SFlightX App release for Juno: New Origins.">
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@SFlightXJNO" />
-    <meta name="twitter:title" content="sFlightX" />
-    <meta name="twitter:description"
-        content="We provide high quality services for your JNO Payloads to Droo, or Earth and beyond!" />
-    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png" />
-    <title>SFlightX</title>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@SFlightXJNO">
+    <meta name="twitter:title" content="Download SFlightX App">
+    <meta name="twitter:description" content="Get the latest SFlightX App release for Juno: New Origins.">
+    <meta name="twitter:image" content="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <title>Download | SFlightX</title>
     <link rel="icon" type="image/png" href="https://sflightx.com/resources/v4/database/logo/logo.png">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <script type="importmap">
     {
@@ -28,93 +34,283 @@
         "@material/web/": "https://esm.run/@material/web/"
       }
     }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  </script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script type="module">
         import '@material/web/all.js';
         import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
         document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
     </script>
-    <link rel="stylesheet" href="https://sflightx.com/resources/v4/element/material-dependency.css" />
+
+    <link rel="stylesheet" href="https://sflightx.com/resources/v4/dependency.css">
+
+    <style>
+        body {
+            font-family: 'Outfit', 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        sflightx-footer a,
+        footer a,
+        footer #legal-link a {
+            color: var(--md-sys-color-primary);
+            text-decoration: none;
+        }
+
+        #side-sheet {
+            transform: none;
+        }
+
+        #navItems {
+            padding: 1rem;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        #side-sheet md-list {
+            background: transparent;
+            --md-list-container-color: transparent;
+            --md-list-item-label-text-color: #fff;
+            --md-list-item-supporting-text-color: #9ca3af;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .download {
+            width: min(800px, calc(100% - 2.5rem));
+            margin: 0 auto;
+            padding: 7.5rem 0 3.5rem;
+        }
+
+        .kicker {
+            display: inline-flex;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid color-mix(in srgb, var(--md-sys-color-primary) 40%, transparent);
+            background: color-mix(in srgb, var(--md-sys-color-primary) 12%, transparent);
+            color: var(--md-sys-color-primary);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .download h1 {
+            margin: 0.85rem 0 0.6rem;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+        }
+
+        .lede {
+            margin: 0 0 1.5rem;
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.6;
+        }
+
+        #release-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .changelog {
+            background: var(--md-sys-color-surface-container);
+            border: 1px solid var(--md-sys-color-outline-variant);
+            border-radius: 1.25rem;
+            padding: 1.5rem 1.6rem 1.7rem;
+            overflow-wrap: anywhere;
+        }
+
+        .changelog h1,
+        .changelog h2,
+        .changelog h3 {
+            margin: 1.25rem 0 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.25;
+        }
+
+        .changelog h1 { font-size: 1.35rem; }
+        .changelog h2 { font-size: 1.15rem; }
+        .changelog h3 { font-size: 1.05rem; }
+
+        .changelog p,
+        .changelog li {
+            color: var(--md-sys-color-on-surface-variant);
+            line-height: 1.65;
+        }
+
+        .changelog ul,
+        .changelog ol {
+            padding-left: 1.2rem;
+        }
+
+        .changelog hr {
+            border: 0;
+            border-top: 1px solid var(--md-sys-color-outline-variant);
+            margin: 1.25rem 0;
+        }
+
+        .changelog code {
+            font-size: 0.9em;
+            padding: 0.1em 0.35em;
+            border-radius: 0.35rem;
+            background: color-mix(in srgb, var(--md-sys-color-on-surface) 8%, transparent);
+        }
+
+        .status {
+            color: var(--md-sys-color-on-surface-variant);
+        }
+
+        .status.error {
+            color: var(--md-sys-color-error);
+        }
+
+        @media (max-width: 968px) {
+            .download {
+                width: calc(100% - 2.3rem);
+                padding: 6.5rem 0 2.5rem;
+            }
+
+            .changelog {
+                padding: 1.15rem 1.1rem 1.3rem;
+                border-radius: 1rem;
+            }
+
+            #release-actions md-filled-tonal-button,
+            #release-actions md-outlined-button {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div id="side-sheet">
         <div id="side-sheet-header">
-            <h3 class="md-typescale-headline-small">SFlightX</h3>
+            <h3 class="md-typescale-headline-small" style="font-weight: 700; color: #fff;">SFlightX</h3>
             <span class="material-symbols-rounded" onclick="toggleSideSheet()">close</span>
         </div>
         <nav id="navItems"></nav>
     </div>
-    <div id="backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden" onclick="toggleSideSheet()"></div>
+
+    <div id="locItems" hidden></div>
+    <div id="backdrop" class="fixed inset-0 z-30 hidden" onclick="toggleSideSheet()"></div>
+
     <header>
         <div class="logo">
             <span class="material-symbols-rounded" onclick="toggleSideSheet()" id="menu">menu</span>
             <a href="https://sflightx.com">
-                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo" />
+                <img id="logo" src="https://sflightx.com/resources/v4/database/logo/logo.png" alt="sFlightX Logo">
             </a>
         </div>
-        <label><span class="material-symbols-rounded">dark_mode</span><md-switch id="themeToggle"></md-switch></label>
-    </header>
-    <main>
-        <div class="content" desktop-gap>
-            <h3 class="md-typescale-display-small" id="version-header"></h3>
-            <!-- Place this tag where you want the button to render. -->
-            <div id="latest-release"></div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                <span class="material-symbols-rounded">dark_mode</span>
+                <md-switch id="themeToggle"></md-switch>
+            </label>
         </div>
-        <sflightx-footer></sflightx-footer>
+    </header>
+
+    <main>
+        <section class="download">
+            <span class="kicker">SFlightX App</span>
+            <h1 id="version-header">Latest release</h1>
+            <p class="lede">Download the newest build of SFlightX App.</p>
+            <div id="release-actions"></div>
+            <article id="latest-release" class="changelog">
+                <p class="status">Loading release notes…</p>
+            </article>
+        </section>
+
+        <div desktop-gap>
+            <sflightx-footer></sflightx-footer>
+        </div>
     </main>
 
     <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script src="https://sflightx.com/resources/v4/data/drawer/primary.js"></script>
-    <script src="https://sflightx.com/resources/function/bp/blueprint_loader.js"></script>
+    <script type="module">
+        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
+        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
 
+        try {
+            renderNavigation(navData);
+        } catch (e) {
+            console.error('Navigation drawer failed to load', e);
+        }
+
+        document.querySelectorAll('#navItems md-list-item').forEach((item) => {
+            item.addEventListener('click', () => {
+                const sheet = document.getElementById('side-sheet');
+                if (sheet && sheet.classList.contains('open') && typeof toggleSideSheet === 'function') {
+                    toggleSideSheet();
+                }
+            });
+        });
+    </script>
     <script>
-        const owner = "sflightx";
-        const repo = "sflightx-app";
+        const owner = 'sflightx';
+        const repo = 'sflightx-app';
+        const versionHeader = document.getElementById('version-header');
+        const releaseDiv = document.getElementById('latest-release');
+        const actions = document.getElementById('release-actions');
+        const githubFallback = 'https://github.com/sflightx/sflightx-app/releases/latest';
 
         fetch(`https://api.github.com/repos/${owner}/${repo}/releases/latest`)
-            .then(response => response.json())
-            .then(data => {
-                const releaseDiv = document.getElementById('latest-release');
-                const versionHeader = document.getElementById('version-header');
-                versionHeader.textContent = `Download SFlightX App ${data.name}`;
-                versionHeader.style.textAlign = 'center';
-                versionHeader.style.marginBottom = '16px';
-                releaseDiv.style.display = 'flex';
-                releaseDiv.style.flexDirection = 'column';
-                releaseDiv.style.alignItems = 'center';
-                releaseDiv.innerHTML = `
-        <div class="container" indent="all" shape="rounded" style="width: 75vw; text-align: left;">${marked.parse(data.body)}</div>
-        <md-outlined-button style="margin: 8px;" href="${data.html_url}" target="_blank">View on GitHub</md-outlined-button>
-      `;
-                if (data.assets.length > 0) {
-                    data.assets.forEach(asset => {
-                        const link = document.createElement('md-filled-tonal-button');
-                        link.href = asset.browser_download_url;
-                        link.textContent = `Download ${asset.name}`;
-                        link.target = '_blank';
-                        releaseDiv.appendChild(link);
-                        releaseDiv.appendChild(document.createElement('br'));
-                    });
-                }
-
+            .then((response) => {
+                if (!response.ok) throw new Error('Release request failed');
+                return response.json();
             })
-            .catch(err => {
-                console.error("Error loading release:", err);
+            .then((data) => {
+                versionHeader.textContent = data.name || data.tag_name || 'Latest release';
+
+                actions.innerHTML = '';
+                (data.assets || []).forEach((asset) => {
+                    const link = document.createElement('md-filled-tonal-button');
+                    link.href = asset.browser_download_url;
+                    link.textContent = `Download ${asset.name}`;
+                    link.target = '_blank';
+                    actions.appendChild(link);
+                });
+
+                const github = document.createElement('md-outlined-button');
+                github.href = data.html_url || githubFallback;
+                github.textContent = 'View on GitHub';
+                github.target = '_blank';
+                actions.appendChild(github);
+
+                releaseDiv.innerHTML = marked.parse(data.body || '_No release notes._');
+            })
+            .catch((err) => {
+                console.error('Error loading release:', err);
+                versionHeader.textContent = 'Download SFlightX App';
+                actions.innerHTML = '';
+                const github = document.createElement('md-outlined-button');
+                github.href = githubFallback;
+                github.textContent = 'View on GitHub';
+                github.target = '_blank';
+                actions.appendChild(github);
+                releaseDiv.innerHTML = '<p class="status error">Could not load the latest release. Open GitHub to download it.</p>';
             });
     </script>
-    <script src="https://sflightx.com/resources/v4/dependency.js"></script>
-    <script type="module">
-        import { renderNavigation } from 'https://sflightx.com/resources/v4/data/drawer/nav-loader.js';
-        import { navData } from 'https://sflightx.com/resources/v4/data/drawer/sflightx_com/index.js';
-        renderNavigation(navData);
-    </script>
-</body>
 
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
 </body>
 
 </html>
